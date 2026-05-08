@@ -1,14 +1,15 @@
 import { useEffect, useState } from "react";
 import { supabase } from "./lib/supabase";
+import type { Project } from "./types/project";
 
 function App() {
-  const [projects, setProjects] = useState<any[]>([]);
+  const [projects, setProjects] = useState<Project[]>([]);
 
   useEffect(() => {
     async function fetchProjects() {
       const { data, error } = await supabase.from("projects").select("*");
       if (error) console.error(error);
-      else setProjects(data);
+      else setProjects(data as Project[]);
     }
     fetchProjects();
   }, []);
