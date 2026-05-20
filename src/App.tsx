@@ -15,12 +15,16 @@ function App() {
   }, []);
 
   return (
-    <div className="bg-black min-h-screen p-10">
-      <h1 className="text-white text-4xl font-bold mb-8">Projects</h1>
+    <div className="container">
+      <div style={{ padding: "2rem" }}>
+        <h1>Inês Mota</h1>
+        <p>Illustrator & Designer based in London</p>
+      </div>
+      <h1>Projects</h1>
       {projects.map((p) => (
-        <div key={p.id} className="text-white mb-4">
-          <p className="text-xl font-bold">{p.title}</p>
-          <p className="text-gray-400">{p.description}</p>
+        <div key={p.id}>
+          <p>{p.title}</p>
+          <p>{p.description}</p>
           <img src={p.image_url} alt={p.title} className="w-64 mt-2" />
         </div>
       ))}
