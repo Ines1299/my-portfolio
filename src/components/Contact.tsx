@@ -28,14 +28,35 @@ export default function Contact() {
   };
 
   return (
-    <form ref={form} onSubmit={sendEmail}>
-      <input type="text" name="user_name" placeholder="Name" required />
-      <input type="email" name="user_email" placeholder="Email" required />
-      <textarea name="message" placeholder="Message" required />
+    <form
+      ref={form}
+      onSubmit={sendEmail}
+      className="w-full max-w-md flex flex-col gap-10"
+    >
+      <input
+        type="text"
+        name="user_name"
+        placeholder="Name"
+        required
+        className="bg-transparent border-b border-black outline-none text-3xl pb-2 placeholder-black"
+      />
+      <input
+        type="email"
+        name="user_email"
+        placeholder="Email"
+        required
+        className="bg-transparent border-b border-black outline-none text-3xl pb-2 placeholder-black"
+      />
+      <textarea
+        name="message"
+        placeholder="Message"
+        required
+        className="bg-transparent border-b border-black outline-none text-3xl pb-2 placeholder-black"
+      />
       <button
         type="submit"
         disabled={loading}
-        className=" bg-pink-500 hover:bg-pink-400 text-white font-bold py-2 px-4 rounded"
+        className=" bg-pink-500 hover:bg-pink-400 text-white px-8 py-3 text-2xl w-fit transition font-bold rounded"
       >
         {loading ? "Sending..." : "Submit"}
       </button>
