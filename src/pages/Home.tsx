@@ -1,22 +1,6 @@
-import { useState, useEffect } from "react";
-import { supabase } from "../lib/supabase";
-import type { Project } from "../types/project";
+import AllProjects from "../components/AllProjects";
 
 function Home() {
-  const [projects, setProjects] = useState<Project[]>([]);
-
-  useEffect(() => {
-    async function fetchProjects() {
-      const { data, error } = await supabase
-        .from("projects")
-        .select("*")
-        .order("year", { ascending: false });
-      if (error) console.log(error);
-      else setProjects(data as Project[]);
-    }
-
-    fetchProjects();
-  }, []);
   return (
     <div>
       {/*Hero Section*/}
@@ -56,23 +40,7 @@ function Home() {
           </div>
         </section>
         {/*Projects Images*/}
-        <div className="mt-68">
-          <section className="container py-16">
-            <div className="grid grid-cols-3 gap-8">
-              {projects.map((project) => (
-                <div key={project.id}>
-                  <img
-                    src={project.image_url}
-                    alt={project.title}
-                    className="w-full aspect-square object-cover"
-                  />
-                  <p>{project.title}</p>
-                  <p>{project.year}</p>
-                </div>
-              ))}
-            </div>
-          </section>
-        </div>
+        <AllProjects />
       </div>
     </div>
   );
