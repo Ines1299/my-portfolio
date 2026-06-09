@@ -1,4 +1,5 @@
 import AllProjects from "../components/AllProjects";
+import FolderGrid from "../components/FolderGrid";
 
 function Home() {
   return (
@@ -22,23 +23,7 @@ function Home() {
       </div>
       {/* Projects */}
       <div className="mt-68">
-        <section className=" container py-16 items-center flex flex-col">
-          <h2 className="text-6xl font-bold mb-24">Projects</h2>
-          <div className="inline-flex gap-16">
-            <div className="flex flex-col items-center gap-2">
-              <img src="../../public/folder.png" className="w-18"></img>
-              <p>Design</p>
-            </div>
-            <div className="flex flex-col items-center gap-2">
-              <img src="../../public/folder.png" className="w-18"></img>
-              <p>Programming</p>
-            </div>
-            <div className="flex flex-col items-center gap-2">
-              <img src="../../public/folder.png" className="w-18"></img>
-              <p>Crochet</p>
-            </div>
-          </div>
-        </section>
+        <FolderGrid />
         {/*Projects Images*/}
         <AllProjects />
       </div>

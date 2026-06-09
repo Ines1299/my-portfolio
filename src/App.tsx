@@ -4,6 +4,7 @@ import Contact from "./pages/Contact";
 import About from "./pages/About";
 import ProjectPage from "./pages/ProjectPage";
 import Layout from "./components/Layout";
+import CategoryPage from "./pages/CategoryPage";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/project/:id" element={<ProjectPage />} />
+          <Route path="category/:slug" element={<CategoryPage />} />
         </Routes>
       </Layout>
     </BrowserRouter>
