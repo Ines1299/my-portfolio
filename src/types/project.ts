@@ -3,7 +3,8 @@ export type Project = {
   title: string;
   description: string;
   image_url: string;
-  category: string;
+  category_id: number;
+  subcategory_id: number | null;
   year: number;
   created_at: string;
 };
