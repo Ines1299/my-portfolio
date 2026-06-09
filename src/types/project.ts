@@ -8,3 +8,16 @@ export type Project = {
   year: number;
   created_at: string;
 };
+
+export type Category = {
+  id: number;
+  name: string;
+  slug: string;
+};
+
+export type Subcategory = {
+  id: number;
+  name: string;
+  slug: string;
+  category_id: number;
+};
