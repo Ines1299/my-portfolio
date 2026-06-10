@@ -3,6 +3,7 @@ import { useParams } from "react-router";
 import { supabase } from "../lib/supabase";
 import type { Subcategory } from "../types/project";
 import { useNavigate } from "react-router";
+import { Link } from "react-router";
 
 export default function CategoryPage() {
   const [subcategories, setSubCategories] = useState<Subcategory[]>([]);
@@ -47,15 +48,18 @@ export default function CategoryPage() {
           Go Back
         </button>
         <section className=" container py-16 items-center flex flex-col">
-          <h2 className="text-6xl font-bold mb-24">Category Name</h2>
+          <h2 className="text-6xl font-bold mb-24">Category</h2>
           <div className="inline-flex gap-16">
             {subcategories.map((subcategory) => (
-              <div>
+              <Link
+                key={subcategory.id}
+                to={`/category/${slug}/${subcategory.slug}`}
+              >
                 <div className="flex flex-col items-center gap-2">
                   <img src="/folder.png" className="w-16"></img>
                   <p>{subcategory.name}</p>
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
         </section>
