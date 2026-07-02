@@ -1,12 +1,13 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router";
 import { supabase } from "../lib/supabase";
-import type { Subcategory } from "../types/project";
+import type { Subcategory, Category } from "../types/project";
 import { useNavigate } from "react-router";
 import { Link } from "react-router";
 
 export default function CategoryPage() {
   const [subcategories, setSubCategories] = useState<Subcategory[]>([]);
+  const [category, setCategory] = useState<Category | null>(null);
   const [loading, setLoading] = useState(true);
   const { slug } = useParams();
   const navigate = useNavigate();
@@ -22,6 +23,8 @@ export default function CategoryPage() {
         console.log(categoryError);
         return;
       }
+
+      setCategory(categoryData as Category);
 
       const { data, error } = await supabase
         .from("subcategories")
@@ -48,7 +51,7 @@ export default function CategoryPage() {
           Go Back
         </button>
         <section className=" container py-16 items-center flex flex-col">
-          <h2 className="text-6xl font-bold mb-24">Category</h2>
+          <h2 className="text-6xl font-bold mb-24">{category?.name}</h2>
           <div className="inline-flex gap-16">
             {subcategories.map((subcategory) => (
               <Link
