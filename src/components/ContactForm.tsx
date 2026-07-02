@@ -1,5 +1,5 @@
-import { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
+import { useRef, useState } from "react";
 
 export default function Contact() {
   const [loading, setLoading] = useState(false);

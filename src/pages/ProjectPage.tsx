@@ -1,8 +1,8 @@
-import { useEffect, useState } from "react";
-import { useParams } from "react-router";
-import { supabase } from "../lib/supabase";
 import type { Project } from "../types/project";
 
+import { supabase } from "../lib/supabase";
+import { useEffect, useState } from "react";
+import { useParams } from "react-router";
 import { useNavigate } from "react-router";
 
 export default function ProjectPage() {

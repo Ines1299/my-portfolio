@@ -1,8 +1,9 @@
-import ProjectCard from "./ProjectCard";
-import { useEffect, useState } from "react";
-
 import type { Project } from "../types/project";
+
+import { useEffect, useState } from "react";
 import { supabase } from "../lib/supabase";
+
+import ProjectCard from "./ProjectCard";
 
 export default function AllProjects() {
   const [projects, setProjects] = useState<Project[]>([]);

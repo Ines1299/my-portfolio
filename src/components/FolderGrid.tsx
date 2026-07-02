@@ -1,7 +1,8 @@
 import type { Category } from "../types/project";
-import { useEffect, useState } from "react";
-import { supabase } from "../lib/supabase";
+
 import { Link } from "react-router-dom";
+import { supabase } from "../lib/supabase";
+import { useEffect, useState } from "react";
 
 export default function FolderGrid() {
   const [categories, setCategories] = useState<Category[]>([]);

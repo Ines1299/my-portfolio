@@ -1,6 +1,7 @@
+import { motion } from "framer-motion";
+
 import AllProjects from "../components/AllProjects";
 import FolderGrid from "../components/FolderGrid";
-import { motion } from "framer-motion";
 
 function Home() {
   return (

@@ -1,9 +1,10 @@
+import type { Subcategory, Category } from "../types/project";
+
+import { Link } from "react-router";
+import { supabase } from "../lib/supabase";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router";
-import { supabase } from "../lib/supabase";
-import type { Subcategory, Category } from "../types/project";
 import { useNavigate } from "react-router";
-import { Link } from "react-router";
 
 export default function CategoryPage() {
   const [subcategories, setSubCategories] = useState<Subcategory[]>([]);

@@ -1,4 +1,5 @@
 import { SocialIcon } from "react-social-icons";
+
 import Contact from "./ContactForm";
 
 function Footer() {
