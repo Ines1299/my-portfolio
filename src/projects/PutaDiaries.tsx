@@ -8,7 +8,7 @@ import { useNavigate } from "react-router";
 export default function ProjectPage() {
   const [project, setProject] = useState<Project | null>(null);
   const [loading, setLoading] = useState(true);
-  const { slug } = useParams();
+  const { id } = useParams();
 
   let navigate = useNavigate();
 
@@ -17,14 +17,14 @@ export default function ProjectPage() {
       const { data, error } = await supabase
         .from("projects")
         .select("*")
-        .eq("slug", slug)
+        .eq("id", id)
         .single();
       if (error) console.log(error);
       else setProject(data as Project);
       setLoading(false);
     }
     fetchProject();
-  }, [slug]);
+  }, [id]);
 
   if (loading) return <p>Loading...</p>;
   if (!project) return <p>Project not found!</p>;

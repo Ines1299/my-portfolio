@@ -7,6 +7,7 @@ export type Project = {
   subcategory_id: number | null;
   year: number;
   created_at: string;
+  slug: string;
 };
 
 export type Category = {

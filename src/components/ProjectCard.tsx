@@ -3,7 +3,7 @@ import { Link } from "react-router";
 export default function ProjectCard(props) {
   const project = props.project;
   return (
-    <Link to={`/project/${project.id}`}>
+    <Link to={`/project/${project.slug}`}>
       <div key={project.id}>
         <img
           src={project.image_url}
