@@ -6,6 +6,7 @@ export default function ProjectPage({ project }: { project: Project }) {
     "https://jvlcwxxjoppsnwglzomo.supabase.co/storage/v1/object/sign/puta-diaries/1.jpg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9jMTA4NmY5YS04NjQxLTQxNGItYmVhNC0zM2QzMzhiMDQ0OWUiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJwdXRhLWRpYXJpZXMvMS5qcGciLCJzY29wZSI6ImRvd25sb2FkIiwiaWF0IjoxNzg0ODA1OTU1LCJleHAiOjE4MTYzNDE5NTV9.uMV8UgonTV0tToznpbelLKOMLIssrEBsYhjQP0iji7w",
     "https://jvlcwxxjoppsnwglzomo.supabase.co/storage/v1/object/sign/puta-diaries/2.jpg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9jMTA4NmY5YS04NjQxLTQxNGItYmVhNC0zM2QzMzhiMDQ0OWUiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJwdXRhLWRpYXJpZXMvMi5qcGciLCJzY29wZSI6ImRvd25sb2FkIiwiaWF0IjoxNzg0ODA1OTgxLCJleHAiOjE4MTYzNDE5ODF9.C6_lR1kpGb9w8l6tbHg9N519l6yI7cfqWCYK8F-rJ2U",
     "https://jvlcwxxjoppsnwglzomo.supabase.co/storage/v1/object/sign/puta-diaries/3.jpg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9jMTA4NmY5YS04NjQxLTQxNGItYmVhNC0zM2QzMzhiMDQ0OWUiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJwdXRhLWRpYXJpZXMvMy5qcGciLCJzY29wZSI6ImRvd25sb2FkIiwiaWF0IjoxNzg0ODA4MDA1LCJleHAiOjE4MTYzNDQwMDV9.bCqkXhuAua74ZML127Iov3Fx4yW_do1hAKfDTmhqICM",
+    "https://jvlcwxxjoppsnwglzomo.supabase.co/storage/v1/object/public/puta-diaries/useNow.png",
   ];
 
   const zineSlides1 = [
@@ -52,13 +53,16 @@ export default function ProjectPage({ project }: { project: Project }) {
   ];
   return (
     <div className="container">
-      <h1 className="text-6xl font-bold mt-10 mb-6 text-center">
-        {project.title}
-      </h1>
-      <div className="flex justify-center mb-6 max-w-4xl mx-auto">
-        <img src={project.image_url} alt={project.title} className="w-full" />
+      <h1 className="text-6xl font-bold mt-12 text-center">{project.title}</h1>
+
+      <div className="max-w-4xl mx-auto">
+        <img
+          src={firstImages[3]}
+          alt={project.title}
+          className="w-full max-h-180 object-contain"
+        />
       </div>
-      <p className="text-sm leading-relaxed max-w-4xl mx-auto mt-6 mb-10 text-pink-400">
+      <p className="text-sm leading-relaxed max-w-4xl mx-auto mt-10 mb-10 text-pink-400">
         Puta Diaries is a feminist zine series exploring the experiences of
         women and those identifying as women in a patriarchal society. Focused
         on sexual harassment, the zines use anonymous submissions to spark
@@ -77,18 +81,18 @@ export default function ProjectPage({ project }: { project: Project }) {
         </div>
       </div>
 
-      <h2 className="mt-16 text-4xl font-bold text-red-500">Volume 1</h2>
       <div className="max-w-4xl mx-auto">
+        <h2 className="mt-16 text-4xl font-bold text-red-500">Volume 1</h2>
         <SlideShow images={zineSlides1} />
       </div>
 
       <div className="flex gap-8 items-start mt-16">
-        <p className="w-1/3 text-sm leading-relaxed text-pink-400">
+        <p className="w-1/3 text-sm leading-relaxed text-pink-400 pt-10">
           Underwear is a personal and somewhat forbidden subject, making it an
           interesting topic to explore with my theme. Here are some of the
-          unedited results of scans I used throughout this project. The colours
-          and textures created a compelling feel that lies almost in limbo
-          between innocence and provocation.
+          results of scans I used throughout this project. The colours and
+          textures created a compelling feel that lies almost in limbo between
+          innocence and provocation.
         </p>
         <div className="w-2/3 flex gap-4">
           <SlideShow images={scansBlack} />
@@ -96,13 +100,13 @@ export default function ProjectPage({ project }: { project: Project }) {
         </div>
       </div>
 
-      <h2 className="mt-16 text-4xl font-bold text-red-500">Volume 2</h2>
       <div className="max-w-4xl mx-auto">
+        <h2 className="mt-16 text-4xl font-bold text-red-500">Volume 2</h2>
         <SlideShow images={zineSlides2} />
       </div>
 
-      <h2 className="mt-16 text-4xl font-bold text-red-500">Volume 3</h2>
       <div className="max-w-4xl mx-auto">
+        <h2 className="mt-16 text-4xl font-bold text-red-500">Volume 3</h2>
         <SlideShow images={zineSlides3} />
       </div>
     </div>

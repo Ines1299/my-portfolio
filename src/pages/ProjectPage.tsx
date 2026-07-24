@@ -42,14 +42,14 @@ export default function ProjectPage() {
   if (!project) return <p>Project not found!</p>;
 
   return (
-    <>
+    <div className="relative">
       <button
         onClick={() => navigate(-1)}
-        className="bg-pink-500 hover:bg-pink-400 text-white px-8 py-3 text-2xl w-fit transition font-bold rounded"
+        className="absolute top-4 left-4 bg-pink-500 hover:bg-pink-400 text-white px-4 py-2 text-sm w-fit transition font-bold rounded z-10"
       >
         Go Back
       </button>
       {renderTemplate(project)}
-    </>
+    </div>
   );
 }
