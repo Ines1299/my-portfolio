@@ -1,5 +1,5 @@
 import type { Project } from "../types/project";
-import SlideShow from "../components/Slideshow";
+import SlideShow from "../components/SlideShow";
 
 export default function ProjectPage({ project }: { project: Project }) {
   const firstImages = [
@@ -51,10 +51,14 @@ export default function ProjectPage({ project }: { project: Project }) {
     "https://jvlcwxxjoppsnwglzomo.supabase.co/storage/v1/object/sign/puta-diaries/17.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9jMTA4NmY5YS04NjQxLTQxNGItYmVhNC0zM2QzMzhiMDQ0OWUiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJwdXRhLWRpYXJpZXMvMTcucG5nIiwic2NvcGUiOiJkb3dubG9hZCIsImlhdCI6MTc4NDgwNzIwOCwiZXhwIjoxODE2MzQzMjA4fQ.8itIdseANotb3R8ewqfiCQEDCwT0tqKh9xKuMQ7PghY",
   ];
   return (
-    <>
-      <h1>{project.title}</h1>
-      <img src={project.image_url} alt={project.title} />
-      <p>
+    <div className="container">
+      <h1 className="text-6xl font-bold mt-10 mb-6 text-center">
+        {project.title}
+      </h1>
+      <div className="flex justify-center mb-6 max-w-4xl mx-auto">
+        <img src={project.image_url} alt={project.title} className="w-full" />
+      </div>
+      <p className="text-sm leading-relaxed max-w-4xl mx-auto mt-6 mb-10 text-pink-400">
         Puta Diaries is a feminist zine series exploring the experiences of
         women and those identifying as women in a patriarchal society. Focused
         on sexual harassment, the zines use anonymous submissions to spark
@@ -64,17 +68,22 @@ export default function ProjectPage({ project }: { project: Project }) {
         V180, compiles illustrations and text from the zines, alongside new and
         previously unused material
       </p>
-      <div className="flex flex-col gap-4">
+
+      <div className="flex flex-col gap-4 mt-10 ">
         <img src={firstImages[0]} alt={project.title} className="w-full" />
-        <div className="flex gap-4">
-          {/* make them be in a hoizontal line */}
+        <div className="flex gap-2">
           <img src={firstImages[1]} alt={project.title} className="w-1/2" />
           <img src={firstImages[2]} alt={project.title} className="w-1/2" />
         </div>
       </div>
-      <SlideShow images={zineSlides1} />
+
+      <h2 className="mt-16 text-4xl font-bold text-red-500">Volume 1</h2>
+      <div className="max-w-4xl mx-auto">
+        <SlideShow images={zineSlides1} />
+      </div>
+
       <div className="flex gap-8 items-start mt-16">
-        <p className="w-1/3 text-sm leading-relaxed">
+        <p className="w-1/3 text-sm leading-relaxed text-pink-400">
           Underwear is a personal and somewhat forbidden subject, making it an
           interesting topic to explore with my theme. Here are some of the
           unedited results of scans I used throughout this project. The colours
@@ -87,9 +96,15 @@ export default function ProjectPage({ project }: { project: Project }) {
         </div>
       </div>
 
-      <SlideShow images={zineSlides2} />
+      <h2 className="mt-16 text-4xl font-bold text-red-500">Volume 2</h2>
+      <div className="max-w-4xl mx-auto">
+        <SlideShow images={zineSlides2} />
+      </div>
 
-      <SlideShow images={zineSlides3} />
-    </>
+      <h2 className="mt-16 text-4xl font-bold text-red-500">Volume 3</h2>
+      <div className="max-w-4xl mx-auto">
+        <SlideShow images={zineSlides3} />
+      </div>
+    </div>
   );
 }
