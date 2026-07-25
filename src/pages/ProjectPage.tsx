@@ -2,6 +2,7 @@ import PutaDiaries from "../projects/PutaDiaries";
 import PutaDiariesGhostStories from "../projects/PutaDiariesGhostStories";
 import IllustrationTemplate from "../templates/IllustrationTemplate";
 import MentalLoad from "../projects/MentalLoad";
+import EternalSummer from "../projects/EternalSummer.tsx";
 
 import type { Project } from "../types/project";
 
@@ -18,6 +19,8 @@ function renderTemplate(project: Project) {
       return <PutaDiariesGhostStories project={project} />;
     case "mental-load":
       return <MentalLoad project={project} />;
+    case "eternal-summer":
+      return <EternalSummer project={project} />;
     default:
       return <IllustrationTemplate project={project} />;
   }
