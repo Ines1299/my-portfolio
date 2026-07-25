@@ -111,7 +111,7 @@ export default function ProjectPage({ project }: { project: Project }) {
       </div>
       <div className="max-w-5xl mx-auto mt-16">
         <ReactPlayer
-          src="https://jvlcwxxjoppsnwglzomo.supabase.co/storage/v1/object/public/videos/PUTA%20DIARIES%20Video%20copy.mp4"
+          src="https://jvlcwxxjoppsnwglzomo.supabase.co/storage/v1/object/public/videos/puta-diaries-gs.mp4"
           width="100%"
           height="100%"
           controls={true}
