@@ -1,4 +1,5 @@
 import PutaDiaries from "../projects/PutaDiaries";
+import PutaDiariesGhostStories from "../projects/PutaDiariesGhostStories";
 import IllustrationTemplate from "../templates/IllustrationTemplate";
 
 import type { Project } from "../types/project";
@@ -12,6 +13,8 @@ function renderTemplate(project: Project) {
   switch (project.slug) {
     case "puta-diaries":
       return <PutaDiaries project={project} />;
+    case "puta-diaries-ghost-stories":
+      return <PutaDiariesGhostStories project={project} />;
     default:
       return <IllustrationTemplate project={project} />;
   }
