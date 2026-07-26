@@ -4,6 +4,7 @@ import IllustrationTemplate from "../templates/IllustrationTemplate";
 import MentalLoad from "../projects/MentalLoad";
 import EternalSummer from "../projects/EternalSummer.tsx";
 import UrbanPicnic from "../projects/UrbanPicnic";
+import CocktailMenu from "../projects/CocktailMenu";
 
 import type { Project } from "../types/project";
 
@@ -24,6 +25,9 @@ function renderTemplate(project: Project) {
       return <EternalSummer project={project} />;
     case "urban-picnic":
       return <UrbanPicnic project={project} />;
+    case "cocktail-menu":
+      return <CocktailMenu project={project} />;
+
     default:
       return <IllustrationTemplate project={project} />;
   }
