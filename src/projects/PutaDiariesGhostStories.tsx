@@ -3,7 +3,11 @@ import SlideShow from "../components/SlideShow";
 
 import ReactPlayer from "react-player";
 
-export default function ProjectPage({ project }: { project: Project }) {
+export default function PutaDiariesGhostStories({
+  project,
+}: {
+  project: Project;
+}) {
   const coverBackCover = [
     "https://jvlcwxxjoppsnwglzomo.supabase.co/storage/v1/object/public/puta-diaries-ghost-stories/1.png",
     "https://jvlcwxxjoppsnwglzomo.supabase.co/storage/v1/object/public/puta-diaries-ghost-stories/2.png",

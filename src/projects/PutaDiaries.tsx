@@ -1,7 +1,7 @@
 import type { Project } from "../types/project";
 import SlideShow from "../components/SlideShow";
 
-export default function ProjectPage({ project }: { project: Project }) {
+export default function PutaDiaries({ project }: { project: Project }) {
   const firstImages = [
     "https://jvlcwxxjoppsnwglzomo.supabase.co/storage/v1/object/sign/puta-diaries/1.jpg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9jMTA4NmY5YS04NjQxLTQxNGItYmVhNC0zM2QzMzhiMDQ0OWUiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJwdXRhLWRpYXJpZXMvMS5qcGciLCJzY29wZSI6ImRvd25sb2FkIiwiaWF0IjoxNzg0ODA1OTU1LCJleHAiOjE4MTYzNDE5NTV9.uMV8UgonTV0tToznpbelLKOMLIssrEBsYhjQP0iji7w",
     "https://jvlcwxxjoppsnwglzomo.supabase.co/storage/v1/object/sign/puta-diaries/2.jpg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9jMTA4NmY5YS04NjQxLTQxNGItYmVhNC0zM2QzMzhiMDQ0OWUiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJwdXRhLWRpYXJpZXMvMi5qcGciLCJzY29wZSI6ImRvd25sb2FkIiwiaWF0IjoxNzg0ODA1OTgxLCJleHAiOjE4MTYzNDE5ODF9.C6_lR1kpGb9w8l6tbHg9N519l6yI7cfqWCYK8F-rJ2U",

@@ -1,7 +1,7 @@
 import type { Project } from "../types/project";
 import SlideShow from "../components/SlideShow";
 
-export default function ProjectPage({ project }: { project: Project }) {
+export default function MentalLoad({ project }: { project: Project }) {
   const zineSlides = [
     "https://jvlcwxxjoppsnwglzomo.supabase.co/storage/v1/object/public/mental-load/2.jpg",
     "https://jvlcwxxjoppsnwglzomo.supabase.co/storage/v1/object/public/mental-load/3.jpg",

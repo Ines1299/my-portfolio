@@ -1,12 +1,11 @@
 import type { Project } from "../types/project";
-import SlideShow from "../components/SlideShow";
 
 import { SocialIcon } from "react-social-icons";
 
 import { useState } from "react";
 
-const cover =
-  "https://jvlcwxxjoppsnwglzomo.supabase.co/storage/v1/object/public/eternal-summer/2.jpg";
+// const cover =
+//   "https://jvlcwxxjoppsnwglzomo.supabase.co/storage/v1/object/public/eternal-summer/2.jpg";
 
 const songs = [
   {
@@ -47,7 +46,7 @@ const songs = [
   },
 ];
 
-export default function ProjectPage({ project }: { project: Project }) {
+export default function EternalSummer({ project }: { project: Project }) {
   const [selectedSong, setSelectedSong] = useState<string | null>(null);
 
   return (
@@ -72,8 +71,6 @@ export default function ProjectPage({ project }: { project: Project }) {
 
           <SocialIcon
             style={{ height: 35, width: 35 }}
-            target="_blank"
-            rel="noreferrer"
             url="https://open.spotify.com/artist/52KnNbAieqBwivwgKsaP7W?si=s-NztJMmRXygU6jVFVKWxg"
           />
         </div>
