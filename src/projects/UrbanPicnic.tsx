@@ -1,8 +1,6 @@
 import type { Project } from "../types/project";
 import SlideShow from "../components/SlideShow";
 
-import ReactPlayer from "react-player";
-
 export default function UrbanPicnic({ project }: { project: Project }) {
   const mainBox = [
     "https://jvlcwxxjoppsnwglzomo.supabase.co/storage/v1/object/public/urban-picnic/2.png",
