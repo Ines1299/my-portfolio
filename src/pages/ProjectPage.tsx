@@ -5,6 +5,11 @@ import MentalLoad from "../projects/MentalLoad";
 import EternalSummer from "../projects/EternalSummer.tsx";
 import UrbanPicnic from "../projects/UrbanPicnic";
 import CocktailMenu from "../projects/CocktailMenu";
+import Wazi from "../projects/Wazi";
+import Divided from "../projects/Divided";
+import AttentionEconomy from "../projects/AttentionEconomy";
+import OhGravity from "../projects/OhGravity";
+import IllustratedMan from "../projects/IllustratedMan.tsx";
 
 import type { Project } from "../types/project";
 
@@ -27,6 +32,16 @@ function renderTemplate(project: Project) {
       return <UrbanPicnic project={project} />;
     case "cocktail-menu":
       return <CocktailMenu project={project} />;
+    case "wazi":
+      return <Wazi project={project} />;
+    case "divided":
+      return <Divided project={project} />;
+    case "attention-economy":
+      return <AttentionEconomy project={project} />;
+    case "oh-gravity":
+      return <OhGravity project={project} />;
+    case "illustrated-man":
+      return <IllustratedMan project={project} />;
 
     default:
       return <IllustrationTemplate project={project} />;
