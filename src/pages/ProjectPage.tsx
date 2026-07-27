@@ -10,6 +10,7 @@ import Divided from "../projects/Divided";
 import AttentionEconomy from "../projects/AttentionEconomy";
 import OhGravity from "../projects/OhGravity";
 import IllustratedMan from "../projects/IllustratedMan.tsx";
+import LoveEncyclopedia from "../projects/LoveEncyclopedia";
 
 import type { Project } from "../types/project";
 
@@ -42,6 +43,8 @@ function renderTemplate(project: Project) {
       return <OhGravity project={project} />;
     case "illustrated-man":
       return <IllustratedMan project={project} />;
+    case "love-encyclopedia":
+      return <LoveEncyclopedia project={project} />;
 
     default:
       return <IllustrationTemplate project={project} />;
