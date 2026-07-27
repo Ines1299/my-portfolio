@@ -8,6 +8,7 @@ export type Project = {
   year: number;
   created_at: string;
   slug: string;
+  full_image_url: string | null;
 };
 
 export type Category = {

@@ -11,6 +11,8 @@ import AttentionEconomy from "../projects/AttentionEconomy";
 import OhGravity from "../projects/OhGravity";
 import IllustratedMan from "../projects/IllustratedMan.tsx";
 import LoveEncyclopedia from "../projects/LoveEncyclopedia";
+import NewHorizons from "../projects/NewHorizons";
+import WeWontBeLong from "/Users/ines/Desktop/Portfolio_website/my-portfolio/src/projects/WeWontBeLong.tsx";
 
 import type { Project } from "../types/project";
 
@@ -45,6 +47,10 @@ function renderTemplate(project: Project) {
       return <IllustratedMan project={project} />;
     case "love-encyclopedia":
       return <LoveEncyclopedia project={project} />;
+    case "new-horizons":
+      return <NewHorizons project={project} />;
+    case "we-wont-be-long":
+      return <WeWontBeLong project={project} />;
 
     default:
       return <IllustrationTemplate project={project} />;
