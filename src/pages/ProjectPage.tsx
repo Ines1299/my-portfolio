@@ -13,6 +13,7 @@ import IllustratedMan from "../projects/IllustratedMan.tsx";
 import LoveEncyclopedia from "../projects/LoveEncyclopedia";
 import NewHorizons from "../projects/NewHorizons";
 import WeWontBeLong from "/Users/ines/Desktop/Portfolio_website/my-portfolio/src/projects/WeWontBeLong.tsx";
+import Brat from "../projects/Brat";
 
 import type { Project } from "../types/project";
 
@@ -51,6 +52,8 @@ function renderTemplate(project: Project) {
       return <NewHorizons project={project} />;
     case "we-wont-be-long":
       return <WeWontBeLong project={project} />;
+    case "brat-top":
+      return <Brat project={project} />;
 
     default:
       return <IllustrationTemplate project={project} />;

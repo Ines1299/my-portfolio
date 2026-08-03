@@ -3,8 +3,7 @@ import type { Subcategory, Category } from "../types/project";
 import { Link } from "react-router";
 import { supabase } from "../lib/supabase";
 import { useEffect, useState } from "react";
-import { useParams } from "react-router";
-import { useNavigate } from "react-router";
+import { useParams, useNavigate } from "react-router";
 
 export default function CategoryPage() {
   const [subcategories, setSubCategories] = useState<Subcategory[]>([]);
@@ -32,9 +31,12 @@ export default function CategoryPage() {
         .select("*")
         .eq("category_id", categoryData.id);
 
-      if (error) console.log(error);
-      else setSubCategories(data as Subcategory[]);
-      setLoading(false);
+      if (error) {
+        console.log(error);
+      } else {
+        setSubCategories(data as Subcategory[]);
+        setLoading(false);
+      }
     }
     fetchSubCategories();
   }, [slug]);
