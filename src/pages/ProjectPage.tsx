@@ -15,6 +15,7 @@ import NewHorizons from "../projects/NewHorizons";
 import WeWontBeLong from "/Users/ines/Desktop/Portfolio_website/my-portfolio/src/projects/WeWontBeLong.tsx";
 import Brat from "../projects/Brat";
 import Kellogs from "../projects/Kellogs";
+import Arsenal from "../projects/Arsenal";
 
 import type { Project } from "../types/project";
 
@@ -57,6 +58,8 @@ function renderTemplate(project: Project) {
       return <Brat project={project} />;
     case "kellogs-blanket":
       return <Kellogs project={project} />;
+    case "arsenal-scarf":
+      return <Arsenal project={project} />;
 
     default:
       return <IllustrationTemplate project={project} />;
