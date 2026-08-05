@@ -14,6 +14,7 @@ import LoveEncyclopedia from "../projects/LoveEncyclopedia";
 import NewHorizons from "../projects/NewHorizons";
 import WeWontBeLong from "/Users/ines/Desktop/Portfolio_website/my-portfolio/src/projects/WeWontBeLong.tsx";
 import Brat from "../projects/Brat";
+import Kellogs from "../projects/Kellogs";
 
 import type { Project } from "../types/project";
 
@@ -54,6 +55,8 @@ function renderTemplate(project: Project) {
       return <WeWontBeLong project={project} />;
     case "brat-top":
       return <Brat project={project} />;
+    case "kellogs-blanket":
+      return <Kellogs project={project} />;
 
     default:
       return <IllustrationTemplate project={project} />;

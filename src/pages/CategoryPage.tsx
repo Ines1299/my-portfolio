@@ -49,7 +49,7 @@ export default function CategoryPage() {
       <div className="container py-16">
         <button
           onClick={() => navigate(-1)}
-          className=" bg-pink-500 hover:bg-pink-400 text-white px-8 py-3 text-2xl w-fit transition font-bold rounded"
+          className=" bg-pink-500 hover:bg-pink-400 text-white px-8 py-3 text-sm w-fit transition font-bold rounded z-10"
         >
           Go Back
         </button>

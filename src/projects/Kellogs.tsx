@@ -1,15 +1,15 @@
 import type { Project } from "../types/project";
 
-export default function Brat({ project }: { project: Project }) {
+export default function Kellogs({ project }: { project: Project }) {
   return (
     <div className="container">
       <h1 className="text-6xl font-bold mt-12 text-center">{project.title}</h1>
       <img
-        src="https://jvlcwxxjoppsnwglzomo.supabase.co/storage/v1/object/public/crochet/1.png"
+        src="https://jvlcwxxjoppsnwglzomo.supabase.co/storage/v1/object/public/crochet/2.png"
         className="w-full max-h-180 object-contain"
       />
       <iframe
-        src="https://www.tiktok.com/embed/v2/7519551388339244321"
+        src="https://www.instagram.com/p/DCm4Sm3vBRp/embed/"
         width="325"
         height="740"
         allow="encrypted-media"
