@@ -16,6 +16,7 @@ import WeWontBeLong from "/Users/ines/Desktop/Portfolio_website/my-portfolio/src
 import Brat from "../projects/Brat";
 import Kellogs from "../projects/Kellogs";
 import Arsenal from "../projects/Arsenal";
+import Cigarette from "../projects/Cigarette";
 
 import type { Project } from "../types/project";
 
@@ -60,6 +61,8 @@ function renderTemplate(project: Project) {
       return <Kellogs project={project} />;
     case "arsenal-scarf":
       return <Arsenal project={project} />;
+    case "cigarette-scarf":
+      return <Cigarette project={project} />;
 
     default:
       return <IllustrationTemplate project={project} />;

@@ -33,6 +33,8 @@ export default function CategoryPage() {
 
       if (error) {
         console.log(error);
+      } else if (data.length === 0) {
+        navigate(`/category/${slug}/all`, { replace: true });
       } else {
         setSubCategories(data as Subcategory[]);
         setLoading(false);
