@@ -17,6 +17,7 @@ import Brat from "../projects/Brat";
 import Kellogs from "../projects/Kellogs";
 import Arsenal from "../projects/Arsenal";
 import Cigarette from "../projects/Cigarette";
+import Spillr from "../projects/Spillr";
 
 import type { Project } from "../types/project";
 
@@ -63,7 +64,8 @@ function renderTemplate(project: Project) {
       return <Arsenal project={project} />;
     case "cigarette-scarf":
       return <Cigarette project={project} />;
-
+    case "spillr":
+      return <Spillr project={project} />;
     default:
       return <IllustrationTemplate project={project} />;
   }
