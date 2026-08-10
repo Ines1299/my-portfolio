@@ -1,5 +1,7 @@
 import type { Project } from "../types/project";
 
+import Slideshow from "../components/SlideShow";
+
 import ReactPlayer from "react-player";
 
 export default function Spillr({ project }: { project: Project }) {
@@ -8,6 +10,15 @@ export default function Spillr({ project }: { project: Project }) {
     "https://jvlcwxxjoppsnwglzomo.supabase.co/storage/v1/object/public/proggraming/spillr-gif-2.mp4",
     "https://jvlcwxxjoppsnwglzomo.supabase.co/storage/v1/object/public/proggraming/spillr-gif-3.mp4",
     "https://jvlcwxxjoppsnwglzomo.supabase.co/storage/v1/object/public/proggraming/spillr-gif-4.mp4",
+  ];
+
+  const screenshots = [
+    "https://jvlcwxxjoppsnwglzomo.supabase.co/storage/v1/object/public/proggraming/figma1.png",
+    "https://jvlcwxxjoppsnwglzomo.supabase.co/storage/v1/object/public/proggraming/figma2.png",
+    "https://jvlcwxxjoppsnwglzomo.supabase.co/storage/v1/object/public/proggraming/figma3.png",
+    "https://jvlcwxxjoppsnwglzomo.supabase.co/storage/v1/object/public/proggraming/figma4.png",
+    "https://jvlcwxxjoppsnwglzomo.supabase.co/storage/v1/object/public/proggraming/figma5.png",
+    "https://jvlcwxxjoppsnwglzomo.supabase.co/storage/v1/object/public/proggraming/figma6.png",
   ];
 
   return (
@@ -19,6 +30,16 @@ export default function Spillr({ project }: { project: Project }) {
       <p className="text-sm leading-relaxed max-w-4xl mx-auto mt-10 mb-10 ">
         {project.description}
       </p>
+      <div className="columns-3 gap-2 mt-10 max-w-5xl mx-auto">
+        {screenshots.map((url) => (
+          <img
+            src={url}
+            key={url}
+            alt={project.title}
+            className="w-full mb-2"
+          />
+        ))}
+      </div>
       <div className="columns-2 gap-2 mt-10 max-w-5xl mx-auto">
         {demos.map((url) => (
           <ReactPlayer
