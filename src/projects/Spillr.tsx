@@ -1,7 +1,5 @@
 import type { Project } from "../types/project";
 
-import Slideshow from "../components/SlideShow";
-
 import ReactPlayer from "react-player";
 
 export default function Spillr({ project }: { project: Project }) {
@@ -21,6 +19,13 @@ export default function Spillr({ project }: { project: Project }) {
     "https://jvlcwxxjoppsnwglzomo.supabase.co/storage/v1/object/public/proggraming/figma6.png",
   ];
 
+  const wireframe = [
+    "https://jvlcwxxjoppsnwglzomo.supabase.co/storage/v1/object/public/proggraming/1.png",
+    "https://jvlcwxxjoppsnwglzomo.supabase.co/storage/v1/object/public/proggraming/2.png",
+    "https://jvlcwxxjoppsnwglzomo.supabase.co/storage/v1/object/public/proggraming/3.png",
+    "https://jvlcwxxjoppsnwglzomo.supabase.co/storage/v1/object/public/proggraming/4.png",
+  ];
+
   return (
     <div className="container pb-16">
       <h1 className="text-6xl font-bold mt-12 mb-6 text-center">
@@ -30,6 +35,24 @@ export default function Spillr({ project }: { project: Project }) {
       <p className="text-sm leading-relaxed max-w-4xl mx-auto mt-10 mb-10 ">
         {project.description}
       </p>
+      <div className="columns-4 gap-6 mt-10 max-w-5xl mx-auto">
+        {wireframe.map((url) => (
+          <img
+            src={url}
+            key={url}
+            alt={project.title}
+            className="w-full mb-2"
+          />
+        ))}
+      </div>
+      <img
+        src={
+          "https://jvlcwxxjoppsnwglzomo.supabase.co/storage/v1/object/public/proggraming/color.png"
+        }
+        key={project.title}
+        alt={project.title}
+        className="w-full mb-2"
+      />
       <div className="columns-3 gap-2 mt-10 max-w-5xl mx-auto">
         {screenshots.map((url) => (
           <img
