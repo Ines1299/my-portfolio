@@ -18,6 +18,7 @@ import Kellogs from "../projects/Kellogs";
 import Arsenal from "../projects/Arsenal";
 import Cigarette from "../projects/Cigarette";
 import Spillr from "../projects/Spillr";
+import NcNews from "../projects/NcNews";
 
 import type { Project } from "../types/project";
 
@@ -66,6 +67,9 @@ function renderTemplate(project: Project) {
       return <Cigarette project={project} />;
     case "spillr":
       return <Spillr project={project} />;
+    case "nc-news":
+      return <NcNews project={project} />;
+
     default:
       return <IllustrationTemplate project={project} />;
   }

@@ -1,6 +1,7 @@
 import type { Project } from "../types/project";
 
 import ReactPlayer from "react-player";
+import ProjectSpecs from "../components/ProjectSpecs";
 
 export default function Spillr({ project }: { project: Project }) {
   const demos = [
@@ -31,10 +32,27 @@ export default function Spillr({ project }: { project: Project }) {
       <h1 className="text-6xl font-bold mt-12 mb-6 text-center">
         {project.title}
       </h1>
-
-      <p className="text-sm leading-relaxed max-w-4xl mx-auto mt-10 mb-10 ">
-        {project.description}
-      </p>
+      <div className="flex gap-12 items-start max-w-4xl mx-auto mt-10 mb-10">
+        <p className="text-sm leading-relaxed flex-1 ">{project.description}</p>
+        <ProjectSpecs
+          specs={[
+            { label: "Front-end", value: "React Native · JavaScript · EXPO " },
+            { label: "Back-end", value: "Supabase · PostgreSQL · WebSocket " },
+            {
+              label: "Role",
+              value: (
+                <>
+                  <span className="block">Front-end & components</span>
+                  <span className="block">Backend endpoints</span>
+                  <span className="block">Design, wireframe & animations</span>
+                </>
+              ),
+            },
+            { label: "Year", value: "2026" },
+            { label: "Status", value: "In production" },
+          ]}
+        />
+      </div>
       <div className="columns-4 gap-6 mt-10 max-w-5xl mx-auto">
         {wireframe.map((url) => (
           <img
