@@ -1,7 +1,11 @@
-function About() {
+import Experience from "../components/Experience";
+
+import me from "/EditedforCV.png";
+
+export default function About() {
   return (
-    <>
-      <div className="flex mb-4">
+    <div className="container">
+      <div className="flex mb-4 mt-12">
         <div className="w-1/2">
           <h1>About me</h1>
           <p>
@@ -14,17 +18,14 @@ function About() {
             clean code and thoughtful UX go hand in hand.
           </p>
         </div>
-        <div className=" w-1/2 h-96 border border-black flex items-center justify-center shrink-0 ">
-          <p className="text-xs">[my photo goes here]</p>
+        <div className=" w-1/2 h-96 flex items-center justify-center">
+          <img src={me} className="max-h-120 " />
+          {/* <p className="text-xs">[my photo goes here]</p> */}
         </div>
       </div>
       <div>
-        <h1>Work experience</h1>
-
-        <h1>Education</h1>
+        <Experience />
       </div>
-    </>
+    </div>
   );
 }
-
-export default About;
