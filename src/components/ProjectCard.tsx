@@ -1,7 +1,7 @@
 import { Link } from "react-router";
+import type { Project } from "../types/project";
 
-export default function ProjectCard(props) {
-  const project = props.project;
+export default function ProjectCard({ project }: { project: Project }) {
   return (
     <Link to={`/project/${project.slug}`}>
       <div key={project.id}>

@@ -12,7 +12,7 @@ import OhGravity from "../projects/OhGravity";
 import IllustratedMan from "../projects/IllustratedMan.tsx";
 import LoveEncyclopedia from "../projects/LoveEncyclopedia";
 import NewHorizons from "../projects/NewHorizons";
-import WeWontBeLong from "/Users/ines/Desktop/Portfolio_website/my-portfolio/src/projects/WeWontBeLong.tsx";
+import WeWontBeLong from "../projects/WeWontBeLong.tsx";
 import Brat from "../projects/Brat";
 import Kellogs from "../projects/Kellogs";
 import Arsenal from "../projects/Arsenal";
