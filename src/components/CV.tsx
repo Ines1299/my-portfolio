@@ -223,21 +223,6 @@ export default function CV() {
       </div>
       {/* Right column */}
       <div className="w-1/3 flex flex-col gap-12 sticky top-8">
-        {/* Contact */}
-        <div>
-          <h2 className="text-2xl font-bold mb-6">Contact</h2>
-          {contact.map((item) => (
-            <div
-              key={item.label}
-              className="flex justify-between border-b border-black pb-3 mb-3 last:border-b-0"
-            >
-              <p className="text-xs font-bold">{item.label}</p>
-              <p className="text-xs" style={{ color: "var(--color-grey)" }}>
-                {item.value}
-              </p>
-            </div>
-          ))}
-        </div>
         {/* Skills */}
         <div>
           <h2 className="text-2xl font-bold mb-6">Skills</h2>
