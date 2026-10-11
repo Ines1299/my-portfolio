@@ -15,11 +15,6 @@ interface Language {
   level: string;
 }
 
-interface ContactItem {
-  label: string;
-  value: string;
-}
-
 const experience: CVItem[] = [
   {
     title: "Freelance Designer",
@@ -123,13 +118,6 @@ const languages: Language[] = [
   { lang: "English", level: "Fluent" },
   { lang: "Portuguese", level: "Native" },
   { lang: "Spanish", level: "Conversational" },
-];
-
-const contact: ContactItem[] = [
-  { label: "Email", value: "inesmcadete@hotmail.com" },
-  { label: "Phone", value: "+44 7895 473 262" },
-  { label: "GitHub", value: "github.com/Ines1299" },
-  { label: "LinkedIn", value: "linkedin.com/in/ines-mota-c" },
 ];
 
 export default function CV() {
