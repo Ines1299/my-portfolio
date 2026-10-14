@@ -1,43 +1,132 @@
-import { motion } from "framer-motion";
+import { useRef } from "react";
+import { motion, useReducedMotion } from "framer-motion";
 
 import AllProjects from "../components/AllProjects";
 import FolderGrid from "../components/FolderGrid";
+import Sticker from "../components/Sticker";
+
+const stickers = [
+  {
+    src: "https://jvlcwxxjoppsnwglzomo.supabase.co/storage/v1/object/public/stickers/1.png",
+    position: "left-[1%] top-[1%]",
+    size: 85,
+  },
+  {
+    src: "https://jvlcwxxjoppsnwglzomo.supabase.co/storage/v1/object/public/stickers/2.png",
+    position: "left-[46%] top-[2%]",
+    size: 70,
+  },
+  {
+    src: "https://jvlcwxxjoppsnwglzomo.supabase.co/storage/v1/object/public/stickers/3.png",
+    position: "left-[50%] top-[55%]",
+    size: 75,
+  },
+  {
+    src: "https://jvlcwxxjoppsnwglzomo.supabase.co/storage/v1/object/public/stickers/4.png",
+    position: "left-[4%] top-[30%]",
+    size: 85,
+  },
+  {
+    src: "https://jvlcwxxjoppsnwglzomo.supabase.co/storage/v1/object/public/stickers/5.png",
+    position: "right-[29%] top-[35%]",
+    size: 90,
+  },
+  {
+    src: "https://jvlcwxxjoppsnwglzomo.supabase.co/storage/v1/object/public/stickers/6.png",
+    position: "right-[10%] top-[50%]",
+    size: 75,
+  },
+  {
+    src: "https://jvlcwxxjoppsnwglzomo.supabase.co/storage/v1/object/public/stickers/7.png",
+    position: "left-[19%] bottom-[20%]",
+    size: 70,
+  },
+  {
+    src: "https://jvlcwxxjoppsnwglzomo.supabase.co/storage/v1/object/public/stickers/8.png",
+    position: "right-[4%] bottom-[20%]",
+    size: 80,
+  },
+  {
+    src: "https://jvlcwxxjoppsnwglzomo.supabase.co/storage/v1/object/public/stickers/9.png",
+    position: "left-[25%] top-[8%]",
+    size: 75,
+  },
+  {
+    src: "https://jvlcwxxjoppsnwglzomo.supabase.co/storage/v1/object/public/stickers/10.png",
+    position: "right-[2%] top-[4%]",
+    size: 85,
+  },
+  {
+    src: "https://jvlcwxxjoppsnwglzomo.supabase.co/storage/v1/object/public/stickers/11.png",
+    position: "left-[30%] top-[45%]",
+    size: 80,
+  },
+  {
+    src: "https://jvlcwxxjoppsnwglzomo.supabase.co/storage/v1/object/public/stickers/12.png",
+    position: "right-[30%] bottom-[15%]",
+    size: 90,
+  },
+];
 
 function Home() {
-  return (
-    <div>
-      {/*Hero Section*/}
+  const heroRef = useRef<HTMLElement>(null);
+  const reduceMotion = useReducedMotion();
 
-      <div className="mt-24">
-        <section className="container py-24 flex justify-between gap-12 items-end ">
-          {/*Left - Text*/}
-          <motion.div
-            className="flex flex-col gap-6 max-w-lg"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-          >
-            <div className="flex flex-col gap-6 max-w-lg ">
-              <h1 className="text-9xl font-bold leading-none">Inês Mota</h1>
-              <p className="tex-sm leading-relaxed">
-                Illustrator, Designer, Programmer and occasional Crocheter based
-                in London.
-              </p>
-            </div>
-          </motion.div>
-          {/* Right - Animation Placeholder*/}
-          <div className=" w-96 h-96 border border-black flex items-center justify-center shrink-0 ">
-            <p className="text-xs">[animation goes here]</p>
+  return (
+    <>
+      {/* Hero */}
+      <section
+        ref={heroRef}
+        className="mt-10 relative min-h-[calc(100svh-5rem)] overflow-hidden bg-white px-5 sm:px-8 lg:px-12"
+      >
+        <div className="relative mx-auto min-h-[calc(100svh-5rem)] w-full max-w-[1400px] pt-20 pb-16 sm:min-h-[600px]">
+          {/* stickers */}
+          {stickers.map((sticker, index) => (
+            <Sticker
+              key={sticker.src}
+              src={sticker.src}
+              className={sticker.position}
+              size={sticker.size}
+              constraintsRef={heroRef}
+              delay={index * 0.12}
+            />
+          ))}
+
+          {/* Hero text */}
+          <div className="relative z-0 mx-auto w-fit max-w-full">
+            <motion.h1
+              initial={reduceMotion ? false : { opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7 }}
+              className="whitespace-nowrap text-center  leading-[0.95] tracking-[-0.065em] text-[clamp(3rem,13.5vw,12rem)]"
+              style={{
+                fontFamily: "var(--font-heading)",
+                color: "var(--color-primary)",
+              }}
+            >
+              Inês Mota
+            </motion.h1>
+
+            <motion.p
+              initial={reduceMotion ? false : { opacity: 0, y: 15 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: 0.2 }}
+              className="mt-16 max-w-[550px] text-left  text-xl leading-snug sm:text-2xl"
+              style={{ color: "var(--color-secondary)" }}
+            >
+              Illustrator, Designer, Programmer and <br />
+              occasional Crocheter based in Brno.
+            </motion.p>
           </div>
-        </section>
-      </div>
-      {/* Projects */}
-      <div className="mt-68">
-        <FolderGrid />
-        {/*Projects Images*/}
-        <AllProjects />
-      </div>
-    </div>
+        </div>
+      </section>
+
+      {/*Projects*/}
+
+      <FolderGrid />
+      {/*Projects Images*/}
+      <AllProjects />
+    </>
   );
 }
 

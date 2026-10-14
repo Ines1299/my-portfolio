@@ -11,8 +11,6 @@ export default function FolderGrid() {
     async function fetchCategories() {
       const { data, error } = await supabase.from("categories").select("*");
 
-      console.log("data:", data);
-      console.log("error:", error);
       if (error) console.log(error);
       else setCategories(data as Category[]);
     }
