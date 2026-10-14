@@ -4,6 +4,7 @@ import { motion, useReducedMotion } from "framer-motion";
 import AllProjects from "../components/AllProjects";
 import FolderGrid from "../components/FolderGrid";
 import Sticker from "../components/Sticker";
+import AnimatedName from "../components/AnimatedName";
 
 const stickers = [
   {
@@ -93,25 +94,14 @@ function Home() {
           ))}
 
           {/* Hero text */}
-          <div className="relative z-0 mx-auto w-fit max-w-full">
-            <motion.h1
-              initial={reduceMotion ? false : { opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7 }}
-              className="whitespace-nowrap text-center  leading-[0.95] tracking-[-0.065em] text-[clamp(3rem,13.5vw,12rem)]"
-              style={{
-                fontFamily: "var(--font-heading)",
-                color: "var(--color-primary)",
-              }}
-            >
-              Inês Mota
-            </motion.h1>
+          <div className="relative z-0 mx-auto w-full max-w-[1400px]">
+            <AnimatedName />
 
             <motion.p
               initial={reduceMotion ? false : { opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.2 }}
-              className="mt-16 max-w-[550px] text-left  text-xl leading-snug sm:text-2xl"
+              className="mt-16 ml-[10%] max-w-[550px] text-left  text-xl leading-snug sm:text-2xl"
               style={{ color: "var(--color-secondary)" }}
             >
               Illustrator, Designer, Programmer and <br />
