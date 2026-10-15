@@ -1,14 +1,18 @@
 import emailjs from "@emailjs/browser";
 import { useRef, useState } from "react";
+import type { FormEvent } from "react";
 
 export default function Contact() {
   const [loading, setLoading] = useState(false);
+  const [status, setStatus] = useState<"success" | "error" | null>(null);
   const form = useRef<HTMLFormElement>(null);
-  const sendEmail = async (e: any) => {
+
+  const sendEmail = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    if (!form.current) return;
+    if (!form.current || loading) return;
 
     setLoading(true);
+    setStatus(null);
 
     try {
       await emailjs.sendForm(
@@ -18,14 +22,18 @@ export default function Contact() {
         import.meta.env.VITE_EMAIL_PUBLIC_KEY,
       );
 
-      alert("Sent!");
+      setStatus("success");
       form.current.reset();
     } catch (err) {
       console.log(err);
-      alert("failed to send message.");
+      setStatus("error");
+    } finally {
+      setLoading(false);
     }
-    setLoading(false);
   };
+
+  const fieldStyles =
+    "w-full border-0 border-b-2 border-black bg-transparent pb-3 text-xl text-black placeholder:text-black/70 outline-none transition-colors focus:border-[var(--color-primary)] sm:text-2xl";
 
   return (
     <form
@@ -36,30 +44,49 @@ export default function Contact() {
       <input
         type="text"
         name="user_name"
+        aria-label="Name"
         placeholder="Name"
+        autoComplete="name"
         required
-        className="bg-transparent border-b border-black outline-none text-3xl pb-2 placeholder-black"
+        className={fieldStyles}
       />
       <input
         type="email"
         name="user_email"
         placeholder="Email"
+        aria-label="Email"
+        autoComplete="email"
         required
-        className="bg-transparent border-b border-black outline-none text-3xl pb-2 placeholder-black"
+        className={fieldStyles}
       />
       <textarea
         name="message"
         placeholder="Message"
+        aria-label="Message"
         required
-        className="bg-transparent border-b border-black outline-none text-3xl pb-2 placeholder-black"
+        rows={3}
+        className={`${fieldStyles} resize-none`}
       />
+
       <button
         type="submit"
         disabled={loading}
-        className=" bg-pink-500 hover:bg-pink-400 text-white px-8 py-3 text-2xl w-fit transition font-bold rounded"
+        className="w-fit cursor-pointer bg-(--color-primary)] px-10 py-3 text-lg font-bold text-white transition-all duration-300 hoover:-translate-y-1 hoover:shadow-lg disabled:cursor-not-allowed disabled:opacity-60 disabled:hoover:translate-y-0"
       >
         {loading ? "Sending..." : "Submit"}
       </button>
+
+      {status === "success" && (
+        <p role="status" className="text-sm font-medium text-black">
+          Your message was sent successfully! ♡
+        </p>
+      )}
+
+      {status === "error" && (
+        <p role="alert" className="text-sm font-medium text-black">
+          Something went wrong. Please try again.
+        </p>
+      )}
     </form>
   );
 }

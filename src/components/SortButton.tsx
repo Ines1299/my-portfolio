@@ -39,7 +39,7 @@ export default function SortButton({
       id="sort-button"
       value={currentIndex}
       onChange={handleChange}
-      className="cursor-pointer border border-[var(--color-primary)] bg-white px-4 py-2 text-sm text-[var(--color-primary)] outline-none"
+      className="cursor-pointer border border-(--color-primary) bg-white px-4 py-2 text-sm text-(--color-primary) outline-none"
       aria-label="Sort projects"
     >
       {sortOptions.map((opt, index) => (

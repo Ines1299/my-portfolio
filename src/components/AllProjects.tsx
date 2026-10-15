@@ -38,7 +38,7 @@ export default function AllProjects() {
 
   return (
     <section className="w-full bg-white px-6 pb-24 pt-28 sm:px-8 lg:pt-36">
-      <div className="mx-auto max-w-[1050px]">
+      <div className="mx-auto max-w-262.5">
         <div className="mb-12 flex justify-start">
           <SortButton
             sortBy={sortBy}

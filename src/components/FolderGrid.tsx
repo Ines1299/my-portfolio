@@ -40,14 +40,14 @@ export default function FolderGrid() {
   return (
     <section
       id="projects"
-      className=" flex min-h-[100svh] w-full  items-center justify-center bg-[var(--color-secondary)] px-5 py-16 sm:px-8 lg:px-12"
+      className=" flex h-svh w-full items-center justify-center bg-(--color-secondary) px-5 py-16 sm:px-8 lg:px-12"
     >
       <motion.div
         initial={reduceMotion ? false : { opacity: 0, y: 60 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.25 }}
-        transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
-        className="mx-auto w-full max-w-[1200px]"
+        transition={{ duration: 0.65, ease: [0.22, 1, 0.36, 1] }}
+        className="mx-auto w-full max-w-300"
       >
         <motion.h2
           initial={reduceMotion ? false : { opacity: 0, y: 40 }}
@@ -89,7 +89,7 @@ export default function FolderGrid() {
                     stiffness: 160,
                     damping: 18,
                   }}
-                  className="flex h-[200px] w-full items-end justify-center sm:h-[220px] lg:h-[280px]"
+                  className="flex h-50 w-full items-end justify-center sm:h-55 lg:h-70"
                 >
                   {imageUrl ? (
                     <img
