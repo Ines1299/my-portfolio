@@ -4,7 +4,7 @@ import Contact from "./ContactForm";
 
 function Footer() {
   return (
-    <footer className="border-t border-black px-8 py-12 mt-16">
+    <footer className="w-full bg-[#FFB6D2] px-6 py-20 text-black sm:px-10 lg:px-16 lg:py-28 ">
       <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 ">
         {/*LEFT*/}
         <div className="flex flex-col justify-between">

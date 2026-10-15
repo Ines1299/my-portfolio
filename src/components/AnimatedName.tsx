@@ -15,7 +15,7 @@ export default function AnimatedName() {
   const [fontIndex, setFontIndex] = useState(0);
   const [fontsReady, setFontsReady] = useState(false);
   const reduceMotion = useReducedMotion();
-
+  15;
   useEffect(() => {
     let cancelled = false;
 
@@ -55,7 +55,7 @@ export default function AnimatedName() {
       }}
       initial={reduceMotion ? false : { opacity: 0 }}
       animate={{ opacity: 1 }}
-      transition={{ duration: 0.4 }}
+      transition={{ duration: 0 }}
     >
       Inês Mota
     </motion.h1>

@@ -14,9 +14,9 @@ function Nav() {
   }
 
   return (
-    <header className="bg-white">
+    <>
       {/* Main navigation */}
-      <nav className="grid h-20 grid-cols-3 items-center px-5 py-3 sm:px-8 lg:px-12">
+      <nav className=" relative z-30 grid h-20 grid-cols-3 items-center bg-white px-5 sm:px-8 lg:px-12">
         <div className=" flex items-center gap-3 sm:gap-6 ">
           <Link
             to="/"
@@ -37,16 +37,7 @@ function Nav() {
             Contact
           </Link>
         </div>
-        <Link
-          to="/"
-          className="justify-self-center whitespace-nowrap text-sm font-bold no-underline sm:text-xl"
-          style={{
-            color: "var(--color-primary)",
-            fontFamily: "var(--font-heading)",
-          }}
-        >
-          Inês Mota
-        </Link>
+        <div />
 
         <button
           type="button"
@@ -54,11 +45,21 @@ function Nav() {
           className="justify-self-end border border-(--color-primary) px-3 py-1 text-xs text-(--color-primary) transition-colors hoover:bg(--color-primary) hoover:text-white sm:px-4 sm:py-2 sm:text-sm"
           aria-label={`Current theme: ${theme}. Click to switch themes.`}
         >
-          {" "}
-          Theme{" "}
+          Theme
         </button>
       </nav>
-    </header>
+
+      <Link
+        to="/"
+        className="fixed left-1/2 top-10 z-50 -translate-x-1/2 -translate-y-1/2 whitespace-nowrap text-sm font-bold no-underline sm:text-xl"
+        style={{
+          color: "var(--color-primary)",
+          fontFamily: "var(--font-heading)",
+        }}
+      >
+        Inês Mota
+      </Link>
+    </>
   );
 }
 

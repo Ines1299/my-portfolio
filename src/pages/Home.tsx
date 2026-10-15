@@ -94,14 +94,14 @@ function Home() {
           ))}
 
           {/* Hero text */}
-          <div className="relative z-0 mx-auto w-full max-w-[1400px]">
+          <div className="mt-20 relative z-0 mx-auto w-full max-w-[1400px]">
             <AnimatedName />
 
             <motion.p
               initial={reduceMotion ? false : { opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.2 }}
-              className="mt-16 ml-[10%] max-w-[550px] text-left  text-xl leading-snug sm:text-2xl"
+              className="mt-16 ml-[20%] max-w-[550px] text-left  text-xl leading-snug sm:text-2xl"
               style={{ color: "var(--color-secondary)" }}
             >
               Illustrator, Designer, Programmer and <br />
