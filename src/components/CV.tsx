@@ -121,143 +121,149 @@ const languages: Language[] = [
 ];
 
 export default function CV() {
+  const headingStyle = {
+    fontFamily: "var(--font-heading)",
+    color: "var(--color-primary)",
+    WebkitTextStroke: "1px white",
+    paintOrder: "stroke fill" as const,
+  };
+
   return (
-    <div className="flex gap-16 items-start mt-5 ml-5 mr-5 mb-5">
+    <div className="grid grid-cols-1 items-start gap-12 border-t border-black pt-16  md:grid-cols-[1.4fr_1fr] lg:gap-20 ">
       {/* Left column */}
-      <div className="flex flex-col gap-16 w-2/3">
+      <div className="flex flex-col gap-16">
         {/*Education*/}
 
-        <div>
-          <h2 className="text-4xl font-bold mb-10">Education</h2>
+        <section>
+          <h2 className="text-2xl sm:text-3xl mb-10" style={headingStyle}>
+            Education
+          </h2>
           {education.map((item) => (
             <div
               key={item.title}
-              className="flex justify-between items-start border-b border-black pb-8 mb-8 last:border-b-0"
+              className="mb-6 flex justify-between items-start gap-6 border-b border-black pb-6 last:mb-0 last:border-0"
             >
               <div>
                 <p className="font-bold text-sm">{item.title}</p>
                 {item.place && (
-                  <p className="text-xs" style={{ color: "var(--color-grey)" }}>
-                    {item.place}
-                  </p>
+                  <p className="text-xs mt-1 text-black/60">{item.place}</p>
                 )}
               </div>
-              <p
-                className="text-xs shrink-0 ml-8"
-                style={{ color: "var(--color-grey)" }}
-              >
+              <span className="shrink-0 text-right text-xs text-black/60">
                 {item.date}
-              </p>
+              </span>
             </div>
           ))}
-        </div>
+        </section>
 
         {/* Experience */}
-        <div>
-          <h2 className="text-4xl font-bold mb-10">Experience</h2>
+        <section>
+          <h2 className="text-2xl mb-10 sm:text-3xl" style={headingStyle}>
+            Experience
+          </h2>
           {experience.map((item) => (
             <div
               key={item.title}
-              className="flex justify-between items-start border-b border-black pb-8 mb-8 last:border-b-0"
+              className="flex justify-between items-start gap-6 border-b border-black/30 pb-6 mb-6 last:mb-0 last:border-0"
             >
-              <div className="max-w-lg">
+              <div>
                 <p className="font-bold text-sm">{item.title}</p>
                 {item.place && (
-                  <p className="text-xs" style={{ color: "var(--color-grey)" }}>
-                    {item.place}
-                  </p>
+                  <p className="text-xs mt-1 text-black/60">{item.place}</p>
                 )}
                 {item.description && (
-                  <p className="text-xs leading-relaxed mt-2">
+                  <p className="text-xs leading-relaxed mt-3 max-w-md text-black/80">
                     {item.description}
                   </p>
                 )}
               </div>
-              <p
-                className="text-xs shrink-0 ml-8"
-                style={{ color: "var(--color-grey)" }}
-              >
+              <span className="text-xs text-right text-black/60 shrink-0">
                 {item.date}
-              </p>
+              </span>
             </div>
           ))}
-        </div>
-
-        {/*Exhibitions*/}
-        <div>
-          <h2 className="text-4xl font-bold mb-10">Exhibitions</h2>
-          {exhibitions.map((item) => (
-            <div
-              key={item.title}
-              className="flex justify-between items-start border-b border-black pb-8 mb-8 last:border-b-0"
-            >
-              <div>
-                <p className="font-bold text-sm">{item.title}</p>
-                {item.place && (
-                  <p className="text-xs" style={{ color: "var(--color-grey)" }}>
-                    {item.place}
-                  </p>
-                )}
-              </div>
-              <p
-                className="text-xs shrink-0 ml-8"
-                style={{ color: "var(--color-grey)" }}
-              >
-                {item.date}
-              </p>
-            </div>
-          ))}
-        </div>
+        </section>
       </div>
+
       {/* Right column */}
-      <div className="w-1/3 flex flex-col gap-12 sticky top-8">
+      <div className="flex flex-col gap-14">
         {/* Skills */}
-        <div>
-          <h2 className="text-2xl font-bold mb-6">Skills</h2>
+        <section>
+          <h2 className="text-2xl sm:text-3xl mb-8" style={headingStyle}>
+            Skills
+          </h2>
           {skills.map((skill) => (
             <div
               key={skill.label}
               className="border-b border-black pb-4 mb-4 last:border-b-0"
             >
-              <p className="text-xs font-bold uppercase tracking-widest mb-1">
-                {skill.label}
-              </p>
+              <p className="text-sm font-bold mb-2">{skill.label}</p>
               <p
-                className="text-xs leading-relaxed"
+                className="text-xs leading-relaxed text-black/70"
                 style={{ color: "var(--color-grey)" }}
               >
                 {skill.value}
               </p>
             </div>
           ))}
-        </div>
+        </section>
+
         {/* Languages */}
-        <div>
-          <h2 className="text-2xl font-bold mb-6">Languages</h2>
+        <section>
+          <h2 className="text-2xl sm:text-3xl mb-8" style={headingStyle}>
+            Languages
+          </h2>
           {languages.map((item) => (
             <div
               key={item.lang}
-              className="flex justify-between border-b border-black pb-3 mb-3 last:border-b-0"
+              className="flex justify-between gap-4 border-b border-black/30 pb-4 mb-4 last:mb-0 last:border-0"
             >
-              <p className="text-xs font-bold">{item.lang}</p>
-              <p className="text-xs" style={{ color: "var(--color-grey)" }}>
-                {item.level}
-              </p>
+              <p className="text-sm font-bold">{item.lang}</p>
+              <p className="text-xs text-black/60">{item.level}</p>
             </div>
           ))}
-        </div>
+        </section>
 
         {/* Interests */}
-        <div>
-          <h2 className="text-2xl font-bold mb-6">Interests</h2>
+        <section>
+          <h2 className="text-2xl sm:text-3xl mb-8" style={headingStyle}>
+            Interests
+          </h2>
           <p
-            className="text-xs leading-relaxed"
+            className="text-xs leading-relaxed text-black/70"
             style={{ color: "var(--color-grey)" }}
           >
             Guitar (12+ years) · Crochet · Horror films · Electronic music ·
             History · Politics · Digital culture
           </p>
-        </div>
+        </section>
+
+        {/*Exhibitions*/}
+        <section>
+          <h2 className="mb-8 text-2xl sm:text-3xl">Exhibitions</h2>
+          {exhibitions.map((item) => (
+            <div
+              key={item.title}
+              className="flex justify-between items-start border-b border-black/30 pb-4 mb-4 last:mb-0 last:border-0 gap-4"
+            >
+              <div>
+                <p className="font-bold text-sm">{item.title}</p>
+                {item.place && (
+                  <p
+                    className="text-xs mt-1 text-black/60"
+                    style={{ color: "var(--color-grey)" }}
+                  >
+                    {item.place}
+                  </p>
+                )}
+              </div>
+
+              <span className="text-right text-xs shrink-0 text-black/60">
+                {item.date}
+              </span>
+            </div>
+          ))}
+        </section>
       </div>
     </div>
   );

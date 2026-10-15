@@ -71,7 +71,7 @@ export default function Contact() {
       <button
         type="submit"
         disabled={loading}
-        className="w-fit cursor-pointer bg-(--color-primary)] px-10 py-3 text-lg font-bold text-white transition-all duration-300 hoover:-translate-y-1 hoover:shadow-lg disabled:cursor-not-allowed disabled:opacity-60 disabled:hoover:translate-y-0"
+        className="w-fit cursor-pointer bg-(--color-primary) px-10 py-3 text-lg font-bold text-white transition-all duration-300 hoover:-translate-y-1 hoover:shadow-lg disabled:cursor-not-allowed disabled:opacity-60 disabled:hoover:translate-y-0"
       >
         {loading ? "Sending..." : "Submit"}
       </button>
