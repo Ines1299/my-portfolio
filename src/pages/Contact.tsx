@@ -5,7 +5,7 @@ const services = [
   "Logo design",
   "Social Media",
   "Illustration",
-  "Branding & Identity",
+  `Branding & Identity`,
   "Merchandise",
   "Posters",
   "Art DIrection",
@@ -34,22 +34,22 @@ function Contact() {
     <div className="bg-white">
       {/* Contact heading and postcard */}
 
-      <section className="mx-auto max-w-300 px-6 pb-10 pt-10 sm:px-8 lg:pt-20">
-        <div className="relative mx-auto max-w-262.5">
+      <section className="mx-auto max-w-250 px-6  sm:px-8 lg:pt-20">
+        <div className="relative ">
           {/* Postcard container */}
 
-          <div className="relative mx-auto w-full max-w-212.5">
-            {/* Heading overlapping postcard */}
-            <h1
-              className="absolute -top-6 left-0 z-10 whitespace-nowrap text-[clamp(4rem,9vw,8rem)] leading-[0.85] text-(--color-primary)"
-              style={{ fontFamily: "var(--font-heading)" }}
-            >
-              Let's
-              <br />
-              Connect
-            </h1>
+          {/* Heading overlapping postcard */}
+          <h1
+            className="absolute -top-12 left-0 z-10 whitespace-nowrap text-[clamp(4rem,9vw,8rem)] leading-none text-(--color-primary)"
+            style={{ fontFamily: "var(--font-heading)" }}
+          >
+            Let's
+            <br />
+            Connect
+          </h1>
 
-            {/* Postcard image */}
+          {/* Postcard image */}
+          <div className="relative mx-auto w-full max-w-212.5 translate-x-30 -translate-y-20">
             <img
               src={postcardURL}
               alt="Vintage postcard with illustrated rabbits"
@@ -57,7 +57,7 @@ function Contact() {
             />
             {/* Contact links */}
 
-            <div className="absolute left-[12%] top-[30%] flex w-[48%] flex-col gap-3 sm:gap-4 lg:gap-5">
+            <div className="absolute left-[12%] top-[35%] flex w-[40%] flex-col gap-1 sm:gap-4 lg:gap-5">
               {contactLinks.map((contact) => (
                 <a
                   key={contact.label}
@@ -82,7 +82,7 @@ function Contact() {
 
       {/* Services section */}
 
-      <section className="mx-auto max-w-180 px-6 pb-28 sm:px-8 ">
+      <section className="relative -mt-16 mx-auto max-w-180 px-6 pb-28 sm:px-8 ">
         {/* Heading */}
         <h2
           className="mb-12 text-center text-5xl"
@@ -95,7 +95,7 @@ function Contact() {
         </h2>
 
         {/* Services grid */}
-        <div className="mx-auto grid max-w-162.5 grid-cols-3 gap-3 sm:gap-5 pb-20">
+        <div className="mx-auto grid max-w-140 grid-cols-3 gap-2 sm:gap-3 pb-20">
           {services.map((service) => (
             <div
               key={service}

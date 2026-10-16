@@ -47,7 +47,7 @@ export default function AnimatedName() {
 
   return (
     <motion.h1
-      className=" w-full whitespace-nowrap text-center text-[clamp(3rem,13.5vw,12rem)] leading-[1.15] tracking-[-0.065em]"
+      className=" w-full whitespace-nowrap text-center text-[clamp(4rem,16vw,15rem)] leading-[1.15] tracking-[-0.065em]"
       style={{
         fontFamily: fonts[fontIndex],
         color: "var(--color-primary)",

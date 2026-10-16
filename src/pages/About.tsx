@@ -16,7 +16,7 @@ export default function About() {
             />
 
             <h1
-              className="absolute -top-6 left-0 z-10 whitespace-nowrap text-[clamp(5rem,11vw,10rem)] leading-none text-(--color-primary)"
+              className="absolute -top-6 left-0 z-10 whitespace-nowrap text-[clamp(4rem,9vw,8rem)] leading-none text-(--color-primary)"
               style={{ fontFamily: "var(--font-heading)" }}
             >
               I am a
@@ -37,7 +37,7 @@ export default function About() {
           </div>
         </div>
       </section>
-      <section className="mx-auto max-w-300 px-6 pb-28 sm:px-8">
+      <section className="mx-auto max-w-225 px-6 pb-28 sm:px-8">
         <CV />
       </section>
     </div>

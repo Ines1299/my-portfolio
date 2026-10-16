@@ -42,7 +42,7 @@ function Nav() {
         <button
           type="button"
           onClick={cycleTheme}
-          className="justify-self-end border border-(--color-primary) px-3 py-1 text-xs text-(--color-primary) transition-colors hoover:bg(--color-primary) hoover:text-white sm:px-4 sm:py-2 sm:text-sm"
+          className="justify-self-end border border-(--color-primary) bg-(--color-light-grey) px-3 py-1 text-xs text-(--color-primary) transition-colors hoover:bg(--color-primary) hoover:text-white sm:px-4 sm:py-2 sm:text-sm"
           aria-label={`Current theme: ${theme}. Click to switch themes.`}
         >
           Theme

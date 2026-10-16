@@ -57,8 +57,8 @@ export default function FolderGrid() {
           className="mb-14 text-center text-5xl font-bold sm:mb-16 sm:text-6xl"
           style={{
             fontFamily: "var(--font-heading)",
-            color: "var(--color-primary)",
-            WebkitTextStroke: "1.5px white",
+            color: "var(--color-light-grey)",
+            WebkitTextStroke: "3px var(--color-primary)",
             paintOrder: "stroke fill",
           }}
         >
@@ -73,7 +73,7 @@ export default function FolderGrid() {
               <Link
                 key={category.id}
                 to={`/category/${category.slug}`}
-                className="group flex flex-col items-center gap-4 no underline"
+                className="group flex flex-col items-center gap-4 no-underline"
               >
                 <motion.div
                   whileHover={
@@ -89,7 +89,7 @@ export default function FolderGrid() {
                     stiffness: 160,
                     damping: 18,
                   }}
-                  className="flex h-50 w-full items-end justify-center sm:h-55 lg:h-70"
+                  className="flex h-60 w-full items-end justify-center sm:h-70 lg:h-85"
                 >
                   {imageUrl ? (
                     <img

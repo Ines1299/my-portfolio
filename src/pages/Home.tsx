@@ -5,6 +5,7 @@ import AllProjects from "../components/AllProjects";
 import FolderGrid from "../components/FolderGrid";
 import Sticker from "../components/Sticker";
 import AnimatedName from "../components/AnimatedName";
+import ScrollSnap from "../components/ScrollSnap";
 
 const stickers = [
   {
@@ -78,7 +79,7 @@ function Home() {
       {/* Hero */}
       <section
         ref={heroRef}
-        className="mt-10 relative min-h-[calc(100svh-5rem)] overflow-hidden bg-white px-5 sm:px-8 lg:px-12"
+        className=" mt-10 relative min-h-[calc(100svh-5rem)] overflow-hidden bg-white px-5 sm:px-8 lg:px-12"
       >
         <div className="relative mx-auto min-h-[calc(100svh-5rem)] w-full max-w-350 pt-20 pb-16 sm:min-h-150">
           {/* stickers */}
@@ -94,14 +95,14 @@ function Home() {
           ))}
 
           {/* Hero text */}
-          <div className="mt-20 relative z-0 mx-auto w-full max-w-350">
+          <div className="mt-10 relative z-0 mx-auto w-full max-w-350">
             <AnimatedName />
 
             <motion.p
               initial={reduceMotion ? false : { opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.2 }}
-              className="mt-16 ml-[20%] max-w-137.5 text-left  text-xl leading-snug sm:text-2xl"
+              className="mt-16 ml-[12%] max-w-137.5 text-left  text-xl leading-snug sm:text-2xl"
               style={{ color: "var(--color-secondary)" }}
             >
               Illustrator, Designer, Programmer and <br />
@@ -112,10 +113,14 @@ function Home() {
       </section>
 
       {/*Projects*/}
+      <ScrollSnap>
+        <FolderGrid />
+      </ScrollSnap>
 
-      <FolderGrid />
       {/*Projects Images*/}
-      <AllProjects />
+      <div className="relative z-10 bg-white ">
+        <AllProjects />
+      </div>
     </>
   );
 }
