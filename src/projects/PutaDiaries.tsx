@@ -1,5 +1,6 @@
 import type { Project } from "../types/project";
 import SlideShow from "../components/SlideShow";
+import { projectStyles as ps } from "../styles/projectStyles";
 
 export default function PutaDiaries({ project }: { project: Project }) {
   const firstImages = [
@@ -52,26 +53,29 @@ export default function PutaDiaries({ project }: { project: Project }) {
     "https://jvlcwxxjoppsnwglzomo.supabase.co/storage/v1/object/sign/puta-diaries/17.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9jMTA4NmY5YS04NjQxLTQxNGItYmVhNC0zM2QzMzhiMDQ0OWUiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJwdXRhLWRpYXJpZXMvMTcucG5nIiwic2NvcGUiOiJkb3dubG9hZCIsImlhdCI6MTc4NDgwNzIwOCwiZXhwIjoxODE2MzQzMjA4fQ.8itIdseANotb3R8ewqfiCQEDCwT0tqKh9xKuMQ7PghY",
   ];
   return (
-    <div className="container">
-      <h1 className="text-6xl font-bold mt-12 text-center">{project.title}</h1>
-
-      <div className="max-w-4xl mx-auto">
-        <img
-          src={firstImages[3]}
-          alt={project.title}
-          className="w-full max-h-180 object-contain"
-        />
-      </div>
-      <p className="text-sm leading-relaxed max-w-4xl mx-auto mt-10 mb-10 text-pink-400">
-        Puta Diaries is a feminist zine series exploring the experiences of
-        women and those identifying as women in a patriarchal society. Focused
-        on sexual harassment, the zines use anonymous submissions to spark
-        dialogue and raise awareness. The series includes three risoprinted A5
-        zines, each with a distinct theme, and an archive book titled Puta
-        Diaries: Ghost Stories. This spiral-bound A4 book, printed on a Xerox
-        V180, compiles illustrations and text from the zines, alongside new and
-        previously unused material
-      </p>
+    <div className={ps.page}>
+      <section className="flex min-h-[calc(100svh-5rem)] flex-col">
+        <h1 className={ps.title} style={{ fontFamily: "var(--font-heading)" }}>
+          {project.title}
+        </h1>
+        <div className="flex w-full justify-center">
+          <img
+            src={firstImages[3]}
+            alt={project.title}
+            className="max-h-[80svh] w-auto max-w-full object-contain"
+          />
+        </div>
+        <p className={`${ps.description} w-full text-left`}>
+          Puta Diaries is a feminist zine series exploring the experiences of
+          women and those identifying as women in a patriarchal society. Focused
+          on sexual harassment, the zines use anonymous submissions to spark
+          dialogue and raise awareness. The series includes three risoprinted A5
+          zines, each with a distinct theme, and an archive book titled Puta
+          Diaries: Ghost Stories. This spiral-bound A4 book, printed on a Xerox
+          V180, compiles illustrations and text from the zines, alongside new
+          and previously unused material
+        </p>
+      </section>
 
       <div className="flex flex-col gap-4 mt-10 ">
         <img src={firstImages[0]} alt={project.title} className="w-full" />

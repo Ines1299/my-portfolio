@@ -3,7 +3,7 @@ import type { Project } from "../types/project";
 export default function OliverConquest({ project }: { project: Project }) {
   return (
     <div className="container">
-      <h1 className="text-6xl font-bold mt-12 text-center">{project.title}</h1>
+      <h1 className={`ps.title} mb-8`}>{project.title}</h1>
 
       <div className="max-w-4xl mx-auto mt-10">
         <img
