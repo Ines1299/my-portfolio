@@ -2,6 +2,7 @@ import type { Project } from "../types/project";
 
 import SlideShow from "../components/SlideShow";
 import ProjectSpecs from "../components/ProjectSpecs";
+import { projectStyles as ps } from "../styles/projectStyles";
 
 export default function NcNews({ project }: { project: Project }) {
   const pages = [
@@ -17,9 +18,9 @@ export default function NcNews({ project }: { project: Project }) {
   ];
 
   return (
-    <div className="container pb-16">
-      <h1 className="text-6xl font-bold mt-12 text-center">{project.title}</h1>
-      <div className="mt-12 ">
+    <div className={ps.page}>
+      <h1 className={`${ps.title} mb-8`}>{project.title}</h1>
+      <div className=" mb-5 ">
         <a
           href="https://nc-news-one.vercel.app/"
           className="text-xl font-bold underline"
@@ -27,9 +28,7 @@ export default function NcNews({ project }: { project: Project }) {
           Website
         </a>
       </div>
-      <p className="text-sm leading-relaxed max-w-4xl mx-auto mt-10 mb-10 ">
-        {project.description}
-      </p>
+      <p className={ps.description}>{project.description}</p>
 
       <div className="columns-3 gap-2 mt-10 max-w-5xl mx-auto">
         {wireframes.map((url) => (
@@ -45,7 +44,7 @@ export default function NcNews({ project }: { project: Project }) {
         <SlideShow images={pages} />
       </div>
       <div className="flex gap-12 items-start max-w-4xl mx-auto mt-10 mb-10">
-        <p className="text-sm leading-relaxed flex-1 ">
+        <p className={ps.description}>
           NC News is a comprehensive project developed during the Northcoders
           JavaScript bootcamp, intended to replicate the functionalities of a
           real-world news platform. It features a custom REST API integrated

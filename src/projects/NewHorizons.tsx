@@ -1,4 +1,5 @@
 import type { Project } from "../types/project";
+import { projectStyles as ps } from "../styles/projectStyles";
 
 export default function NewHorizons({ project }: { project: Project }) {
   const illustrations = [
@@ -11,8 +12,8 @@ export default function NewHorizons({ project }: { project: Project }) {
   ];
 
   return (
-    <div className="container">
-      <h1 className="text-6xl font-bold mt-12 text-center">{project.title}</h1>
+    <div className={ps.page}>
+      <h1 className={`${ps.title} `}>{project.title}</h1>
 
       <div className="max-w-5xl mx-auto">
         <img
@@ -23,7 +24,7 @@ export default function NewHorizons({ project }: { project: Project }) {
       </div>
 
       <div className="flex items-start max-w-4xl gap-4 mx-auto ">
-        <p className="text-sm leading-relaxed max-w-4xl mx-auto mt-10 mb-10">
+        <p className={ps.description}>
           On this piece of work I was asked to think about the concepts of
           contemporary mobility, migratory crisis and personal patrimony. These
           are very strong and emotional themes and so I wanted to work on

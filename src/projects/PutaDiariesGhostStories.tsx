@@ -1,62 +1,61 @@
 import type { Project } from "../types/project";
 import SlideShow from "../components/SlideShow";
 
+import { projectStyles as ps } from "../styles/projectStyles";
 import ReactPlayer from "react-player";
+
+const coverBackCover = [
+  "https://jvlcwxxjoppsnwglzomo.supabase.co/storage/v1/object/public/puta-diaries-ghost-stories/1.png",
+  "https://jvlcwxxjoppsnwglzomo.supabase.co/storage/v1/object/public/puta-diaries-ghost-stories/2.png",
+];
+
+const zine4Pages = [
+  "https://jvlcwxxjoppsnwglzomo.supabase.co/storage/v1/object/public/puta-diaries-ghost-stories/3.png",
+  "https://jvlcwxxjoppsnwglzomo.supabase.co/storage/v1/object/public/puta-diaries-ghost-stories/4.png",
+];
+
+const scans = [
+  "https://jvlcwxxjoppsnwglzomo.supabase.co/storage/v1/object/public/puta-diaries-ghost-stories/5.png",
+  "https://jvlcwxxjoppsnwglzomo.supabase.co/storage/v1/object/public/puta-diaries-ghost-stories/6.png",
+  "https://jvlcwxxjoppsnwglzomo.supabase.co/storage/v1/object/public/puta-diaries-ghost-stories/7.png",
+  "https://jvlcwxxjoppsnwglzomo.supabase.co/storage/v1/object/public/puta-diaries-ghost-stories/8.png",
+  "https://jvlcwxxjoppsnwglzomo.supabase.co/storage/v1/object/public/puta-diaries-ghost-stories/9.png",
+  "https://jvlcwxxjoppsnwglzomo.supabase.co/storage/v1/object/public/puta-diaries-ghost-stories/10.png",
+];
+
+const cyanotypes = [
+  "https://jvlcwxxjoppsnwglzomo.supabase.co/storage/v1/object/public/puta-diaries-ghost-stories/11.jpg",
+  "https://jvlcwxxjoppsnwglzomo.supabase.co/storage/v1/object/public/puta-diaries-ghost-stories/12.jpg",
+  "https://jvlcwxxjoppsnwglzomo.supabase.co/storage/v1/object/public/puta-diaries-ghost-stories/13.jpg",
+  "https://jvlcwxxjoppsnwglzomo.supabase.co/storage/v1/object/public/puta-diaries-ghost-stories/14.jpg",
+  "https://jvlcwxxjoppsnwglzomo.supabase.co/storage/v1/object/public/puta-diaries-ghost-stories/15.png",
+];
+
+const reliefPrints = [
+  "https://jvlcwxxjoppsnwglzomo.supabase.co/storage/v1/object/public/puta-diaries-ghost-stories/16.jpg",
+  "https://jvlcwxxjoppsnwglzomo.supabase.co/storage/v1/object/public/puta-diaries-ghost-stories/17.jpg",
+  "https://jvlcwxxjoppsnwglzomo.supabase.co/storage/v1/object/public/puta-diaries-ghost-stories/18.jpg",
+];
+
+const reliefPrints2 = [
+  "https://jvlcwxxjoppsnwglzomo.supabase.co/storage/v1/object/public/puta-diaries-ghost-stories/19.jpg",
+  "https://jvlcwxxjoppsnwglzomo.supabase.co/storage/v1/object/public/puta-diaries-ghost-stories/20.png",
+  "https://jvlcwxxjoppsnwglzomo.supabase.co/storage/v1/object/public/puta-diaries-ghost-stories/21.jpg",
+];
+
+const halfPanties = [
+  "https://jvlcwxxjoppsnwglzomo.supabase.co/storage/v1/object/public/puta-diaries-ghost-stories/22.jpg",
+  "https://jvlcwxxjoppsnwglzomo.supabase.co/storage/v1/object/public/puta-diaries-ghost-stories/23.jpg",
+];
 
 export default function PutaDiariesGhostStories({
   project,
 }: {
   project: Project;
 }) {
-  const coverBackCover = [
-    "https://jvlcwxxjoppsnwglzomo.supabase.co/storage/v1/object/public/puta-diaries-ghost-stories/1.png",
-    "https://jvlcwxxjoppsnwglzomo.supabase.co/storage/v1/object/public/puta-diaries-ghost-stories/2.png",
-  ];
-
-  const zine4Pages = [
-    "https://jvlcwxxjoppsnwglzomo.supabase.co/storage/v1/object/public/puta-diaries-ghost-stories/3.png",
-    "https://jvlcwxxjoppsnwglzomo.supabase.co/storage/v1/object/public/puta-diaries-ghost-stories/4.png",
-  ];
-
-  const scans = [
-    "https://jvlcwxxjoppsnwglzomo.supabase.co/storage/v1/object/public/puta-diaries-ghost-stories/5.png",
-    "https://jvlcwxxjoppsnwglzomo.supabase.co/storage/v1/object/public/puta-diaries-ghost-stories/6.png",
-    "https://jvlcwxxjoppsnwglzomo.supabase.co/storage/v1/object/public/puta-diaries-ghost-stories/7.png",
-    "https://jvlcwxxjoppsnwglzomo.supabase.co/storage/v1/object/public/puta-diaries-ghost-stories/8.png",
-    "https://jvlcwxxjoppsnwglzomo.supabase.co/storage/v1/object/public/puta-diaries-ghost-stories/9.png",
-    "https://jvlcwxxjoppsnwglzomo.supabase.co/storage/v1/object/public/puta-diaries-ghost-stories/10.png",
-  ];
-
-  const cyanotypes = [
-    "https://jvlcwxxjoppsnwglzomo.supabase.co/storage/v1/object/public/puta-diaries-ghost-stories/11.jpg",
-    "https://jvlcwxxjoppsnwglzomo.supabase.co/storage/v1/object/public/puta-diaries-ghost-stories/12.jpg",
-    "https://jvlcwxxjoppsnwglzomo.supabase.co/storage/v1/object/public/puta-diaries-ghost-stories/13.jpg",
-    "https://jvlcwxxjoppsnwglzomo.supabase.co/storage/v1/object/public/puta-diaries-ghost-stories/14.jpg",
-    "https://jvlcwxxjoppsnwglzomo.supabase.co/storage/v1/object/public/puta-diaries-ghost-stories/15.png",
-  ];
-
-  const reliefPrints = [
-    "https://jvlcwxxjoppsnwglzomo.supabase.co/storage/v1/object/public/puta-diaries-ghost-stories/16.jpg",
-    "https://jvlcwxxjoppsnwglzomo.supabase.co/storage/v1/object/public/puta-diaries-ghost-stories/17.jpg",
-    "https://jvlcwxxjoppsnwglzomo.supabase.co/storage/v1/object/public/puta-diaries-ghost-stories/18.jpg",
-  ];
-
-  const reliefPrints2 = [
-    "https://jvlcwxxjoppsnwglzomo.supabase.co/storage/v1/object/public/puta-diaries-ghost-stories/19.jpg",
-    "https://jvlcwxxjoppsnwglzomo.supabase.co/storage/v1/object/public/puta-diaries-ghost-stories/20.png",
-    "https://jvlcwxxjoppsnwglzomo.supabase.co/storage/v1/object/public/puta-diaries-ghost-stories/21.jpg",
-  ];
-
-  const halfPanties = [
-    "https://jvlcwxxjoppsnwglzomo.supabase.co/storage/v1/object/public/puta-diaries-ghost-stories/22.jpg",
-    "https://jvlcwxxjoppsnwglzomo.supabase.co/storage/v1/object/public/puta-diaries-ghost-stories/23.jpg",
-  ];
-
   return (
-    <div className="container pb-16">
-      <h1 className="text-6xl font-bold mt-12 mb-6 text-center">
-        {project.title}
-      </h1>
+    <div className={ps.page}>
+      <h1 className={`${ps.title} mb-8 `}>{project.title}</h1>
 
       <div className="flex gap-2 max-w-6xl mx-auto">
         <img src={coverBackCover[0]} alt={project.title} className="w-1/2 " />

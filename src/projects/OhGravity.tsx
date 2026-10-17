@@ -1,4 +1,5 @@
 import type { Project } from "../types/project";
+import { projectStyles as ps } from "../styles/projectStyles";
 
 export default function AttentionEconomy({ project }: { project: Project }) {
   const screenprint =
@@ -11,12 +12,10 @@ export default function AttentionEconomy({ project }: { project: Project }) {
     "https://jvlcwxxjoppsnwglzomo.supabase.co/storage/v1/object/public/illustrations/9.jpg";
 
   return (
-    <div className="container">
-      <h1 className="text-6xl font-bold mt-12 text-center">{project.title}</h1>
+    <div className={ps.page}>
+      <h1 className={`${ps.title} mb-8 `}>{project.title}</h1>
 
-      <p className="text-sm leading-relaxed max-w-4xl mx-auto mt-10">
-        {project.description}
-      </p>
+      <p className={ps.description}>{project.description}</p>
       <div className="max-w-4xl mx-auto ">
         <img src={screenprint} alt={project.title} />
       </div>

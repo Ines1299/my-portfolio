@@ -1,6 +1,7 @@
 import type { Project } from "../types/project";
 
 import { SocialIcon } from "react-social-icons";
+import { projectStyles as ps } from "../styles/projectStyles";
 
 import { useState } from "react";
 
@@ -51,10 +52,8 @@ export default function EternalSummer({ project }: { project: Project }) {
 
   return (
     <>
-      <div className="container pb-32">
-        <h1 className="text-6xl font-bold mt-12 text-center">
-          {project.title}
-        </h1>
+      <div className={ps.page}>
+        <h1 className={`${ps.title} mb-8`}>{project.title}</h1>
 
         <div className="max-w-10xl mx-auto">
           <img
@@ -64,7 +63,7 @@ export default function EternalSummer({ project }: { project: Project }) {
           />
         </div>
         <div className="flex items-center gap-3 max-w-4xl mx-auto mb-10">
-          <p className="text-sm leading-relaxed ">
+          <p className={ps.description}>
             A series of single covers and album cover for “THE ETERNAL SUMMER”
             album by SOURFACE.
           </p>
