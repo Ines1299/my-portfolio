@@ -2,6 +2,7 @@ import type { Project } from "../types/project";
 
 import { SocialIcon } from "react-social-icons";
 import { projectStyles as ps } from "../styles/projectStyles";
+import HoverImage from "../components/HooverImage";
 
 import { useState } from "react";
 
@@ -55,13 +56,6 @@ export default function EternalSummer({ project }: { project: Project }) {
       <div className={ps.page}>
         <h1 className={`${ps.title} mb-8`}>{project.title}</h1>
 
-        <div className="max-w-10xl mx-auto">
-          <img
-            src="https://jvlcwxxjoppsnwglzomo.supabase.co/storage/v1/object/public/eternal-summer/Free_Vinyl_Mockup_DRFG5.png"
-            alt={project.title}
-            className="w-full object-contain"
-          />
-        </div>
         <div className="flex items-center gap-3 max-w-4xl mx-auto mb-10">
           <p className={ps.description}>
             A series of single covers and album cover for “THE ETERNAL SUMMER”
@@ -74,16 +68,29 @@ export default function EternalSummer({ project }: { project: Project }) {
           />
         </div>
 
-        <div className="grid grid-cols-3 gap-4 max-w-5xl mx-auto mt-10">
+        <div className="max-w-10xl mx-auto">
+          <img
+            src="https://jvlcwxxjoppsnwglzomo.supabase.co/storage/v1/object/public/eternal-summer/Free_Vinyl_Mockup_DRFG5.png"
+            alt={project.title}
+            className="w-full object-contain"
+          />
+        </div>
+
+        <div className="grid grid-cols-2 gap-4 max-w-5xl mx-auto mt-10 sm:grid-cols-3">
           {songs.map((song) => (
-            <div
+            <button
               key={song.spotifyId}
+              type="button"
               onClick={() => setSelectedSong(song.spotifyId)}
-              className="cursor-pointer hover:opacity-80 transition"
+              className="block w-full cursor-pointer border-0 bg-transparent p-0 text-left"
+              aria-label={`Play ${song.title}`}
             >
-              <img src={song.image} alt={song.title} className="w-full" />
-              <p className="text-xs mt-1 text-center">{song.title}</p>
-            </div>
+              <HoverImage
+                src={song.image}
+                alt={song.title}
+                title={song.title}
+              />
+            </button>
           ))}
         </div>
       </div>

@@ -3,7 +3,7 @@ export const projectStyles = {
   page: "mx-auto w-full max-w-250 px-6 pb-28 pt-12 sm:px-8",
 
   // Project heading
-  title: "text-[clamp(3.5rem,8vw,6rem)] leading-none",
+  title: "text-[clamp(2.5rem,6vw,4.5rem)] leading-none",
 
   // Project description
   description: "text-sm leading-snug text-(--color-secondary) sm:text-base",
