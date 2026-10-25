@@ -86,7 +86,7 @@ export default function PutaDiaries({ project }: { project: Project }) {
       </div>
 
       <div className="max-w-4xl mx-auto">
-        <h2 className="mt-16 text-4xl font-bold text-red-500">Volume 1</h2>
+        <h2 className="mt-16 text-4xl font-bold text-red-500 mb-5">Volume 1</h2>
         <SlideShow images={zineSlides1} />
       </div>
 
@@ -105,12 +105,12 @@ export default function PutaDiaries({ project }: { project: Project }) {
       </div>
 
       <div className="max-w-4xl mx-auto">
-        <h2 className="mt-16 text-4xl font-bold text-red-500">Volume 2</h2>
+        <h2 className="mt-16 text-4xl font-bold text-red-500 mb-5">Volume 2</h2>
         <SlideShow images={zineSlides2} />
       </div>
 
       <div className="max-w-4xl mx-auto">
-        <h2 className="mt-16 text-4xl font-bold text-red-500">Volume 3</h2>
+        <h2 className="mt-16 text-4xl font-bold text-red-500 mb-5">Volume 3</h2>
         <SlideShow images={zineSlides3} />
       </div>
     </div>
