@@ -1,9 +1,10 @@
 import type { Category, Subcategory } from "../types/project";
 
 import { useEffect, useState } from "react";
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { supabase } from "../lib/supabase";
 import AllProjects from "../components/AllProjects";
+import BackButton from "../components/BackButton";
 
 export default function ProjectsPage() {
   const [category, setCategory] = useState<Category | null>(null);
@@ -12,7 +13,6 @@ export default function ProjectsPage() {
   const [error, setError] = useState<string | null>(null);
 
   const { slug, subcategorySlug } = useParams();
-  const navigate = useNavigate();
 
   useEffect(() => {
     let cancelled = false;
@@ -95,21 +95,19 @@ export default function ProjectsPage() {
   return (
     <div className="w-full">
       {/* Page heading */}
-      <div className="mx-auto max-w-225 px-6 pt-16 sm:px-8">
-        <button
-          type="button"
-          onClick={() => navigate(-1)}
-          className="mb-10 w-fit rounded bg-(--color-primary) px-8 py-2 text-sm font-bold text-white transition-opacity hover:opacity-80"
-        >
-          Go Back
-        </button>
+      <div className="relative w-full">
+        {/* Back Button */}
+        <div className="mx-auto w-full max-w-250 px-6 pt-4 sm:px-8 lg:absolute lg:left-5 lg:top-6 lg:z-10 lg:w-auto lg:max-w-none lg:p-0">
+          <BackButton />
+        </div>
 
-        <h1
-          className="text-5xl font-bold sm:text-6xl"
-          style={{ fontFamily: "var(--font-heading)" }}
-        >
-          {title}
-        </h1>
+        {/* Title  */}
+
+        <div className="mx-auto w-full max-w-250 px-6 pt-6 sm:px-8">
+          <h1 className="lg:text-center text-4xl font-bold leading-tight sm:text-6xl">
+            {title}
+          </h1>
+        </div>
       </div>
 
       {/* Shared project grid + sorting */}

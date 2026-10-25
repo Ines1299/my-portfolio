@@ -1,3 +1,12 @@
+import ServiceStar from "../components/ServiceStar";
+import {
+  FaEnvelope,
+  FaInstagram,
+  FaTiktok,
+  FaGithub,
+  FaLinkedin,
+} from "react-icons/fa6";
+
 const postcardURL =
   "https://jvlcwxxjoppsnwglzomo.supabase.co/storage/v1/object/public/profiles/postcard1.png";
 
@@ -17,16 +26,28 @@ const contactLinks = [
   {
     label: "inesmcadete@hotmail.com",
     href: "mailto:inesmcadete@hotmail.com",
-    icon: "",
+    icon: FaEnvelope,
   },
-  { label: "@i.nesart", href: "https://www.instagram.com/i.nesart/", icon: "" },
+  {
+    label: "@i.nesart",
+    href: "https://www.instagram.com/i.nesart/",
+    icon: FaInstagram,
+  },
   {
     label: "@inesmota45",
     href: "https://www.tiktok.com/@inesmota45",
-    icon: "",
+    icon: FaTiktok,
   },
-  { label: "@ines1299", href: "https://github.com/ines1299", icon: "" },
-  { label: "Ines Mota", href: "www.linkedin.com/in/ines-mota-c", icon: "" },
+  {
+    label: "@ines1299",
+    href: "https://www.github.com/ines1299",
+    icon: FaGithub,
+  },
+  {
+    label: "Ines Mota",
+    href: "https://www.linkedin.com/in/ines-mota-c",
+    icon: FaLinkedin,
+  },
 ];
 
 function Contact() {
@@ -58,23 +79,33 @@ function Contact() {
             {/* Contact links */}
 
             <div className="absolute left-[12%] top-[35%] flex w-[40%] flex-col gap-1 sm:gap-4 lg:gap-5">
-              {contactLinks.map((contact) => (
-                <a
-                  key={contact.label}
-                  href={contact.href}
-                  target={
-                    contact.href.startsWith("mailto:") ? undefined : "_blank"
-                  }
-                  rel={
-                    contact.href.startsWith("mailto:")
-                      ? undefined
-                      : "noopener noreferrer"
-                  }
-                  className="text-[clamp(0.85rem,1.7vw,1.25rem)] leading-relaxed text-(--color-secondary) no-underline hover:underline"
-                >
-                  {contact.label}
-                </a>
-              ))}
+              {contactLinks.map((contact) => {
+                const Icon = contact.icon;
+                return (
+                  <a
+                    key={contact.label}
+                    href={contact.href}
+                    target={
+                      contact.href.startsWith("mailto:") ? undefined : "_blank"
+                    }
+                    rel={
+                      contact.href.startsWith("mailto:")
+                        ? undefined
+                        : "noopener noreferrer"
+                    }
+                    className="group flex items-center gap-2 text-[clamp(0.85rem,1.7vw,1.25rem)] leading-relaxed text-(--color-secondary) no-underline hover:underline"
+                  >
+                    <Icon
+                      aria-hidden="true"
+                      className="shrink-0 text-[0.9em] transition-transform duration-200 group-hover:scale-110"
+                    />
+
+                    <span className="group-hover:underline">
+                      {contact.label}
+                    </span>
+                  </a>
+                );
+              })}
             </div>
           </div>
         </div>
@@ -95,25 +126,10 @@ function Contact() {
         </h2>
 
         {/* Services grid */}
-        <div className="mx-auto grid max-w-140 grid-cols-3 gap-2 sm:gap-3 pb-20">
+
+        <div className="mx-auto grid max-w-140 grid-cols-3 gap-2 pb-20 sm:gap-3">
           {services.map((service) => (
-            <div
-              key={service}
-              className="relative flex aspect-square items-center justify-center "
-            >
-              {/* Star shape */}
-              <div
-                className="absolute inset-0 bg-(--color-secondary)"
-                style={{
-                  clipPath:
-                    "polygon(50% 0%, 62% 35%, 100% 35%, 70% 58%, 82% 100%, 50% 75%, 18% 100%, 30% 58%, 0% 35%, 38% 35%)",
-                }}
-              />
-              {/* Text outside clipping area */}
-              <span className="relative z-10 w-[90%] text-center text-[10px] font-bold leading-tight text-black sm:text-sm">
-                {service}
-              </span>
-            </div>
+            <ServiceStar key={service} label={service} />
           ))}
         </div>
       </section>

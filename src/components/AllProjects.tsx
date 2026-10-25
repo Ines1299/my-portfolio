@@ -61,7 +61,13 @@ export default function AllProjects({
   }
 
   return (
-    <section className="w-full bg-white px-6 pb-24 pt-28 sm:px-8 lg:pt-36">
+    <section
+      className={`w-full bg-white px-6 pb-24 sm:px-8 ${
+        categoryId !== undefined || subcategoryId !== undefined
+          ? "pt-6 lg:pt-8"
+          : "pt-28 lg:pt-36"
+      }`}
+    >
       <div className="mx-auto max-w-225">
         <div className="mb-12 flex justify-start">
           <SortButton

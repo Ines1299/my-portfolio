@@ -20,12 +20,13 @@ import Cigarette from "../projects/Cigarette";
 import Spillr from "../projects/Spillr";
 import NcNews from "../projects/NcNews";
 
+import BackButton from "../components/BackButton.tsx";
+
 import type { Project } from "../types/project";
 
 import { supabase } from "../lib/supabase";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router";
-import { useNavigate } from "react-router";
 
 function renderTemplate(project: Project) {
   switch (project.slug) {
@@ -80,8 +81,6 @@ export default function ProjectPage() {
   const [loading, setLoading] = useState(true);
   const { slug } = useParams();
 
-  let navigate = useNavigate();
-
   useEffect(() => {
     async function fetchProject() {
       const { data, error } = await supabase
@@ -101,12 +100,9 @@ export default function ProjectPage() {
 
   return (
     <div className="relative">
-      <button
-        onClick={() => navigate(-1)}
-        className="absolute top-4 left-4 bg-pink-500 hover:bg-pink-400 text-white px-4 py-2 text-sm w-fit transition font-bold rounded z-10"
-      >
-        Go Back
-      </button>
+      <div className="mx-auto w-full max-w-250 px-6 pt-4 sm:px-8 lg:absolute lg:left-5 lg:top-6 lg:z-20 lg:w-auto lg:max-w-none lg:p-0 ">
+        <BackButton />
+      </div>
       {renderTemplate(project)}
     </div>
   );

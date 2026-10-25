@@ -36,13 +36,13 @@ function Footer() {
                 style={{ height: 44, width: 44 }}
               />
               <SocialIcon
-                url="https://linkedin.com"
+                url="https://www.linkedin.com/in/ines-mota-c"
                 bgColor="#111111"
                 fgColor="#FFFFFF"
                 style={{ height: 44, width: 44 }}
               />
               <SocialIcon
-                url="https://github.com"
+                url="https://github.com/Ines1299"
                 bgColor="#111111"
                 fgColor="#FFFFFF"
                 style={{ height: 44, width: 44 }}

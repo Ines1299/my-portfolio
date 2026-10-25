@@ -1,9 +1,16 @@
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { useTheme } from "../contexts/ThemeContext";
 import type { ThemeName } from "../themes/themes";
 import AnimatedName from "./AnimatedName";
 
 const themeOrder: ThemeName[] = ["design", "coding", "crochet"];
+
+const navLinkClass = ({ isActive }: { isActive: boolean }) =>
+  `text-xs no-underline transition-colors sm:text-sm ${
+    isActive
+      ? "text-(--color-primary)"
+      : "text-black hover:text-(--color-primary)"
+  }`;
 
 function Nav() {
   const { theme, setTheme } = useTheme();
@@ -19,24 +26,16 @@ function Nav() {
       {/* Main navigation */}
       <nav className=" relative z-30 grid h-20 grid-cols-3 items-center bg-white px-5 sm:px-8 lg:px-12">
         <div className=" flex items-center gap-3 sm:gap-6 ">
-          <Link
-            to="/"
-            className="text-xs text-black no-underline transition-colors hover:text-(--color-primary) sm:text-sm"
-          >
+          <NavLink to="/" end className={navLinkClass}>
             Projects
-          </Link>
-          <Link
-            to="/about"
-            className="text-xs text-black no-underline transition-colors hover:text-(--color-primary) sm:text-sm"
-          >
+          </NavLink>
+
+          <NavLink to="/about" className={navLinkClass}>
             About
-          </Link>
-          <Link
-            to="/contact"
-            className="text-xs text-black no-underline transition-colors hover:text-(--color-primary) sm:text-sm"
-          >
+          </NavLink>
+          <NavLink to="/contact" className={navLinkClass}>
             Contact
-          </Link>
+          </NavLink>
         </div>
         <div />
 

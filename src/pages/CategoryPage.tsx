@@ -5,6 +5,8 @@ import { motion, useReducedMotion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { Link, useParams, useNavigate } from "react-router";
 
+import BackButton from "../components/BackButton";
+
 const subcategoryImages: Record<string, string> = {
   illustration:
     "https://jvlcwxxjoppsnwglzomo.supabase.co/storage/v1/object/public/categories/illustration_design.png",
@@ -108,7 +110,10 @@ export default function CategoryPage() {
   }
 
   return (
-    <section className="flex min-h-svh w-full items-center justify-center bg-(--color-secondary) px-5 py-16 sm:px-8 lg:px-12">
+    <section className="relative flex min-h-svh w-full items-center justify-center bg-(--color-secondary) px-5 py-16 sm:px-8 lg:px-12">
+      <div className="absolute left-5 top-6 z-10 p-2 sm:left-8 lg:left-12">
+        <BackButton />
+      </div>
       <motion.div
         initial={reduceMotion ? false : { opacity: 0, y: 60 }}
         whileInView={{ opacity: 1, y: 0 }}

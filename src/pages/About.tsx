@@ -28,11 +28,17 @@ export default function About() {
               Portuguese Illustrator, Designer and Junior Developer based in
               Brno. First Class graduate in Illustration and Visual Media from
               UAL, recently completed an intensive JavaScript bootcamp at
-              Northcoders. Equally comfortable in Figma and React, between
-              creative briefs and codebases. Specialising in printmaking,
-              publication and storytelling. Passionate about building
+              Northcoders. Equally comfortable in Figma and React, jumping
+              between creative briefs and codebases. Passionate about building
               accessible, intuitive interfaces where clean code and thoughtful
               design go hand in hand.
+              <br /> With so many creative interests, I wanted a little corner
+              of the internet that could bring them all together. So I designed
+              and coded this website entirely from scratch, no vibe coding, just
+              lots of experimenting, problem-solving and learning along the way.
+              It's a space to showcase all the different things I love making,
+              and a project in itself that brings together my love for design
+              and development.
             </p>
           </div>
         </div>

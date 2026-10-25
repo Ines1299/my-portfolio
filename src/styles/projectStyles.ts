@@ -1,6 +1,6 @@
 export const projectStyles = {
   // Main project page
-  page: "mx-auto w-full max-w-250 px-6 pb-28 pt-12 sm:px-8",
+  page: "mx-auto w-full max-w-250 px-6 pb-28 pt-6 sm:px-8",
 
   // Project heading
   title: "text-[clamp(2.5rem,6vw,4.5rem)] leading-none",
