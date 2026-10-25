@@ -11,11 +11,15 @@ const fonts = [
   '"Playwrite US Trad", cursive',
 ];
 
-export default function AnimatedName() {
+interface AnimatedNameProps {
+  small?: boolean;
+}
+
+export default function AnimatedName({ small = false }: AnimatedNameProps) {
   const [fontIndex, setFontIndex] = useState(0);
   const [fontsReady, setFontsReady] = useState(false);
   const reduceMotion = useReducedMotion();
-  15;
+
   useEffect(() => {
     let cancelled = false;
 
@@ -45,9 +49,15 @@ export default function AnimatedName() {
     return () => window.clearInterval(interval);
   }, [reduceMotion, fontsReady]);
 
+  const MotionTag = small ? motion.span : motion.h1;
+
   return (
-    <motion.h1
-      className=" w-full whitespace-nowrap text-center text-[clamp(4rem,16vw,15rem)] leading-[1.15] tracking-[-0.065em]"
+    <MotionTag
+      className={
+        small
+          ? "block whitespace-nowrap text-sm font-bold leading-none sm:text-xl"
+          : "w-full whitespace-nowrap text-center text-[clamp(4rem,16vw,15rem)] leading-[1.15] tracking-[-0.065em]"
+      }
       style={{
         fontFamily: fonts[fontIndex],
         color: "var(--color-primary)",
@@ -58,6 +68,6 @@ export default function AnimatedName() {
       transition={{ duration: 0 }}
     >
       Inês Mota
-    </motion.h1>
+    </MotionTag>
   );
 }

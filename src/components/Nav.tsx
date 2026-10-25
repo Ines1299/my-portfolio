@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { useTheme } from "../contexts/ThemeContext";
 import type { ThemeName } from "../themes/themes";
+import AnimatedName from "./AnimatedName";
 
 const themeOrder: ThemeName[] = ["design", "coding", "crochet"];
 
@@ -51,13 +52,13 @@ function Nav() {
 
       <Link
         to="/"
-        className="fixed left-1/2 top-10 z-50 -translate-x-1/2 -translate-y-1/2 whitespace-nowrap text-sm font-bold no-underline sm:text-xl"
+        className="fixed left-1/2 top-10 z-50 -translate-x-1/2 -translate-y-1/2 whitespace-nowrap no-underline "
         style={{
           color: "var(--color-primary)",
           fontFamily: "var(--font-heading)",
         }}
       >
-        Inês Mota
+        <AnimatedName small />
       </Link>
     </>
   );

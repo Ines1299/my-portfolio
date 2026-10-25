@@ -1,4 +1,5 @@
 import type { Project } from "../types/project";
+import { projectStyles as ps } from "../styles/projectStyles";
 
 export default function IllustrationTemplate({
   project,
@@ -6,17 +7,18 @@ export default function IllustrationTemplate({
   project: Project;
 }) {
   return (
-    <div className="container pb-16">
-      <h1 className="text-6xl font-bold mt-12 text-center">{project.title}</h1>
-
-      <div className="max-w-3xl mx-auto mt-10">
+    <div className={ps.page}>
+      <h1 className={`${ps.title} mb-8`}>{project.title}</h1>
+      <p className={ps.description}>{project.description}</p>
+      <div className="mx-auto flex w-full items-center justify-center mt-10">
         {project.full_image_url && (
-          <img src={project.full_image_url} alt={project.title} />
+          <img
+            src={project.full_image_url}
+            alt={project.title}
+            className="block h-auto max-h-[85svh] w-auto max-w-full object-contain"
+          />
         )}
       </div>
-      <p className="text-sm leading-relaxed max-w-4xl mx-auto mt-10 mb-10">
-        {project.description}
-      </p>
     </div>
   );
 }
