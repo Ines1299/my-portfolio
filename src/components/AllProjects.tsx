@@ -9,27 +9,51 @@ import SortButton from "./SortButton";
 type SortBy = "year" | "title";
 type SortOrder = "ASC" | "DESC";
 
-export default function AllProjects() {
-  const [projects, setProjects] = useState<Project[]>([]);
+type AllProjectsProps = {
+  categoryId?: number;
+  subcategoryId?: number;
+};
 
+export default function AllProjects({
+  categoryId,
+  subcategoryId,
+}: AllProjectsProps) {
+  const [projects, setProjects] = useState<Project[]>([]);
   const [sortBy, setSortBy] = useState<SortBy>("year");
   const [order, setOrder] = useState<SortOrder>("DESC");
 
   useEffect(() => {
+    let cancelled = false;
+
     async function fetchProjects() {
-      const { data, error } = await supabase
-        .from("projects")
-        .select("*")
-        .order(sortBy, { ascending: order === "ASC" });
+      let query = supabase.from("projects").select("*");
+
+      if (subcategoryId !== undefined) {
+        query = query.eq("subcategory_id", subcategoryId);
+      } else if (categoryId !== undefined) {
+        query = query.eq("category_id", categoryId);
+      }
+
+      const { data, error } = await query.order(sortBy, {
+        ascending: order === "ASC",
+      });
+
+      if (cancelled) return;
+
       if (error) {
-        console.log(error);
+        console.error(error);
         return;
       }
+
       setProjects(data as Project[]);
     }
 
     fetchProjects();
-  }, [sortBy, order]);
+
+    return () => {
+      cancelled = true;
+    };
+  }, [categoryId, subcategoryId, sortBy, order]);
 
   function handleSortChange(newSortBy: SortBy, newOrder: SortOrder) {
     setSortBy(newSortBy);

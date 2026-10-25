@@ -6,8 +6,7 @@ import Contact from "./pages/Contact";
 import Home from "./pages/Home";
 import Layout from "./components/Layout";
 import ProjectPage from "./pages/ProjectPage";
-import SubcategoryPage from "./pages/SubcategoryPage";
-import CategoryProjectsPage from "./pages/CategoryProjectsPage";
+import ProjectsPage from "./pages/ProjectsPage";
 
 function App() {
   return (
@@ -17,15 +16,14 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
+
           <Route path="/project/:slug" element={<ProjectPage />} />
+
           <Route path="/category/:slug" element={<CategoryPage />} />
+
           <Route
-            path="/category/:slug/all"
-            element={<CategoryProjectsPage />}
-          />
-          <Route
-            path="/category/:categorySlug/:subcategorySlug"
-            element={<SubcategoryPage />}
+            path="/category/:slug/:subcategorySlug"
+            element={<ProjectsPage />}
           />
         </Routes>
       </Layout>
