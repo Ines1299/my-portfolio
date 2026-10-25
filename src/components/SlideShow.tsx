@@ -4,20 +4,33 @@ import { Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 
-export default function SlideShow({ images }: { images: string[] }) {
+interface SlideShowProps {
+  images: string[];
+  height?: number;
+}
+
+export default function SlideShow({ images, height }: SlideShowProps) {
   return (
     <Swiper
       modules={[Navigation]}
       navigation
       loop={true}
-      className="w-full mt-10"
+      className={height ? "w-full" : "w-full"}
+      style={height ? { height: `${height}px` } : undefined}
     >
       {images.map((src, index) => (
-        <SwiperSlide key={index}>
+        <SwiperSlide
+          key={index}
+          className={height ? "flex! items-center justify-center" : ""}
+        >
           <img
             src={src}
             alt={`slide ${index + 1}`}
-            className="w-full object-cover"
+            className={
+              height
+                ? "block h-full w-full object-contain"
+                : "w-full object-cover"
+            }
           />
         </SwiperSlide>
       ))}
