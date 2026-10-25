@@ -26,7 +26,7 @@ function Nav() {
       {/* Main navigation */}
       <nav className=" relative z-30 grid h-20 grid-cols-3 items-center bg-white px-5 sm:px-8 lg:px-12">
         <div className=" flex items-center gap-3 sm:gap-6 ">
-          <NavLink to="/" end className={navLinkClass}>
+          <NavLink to="/#projects" end className={navLinkClass}>
             Projects
           </NavLink>
 

@@ -71,7 +71,7 @@ export default function NcNews({ project }: { project: Project }) {
           />
         ))}
       </div>
-      <div className="max-w-4xl mx-auto">
+      <div className="max-w-4xl mx-auto mt-10">
         <SlideShow images={pages} />
       </div>
     </div>

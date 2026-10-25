@@ -8,9 +8,12 @@ import Layout from "./components/Layout";
 import ProjectPage from "./pages/ProjectPage";
 import ProjectsPage from "./pages/ProjectsPage";
 
+import ScrollToTop from "./components/ScrollToTop";
+
 function App() {
   return (
     <BrowserRouter>
+      <ScrollToTop />
       <Layout>
         <Routes>
           <Route path="/" element={<Home />} />

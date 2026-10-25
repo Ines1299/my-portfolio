@@ -114,7 +114,9 @@ function Home() {
 
       {/*Projects*/}
       <ScrollSnap>
-        <FolderGrid />
+        <section id="projects">
+          <FolderGrid />
+        </section>
       </ScrollSnap>
 
       {/*Projects Images*/}
