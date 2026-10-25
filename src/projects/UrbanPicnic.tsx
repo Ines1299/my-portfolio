@@ -1,21 +1,22 @@
 import type { Project } from "../types/project";
 import SlideShow from "../components/SlideShow";
+import { projectStyles as ps } from "../styles/projectStyles";
 
 export default function UrbanPicnic({ project }: { project: Project }) {
   const mainBox = [
-    "https://jvlcwxxjoppsnwglzomo.supabase.co/storage/v1/object/public/urban-picnic/2.png",
-    "https://jvlcwxxjoppsnwglzomo.supabase.co/storage/v1/object/public/urban-picnic/3.png",
-    "https://jvlcwxxjoppsnwglzomo.supabase.co/storage/v1/object/public/urban-picnic/4.png",
+    "https://jvlcwxxjoppsnwglzomo.supabase.co/storage/v1/object/public/urban-picnic/main-box.png",
+    "https://jvlcwxxjoppsnwglzomo.supabase.co/storage/v1/object/public/urban-picnic/main-box-sides.png",
+    "https://jvlcwxxjoppsnwglzomo.supabase.co/storage/v1/object/public/urban-picnic/main-box-back.png",
   ];
 
   const triangleBox = [
-    "https://jvlcwxxjoppsnwglzomo.supabase.co/storage/v1/object/public/urban-picnic/5.png",
-    "https://jvlcwxxjoppsnwglzomo.supabase.co/storage/v1/object/public/urban-picnic/6.png",
+    "https://jvlcwxxjoppsnwglzomo.supabase.co/storage/v1/object/public/urban-picnic/triangle-open.png",
+    "https://jvlcwxxjoppsnwglzomo.supabase.co/storage/v1/object/public/urban-picnic/triangle-closed.png",
   ];
 
   const rectangleBox = [
-    "https://jvlcwxxjoppsnwglzomo.supabase.co/storage/v1/object/public/urban-picnic/7.png",
-    "https://jvlcwxxjoppsnwglzomo.supabase.co/storage/v1/object/public/urban-picnic/8.png",
+    "https://jvlcwxxjoppsnwglzomo.supabase.co/storage/v1/object/public/urban-picnic/rectangle-up.png",
+    "https://jvlcwxxjoppsnwglzomo.supabase.co/storage/v1/object/public/urban-picnic/rectangle-side.png",
   ];
 
   const logos = [
@@ -30,9 +31,9 @@ export default function UrbanPicnic({ project }: { project: Project }) {
     "https://jvlcwxxjoppsnwglzomo.supabase.co/storage/v1/object/public/urban-picnic/mockup.png";
 
   const patterns = [
-    "https://jvlcwxxjoppsnwglzomo.supabase.co/storage/v1/object/public/urban-picnic/pattern1.png",
-    "https://jvlcwxxjoppsnwglzomo.supabase.co/storage/v1/object/public/urban-picnic/pattern2.png",
-    "https://jvlcwxxjoppsnwglzomo.supabase.co/storage/v1/object/public/urban-picnic/pattern3.jpg",
+    "https://jvlcwxxjoppsnwglzomo.supabase.co/storage/v1/object/public/urban-picnic/patterns-1.png",
+    "https://jvlcwxxjoppsnwglzomo.supabase.co/storage/v1/object/public/urban-picnic/patterns-2.png",
+    "https://jvlcwxxjoppsnwglzomo.supabase.co/storage/v1/object/public/urban-picnic/pattern-4.png",
   ];
 
   const posters = [
@@ -57,20 +58,20 @@ export default function UrbanPicnic({ project }: { project: Project }) {
     "https://jvlcwxxjoppsnwglzomo.supabase.co/storage/v1/object/public/urban-picnic/mockup2.png",
   ];
   return (
-    <div className="container pb-16">
-      <h1 className="text-6xl font-bold mt-12 mb-6 text-center">
-        {project.title}
-      </h1>
-      <div className="max-w-4xl mx-auto">
+    <div className={ps.page}>
+      <h1 className={`${ps.title} mb-8`}>{project.title}</h1>
+
+      <div className="max-w-4xl mx-auto w-full">
         <img
           src={
             "https://jvlcwxxjoppsnwglzomo.supabase.co/storage/v1/object/public/urban-picnic/1.png"
           }
           alt={project.title}
-          className="w-full max-h-180 object-contain"
+          className="w-full max-h-180 object-contain block"
         />
       </div>
-      <p className="text-sm leading-relaxed max-w-4xl mx-auto mt-10 mb-10 text-pink-400">
+
+      <p className={ps.description}>
         During a brief given by the studio ForPeople I was asked to create a new
         plant-based takeaway restaurant based in London and think of a pop-up
         event to showcase it and its menu. I founded Urban Picnic, a restaurant
@@ -79,118 +80,139 @@ export default function UrbanPicnic({ project }: { project: Project }) {
         experiences, and most importantly, food.
       </p>
 
-      <div className="max-w-4xl mx-auto">
-        <img
-          src={logos[0]}
-          alt={project.title}
-          className="w-full max-h-180 object-contain"
-        />
-        <img
-          src={logos[1]}
-          alt={project.title}
-          className="w-full max-h-180 object-contain"
-        />
-      </div>
-      <div className="max-w-4xl mx-auto">
-        <img
-          src={brandingSketch}
-          alt={project.title}
-          className="w-full max-h-180 object-contain"
-        />
+      {/* Two logos */}
+      <div className="mx-auto mt-16 max-w-200 grid w-full grid-cols-2 items-center gap-6">
+        {logos.map((url, index) => (
+          <img
+            key={url}
+            src={url}
+            alt={`${project.title} logo ${index + 1}`}
+            className="block h-auto w-full object-contain"
+          />
+        ))}
       </div>
 
-      <div className="max-w-4xl mx-auto">
+      {/* Social Media*/}
+      <div className="sm:col-span-2 mt-12">
         <img
           src={socialMediaMockup}
           alt={project.title}
-          className="w-full max-h-180 object-contain"
+          className="block h-auto w-full object-contain"
         />
       </div>
+      {/* Branding sketch + description */}
 
-      <p className=" text-sm leading-relaxed mx-auto mt-16 text-pink-400 w-1/2 pt-10">
-        I began to explore various types of packaging, and it was during this
-        process that I came up with the idea of incorporating gingham pattern on
-        the inside, which makes it work as a picnic blanket when opened,
-        reenforcing the motto of the brand to be able to have a picnic anywhere.
-        I illustrated items from the menu and used it for the outside of the
-        package. I also created a picnic box which would be used to carry the
-        individual takeaway boxes. I printed the layout patterns and lasercut
-        them.
-      </p>
+      <div className="max-w-200 mx-auto mt-12 grid grid-cols-1 items-start gap-8 sm:grid-cols-2">
+        <img
+          src={brandingSketch}
+          alt={project.title}
+          className="block h-auto w-full object-contain"
+        />
 
-      <div className="flex gap-8 items-start">
-        <div className="max-w-3xl mx-auto mt-4 w-1/3">
-          <SlideShow images={mainBox} />
-        </div>
-
-        <div className="max-w-3xl mx-auto mt-4 w-1/3">
-          <SlideShow images={triangleBox} />
-        </div>
-        <div className="max-w-3xl mx-auto mt-4 w-1/3">
-          <SlideShow images={rectangleBox} />
-        </div>
+        <p className={ps.description}>
+          I began to explore various types of packaging, and it was during this
+          process that I came up with the idea of incorporating gingham pattern
+          on the inside, which makes it work as a picnic blanket when opened,
+          reenforcing the motto of the brand to be able to have a picnic
+          anywhere. I illustrated items from the menu and used it for the
+          outside of the package. I also created a picnic box which would be
+          used to carry the individual takeaway boxes. I printed the layout
+          patterns and lasercut them.
+        </p>
       </div>
 
-      <div className="flex gap-8 mt-16 max-w-4xl mx-auto">
-        <div className="max-w-3xl mx-auto mt-4 w-1/2">
+      {/* Packaging slideshows */}
+
+      <div className="mx-auto grid w-full max-w-4xl grid-cols-1 items-start gap-8 sm:grid-cols-2 mt-10">
+        <div className="min-w-0">
+          <SlideShow images={mainBox} />
+        </div>
+        <div className="min-w-0">
+          <SlideShow images={triangleBox} />
+        </div>
+        <div className="min-w-0">
+          <SlideShow images={rectangleBox} />
+        </div>
+        <div className="min-w-0">
           <SlideShow images={patterns} />
         </div>
       </div>
 
-      <p className=" text-sm leading-relaxed mx-auto text-pink-400 w-1/2 pt-10">
+      {/* Event description */}
+
+      <p className={`${ps.description} mx-auto mt-20 `}>
         To promote the pop-up event, I designed a series of illustrations
         featuring the Urban Picnic characters enjoying picnics in different
         settings. My idea was to collaborate with an app to create a buddy-up
         experience, encouraging people to meet new people. This approach not
-        only brings Urbans Picnics message to life, but also opens the event to
+        only brings Urban Picnic's message to life, but also opens the event to
         a wider audience.
       </p>
 
-      <div className="flex gap-8 items-start">
-        <div className="max-w-3xl mx-auto mt-4 w-1/3">
-          <img src={posters[0]} />
-        </div>
-        <div className="max-w-3xl mx-auto mt-4 w-1/3">
-          <img src={posters[1]} />
-        </div>
-        <div className="max-w-3xl mx-auto mt-4 w-1/3">
-          <img src={posters[2]} />
-        </div>
+      {/* Posters */}
+
+      <div className="mx-auto mt-20 grid w-full grid-cols-1 items-start gap-6  max-w-300 sm:grid-cols-3">
+        {posters.map((url, index) => (
+          <img
+            key={url}
+            src={url}
+            alt={`${project.title} poster ${index + 1}`}
+            className="block h-auto w-full object-contain"
+          />
+        ))}
       </div>
 
-      <div className="flex gap-8 items-start">
-        <div className="max-w-3xl mx-auto mt-4 w-1/2">
-          <img src={posterMockups[0]} />
-        </div>
-        <div className="max-w-3xl mx-auto mt-4 w-1/2">
-          <img src={posterMockups[1]} />
-        </div>
+      {/* Poster mockups */}
+
+      <div className="mx-auto mt-20 grid w-full max-w-4xl grid-cols-1 items-start gap-6 sm:grid-cols-2">
+        {posterMockups.map((url, index) => (
+          <img
+            key={url}
+            src={url}
+            alt={`${project.title} poster mockup ${index + 1}`}
+            className="block h-auto w-full object-contain"
+          />
+        ))}
       </div>
 
-      <div className="flex gap-8 items-start">
-        <div className="max-w-3xl mx-auto mt-4 w-1/3">
-          <img src={stickers[0]} />
-        </div>
-        <div className="max-w-3xl mx-auto mt-4 w-1/3">
-          <img src={stickers[1]} />
-        </div>
-        <div className="max-w-3xl mx-auto mt-4 w-1/3">
-          <img src={stickers[2]} />
-        </div>
+      {/* Stickers */}
+
+      <div className="mx-auto mt-20 grid w-full grid-cols-1 max-w-200 items-center gap-6 sm:grid-cols-3">
+        {stickers.map((url, index) => (
+          <img
+            key={url}
+            src={url}
+            alt={`${project.title} sticker ${index + 1}`}
+            className="block h-auto w-full object-contain"
+          />
+        ))}
       </div>
-      <p>
-        Urban Picnic is a playful vegan food brand bringing the joy of a picnic
-        to any place, any time. It invites city dwellers to slow down, connect,
-        and savor the moment. Designed for young, socially conscious foodies,
-        especially those craving connection in an isolating urban environment,
-        Urban Picnic turns a good meal into a chance to make memories.
-      </p>
-      <div className="flex gap-8 items-start">
-        <div className="max-w-3xl mx-auto mt-4 w-1/2">
-          <img src={mockups[0]} />
+
+      {/* Closing description and mockups*/}
+      <div className="mx-auto mt-20 grid w-full grid-cols-1 items-start gap-10 md:grid-cols-2 lg:gap-16">
+        <div className="flex flex-col gap-10">
+          <p className={ps.description}>
+            Urban Picnic is a playful vegan food brand bringing the joy of a
+            picnic to any place, any time. It invites city dwellers to slow
+            down, connect, and savor the moment. Designed for young, socially
+            conscious foodies, especially those craving connection in an
+            isolating urban environment, Urban Picnic turns a good meal into a
+            chance to make memories.
+          </p>
+
+          <img
+            src={mockups[0]}
+            alt={`${project.title} final mockup 2`}
+            className="block h-auto w-full object-contain"
+          />
         </div>
-        <div className="max-w-3xl mx-auto mt-4 w-1/2">
-          <img src={mockups[1]} />
+
+        <div>
+          <img
+            src={mockups[1]}
+            alt={`${project.title} final mockup 1`}
+            className="block h-auto w-full object-contain"
+          />
         </div>
       </div>
     </div>
