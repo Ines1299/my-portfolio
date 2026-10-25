@@ -1,6 +1,8 @@
+import type { ReactNode } from "react";
+
 interface Spec {
   label: string;
-  value: string | React.ReactNode;
+  value: string | ReactNode;
 }
 
 interface ProjectSpecsProps {
@@ -9,23 +11,30 @@ interface ProjectSpecsProps {
 
 export default function ProjectSpecs({ specs }: ProjectSpecsProps) {
   return (
-    <div className="border border-black w-72">
-      <div className="bg-black px-4 py-3">
-        <p className="text-white text-xs font-bold tracking-widest uppercase">
-          How it was built
-        </p>
+    <div className=" w-full">
+      {/* Heading */}
+      <div className="mb-5">
+        <h3 className="text-xl leading-none text-(--color-primary) sm:text-2xl">
+          SPECS
+        </h3>
       </div>
-      {specs.map((spec, index) => (
-        <div
-          key={index}
-          className="flex gap-4 px-4 py-3 border-b border-black last:border-b-0"
-        >
-          <p className="text-xs font-bold tracking-widest uppercase w-24 shrink-0">
-            {spec.label}
-          </p>
-          <p className="text-xs font-mono">{spec.value}</p>
-        </div>
-      ))}
+
+      {/* Specifications */}
+      <div className="border-t-2 border-(--color-secondary)">
+        {specs.map((spec, index) => (
+          <div
+            key={index}
+            className="grid grid-cols-[90px_1fr] gap-4 border-b border-(--color-secondary) py-4"
+          >
+            <p className="text-[11px] font-bold tracking-wider text-(--color-primary)">
+              {spec.label}
+            </p>
+            <p className="text-sm leading-snug text-(--color-secondary)">
+              {spec.value}
+            </p>
+          </div>
+        ))}
+      </div>
     </div>
   );
 }

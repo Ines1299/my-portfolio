@@ -23,27 +23,12 @@ export default function NcNews({ project }: { project: Project }) {
       <div className=" mb-5 ">
         <a
           href="https://nc-news-one.vercel.app/"
-          className="text-xl font-bold underline"
+          className="text-xl font-bold underline  text-(--color-secondary)"
         >
           Website
         </a>
       </div>
-      <p className={ps.description}>{project.description}</p>
-
-      <div className="columns-3 gap-2 mt-10 max-w-5xl mx-auto">
-        {wireframes.map((url) => (
-          <img
-            key={url}
-            src={url}
-            alt={project.title}
-            className="w-full mb-2"
-          />
-        ))}
-      </div>
-      <div className="max-w-4xl mx-auto">
-        <SlideShow images={pages} />
-      </div>
-      <div className="flex gap-12 items-start max-w-4xl mx-auto mt-10 mb-10">
+      <div className="grid grid-cols-1 items-start gap-10 md:grid-cols-[2fr_1fr] lg:gap-16">
         <p className={ps.description}>
           NC News is a comprehensive project developed during the Northcoders
           JavaScript bootcamp, intended to replicate the functionalities of a
@@ -63,16 +48,31 @@ export default function NcNews({ project }: { project: Project }) {
           clean and user-friendly interface that enhances the overall user
           experience.
         </p>
+        <div className="flex gap-12 items-start max-w-4xl mx-auto mb-10">
+          <ProjectSpecs
+            specs={[
+              { label: "Front-end", value: "React · JavaScript · Tailwind" },
+              { label: "Back-end", value: "Supabase · PostgreSQL" },
+              { label: "Role", value: "Solo" },
+              { label: "Year", value: "2026" },
+              { label: "Status", value: "In production" },
+            ]}
+          />
+        </div>
+      </div>
 
-        <ProjectSpecs
-          specs={[
-            { label: "Front-end", value: "React · JavaScript · Tailwind" },
-            { label: "Back-end", value: "Supabase · PostgreSQL" },
-            { label: "Role", value: "Solo" },
-            { label: "Year", value: "2026" },
-            { label: "Status", value: "In production" },
-          ]}
-        />
+      <div className="columns-3 gap-2 mt-10 max-w-5xl mx-auto">
+        {wireframes.map((url) => (
+          <img
+            key={url}
+            src={url}
+            alt={project.title}
+            className="w-full mb-2"
+          />
+        ))}
+      </div>
+      <div className="max-w-4xl mx-auto">
+        <SlideShow images={pages} />
       </div>
     </div>
   );
