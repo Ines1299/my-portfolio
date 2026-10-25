@@ -57,19 +57,19 @@ export default function PutaDiariesGhostStories({
     <div className={ps.page}>
       <h1 className={`${ps.title} mb-8 `}>{project.title}</h1>
 
-      <div className="flex gap-2 max-w-6xl mx-auto">
+      <div className="flex gap-2 max-w-6xl mx-auto mb-8">
         <img src={coverBackCover[0]} alt={project.title} className="w-1/2 " />
         <img src={coverBackCover[1]} alt={project.title} className="w-1/2 " />
       </div>
 
-      <p className="text-sm leading-relaxed max-w-4xl mx-auto mt-10 mb-10 text-pink-400">
+      <p className={ps.description}>
         Puta Diaries: Ghost Stories is an archive book which features
         illustrations and text from the project Puta Diaries, as well as new and
         unused material. It is an A4 book spiral bounded and was printed in a
         Xerox V180.
       </p>
 
-      <div className="flex flex-col gap-2 max-w-5xl mx-auto ">
+      <div className="flex flex-col gap-2 max-w-5xl mx-auto mt-8 ">
         <img src={zine4Pages[0]} alt={project.title} className="w-full" />
         <img src={zine4Pages[1]} alt={project.title} className="w-full" />
       </div>
@@ -86,7 +86,7 @@ export default function PutaDiariesGhostStories({
       </div>
 
       <div className="flex gap-8 items-start mt-16">
-        <p className=" text-sm leading-relaxed mx-auto mt-16 text-pink-400 w-1/2 pt-10">
+        <p className=" text-sm leading-snug text-(--color-secondary) sm:text-base  mx-auto mt-16 w-1/2 pt-10">
           During this project, I explored various ways to express myself and
           create. I used scans for the cover and back cover. I created screen
           prints, cyanotypes and relief prints. I also utilized Photoshop,
