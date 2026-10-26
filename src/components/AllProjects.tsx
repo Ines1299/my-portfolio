@@ -62,21 +62,21 @@ export default function AllProjects({
 
   return (
     <section
-      className={`w-full bg-white px-6 pb-24 sm:px-8 ${
+      className={`w-full bg-white px-5 pb-16 sm:px-8 sm:pb-24 ${
         categoryId !== undefined || subcategoryId !== undefined
           ? "pt-6 lg:pt-8"
-          : "pt-28 lg:pt-36"
+          : "pt-16 sm:pt-28 lg:pt-36"
       }`}
     >
       <div className="mx-auto max-w-225">
-        <div className="mb-12 flex justify-start">
+        <div className="mb-8 flex justify-start sm:mb-12">
           <SortButton
             sortBy={sortBy}
             order={order}
             onSortChange={handleSortChange}
           />
         </div>
-        <div className="grid grid-cols-1 gap-x-8 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid grid-cols-1 gap-x-8 gap-y-10 sm:grid-cols-2 sm:gap-y-12 lg:grid-cols-3">
           {projects.map((project) => (
             <ProjectCard key={project.id} project={project} />
           ))}
