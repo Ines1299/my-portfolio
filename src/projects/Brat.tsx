@@ -8,7 +8,9 @@ export default function Brat({ project }: { project: Project }) {
         {/* Left column */}
         <div className="flex flex-col gap-10">
           <div>
-            <h1 className={`${ps.title} mb-8`}>{project.title}</h1>
+            <h1 className={`${ps.title} mb-8 hidden lg:block`}>
+              {project.title}
+            </h1>
 
             <p className={ps.description}>
               Charli XCX inspired 4ply purple top. Brat lettering was made using

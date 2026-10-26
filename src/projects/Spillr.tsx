@@ -30,23 +30,23 @@ export default function Spillr({ project }: { project: Project }) {
 
   return (
     <div className={ps.page}>
-      <h1 className={`${ps.title} mb-8`}>{project.title}</h1>
+      <h1 className={`${ps.title} mb-8 hidden lg:block`}>{project.title}</h1>
 
-      <div className="grid grid-cols-1 items-start gap-8 md:grid-cols-[2fr_1fr] lg:gap-12 ">
+      <div className="grid grid-cols-1 items-start gap-8 lg:grid-cols-[2fr_1fr] lg:gap-12 ">
         {/* Left column */}
-        <div className="flex flex-col gap-8">
+        <div className="flex min-w-0 flex-col gap-8">
           <p className={ps.description}>{project.description}</p>
           <img
             src={
               "https://jvlcwxxjoppsnwglzomo.supabase.co/storage/v1/object/public/proggraming/color.png"
             }
             alt={project.title}
-            className="block h-auto object-contain w-full"
+            className={ps.image}
           />
         </div>
 
         {/* Right column */}
-        <div className="md:-mt-4">
+        <div className="min-w-0 lg:-mt-4">
           <ProjectSpecs
             specs={[
               {
@@ -77,43 +77,35 @@ export default function Spillr({ project }: { project: Project }) {
       </div>
 
       {/* Wireframes */}
-      <div className="mx-auto grid  w-full max-w-225 grid-cols-2 items-start gap-4 sm:grid-cols-4 mt-16 ">
+      <div className="mx-auto grid  w-full max-w-225 grid-cols-2 items-start gap-4 lg:grid-cols-4 mt-12 lg:mt-16 ">
         {wireframe.map((url) => (
-          <img
-            src={url}
-            key={url}
-            alt={project.title}
-            className="block h-auto w-full object-contain"
-          />
+          <img src={url} key={url} alt={project.title} className={ps.image} />
         ))}
       </div>
 
       {/* Screenshots */}
-      <div className="grid w-full gap-4 mt-16 max-w-250 grid-cols-2 items-start sm:grid-cols-3 mx-auto">
+      <div className="grid w-full gap-4 mt-12 max-w-250 grid-cols-1 items-start sm:grid-cols-2 mx-auto lg:grid-cols-3 lg:mt-16">
         {screenshots.map((url) => (
-          <img
-            src={url}
-            key={url}
-            alt={project.title}
-            className="block h-auto w-full object-contain"
-          />
+          <img src={url} key={url} alt={project.title} className={ps.image} />
         ))}
       </div>
 
       {/* Videos*/}
 
-      <div className="grid w-full gap-6 mt-16 max-w-200 grid-cols-1 items-start mx-auto sm:grid-cols-2">
+      <div className="grid w-full gap-6 mt-12 max-w-200 grid-cols-1 items-start mx-auto sm:grid-cols-2 lg:mt-16">
         {demos.map((url) => (
-          <ReactPlayer
-            src={url}
-            width="100%"
-            height="100%"
-            controls={true}
-            playing={true}
-            muted={true}
-            loop={true}
-            className="w-full mb-2"
-          />
+          <div key={url} className="min-w-0">
+            <ReactPlayer
+              src={url}
+              width="100%"
+              height="100%"
+              controls={true}
+              playing={true}
+              muted={true}
+              loop={true}
+              className="w-full mb-2"
+            />
+          </div>
         ))}
       </div>
     </div>

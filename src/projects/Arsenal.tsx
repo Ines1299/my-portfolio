@@ -5,7 +5,7 @@ import { projectStyles as ps } from "../styles/projectStyles";
 export default function Arsenal({ project }: { project: Project }) {
   return (
     <div className={ps.page}>
-      <h1 className={`${ps.title} mb-8`}>{project.title}</h1>
+      <h1 className={`${ps.title} mb-8 hidden lg:block`}>{project.title}</h1>
 
       <p className={`${ps.description} `}>
         Crochet arsenal scarf where I designed the pattern on Procreate, then

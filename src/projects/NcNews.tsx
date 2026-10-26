@@ -19,16 +19,19 @@ export default function NcNews({ project }: { project: Project }) {
 
   return (
     <div className={ps.page}>
-      <h1 className={`${ps.title} mb-8`}>{project.title}</h1>
+      <h1 className={`${ps.title} mb-8 hidden lg:block`}>{project.title}</h1>
+
       <div className=" mb-5 ">
         <a
           href="https://nc-news-one.vercel.app/"
-          className="text-xl font-bold underline  text-(--color-secondary)"
+          rel="noopener noreferrer"
+          className="text-lg font-bold underline  text-(--color-secondary) sm:text-xl"
         >
           Website
         </a>
       </div>
-      <div className="grid grid-cols-1 items-start gap-10 md:grid-cols-[2fr_1fr] lg:gap-16">
+
+      <div className="grid grid-cols-1 items-start gap-8 lg:grid-cols-[2fr_1fr] lg:gap-16">
         <p className={ps.description}>
           NC News is a comprehensive project developed during the Northcoders
           JavaScript bootcamp, intended to replicate the functionalities of a
@@ -48,7 +51,8 @@ export default function NcNews({ project }: { project: Project }) {
           clean and user-friendly interface that enhances the overall user
           experience.
         </p>
-        <div className="flex gap-12 items-start max-w-4xl mx-auto mb-10">
+
+        <div className="mb-4 flex w-full min-w-0 items-start max-w-4xl lg:mb-10">
           <ProjectSpecs
             specs={[
               { label: "Front-end", value: "React · JavaScript · Tailwind" },
@@ -61,17 +65,18 @@ export default function NcNews({ project }: { project: Project }) {
         </div>
       </div>
 
-      <div className="columns-3 gap-2 mt-10 max-w-5xl mx-auto">
+      <div className="grid w-full grid-cols-1 gap-2 lg:mt-10 lg:grid-cols-3 mt-8 max-w-5xl mx-auto">
         {wireframes.map((url) => (
           <img
             key={url}
             src={url}
             alt={project.title}
-            className="w-full mb-2"
+            className="block h-auto w-full object-contain mt-2"
           />
         ))}
       </div>
-      <div className="max-w-4xl mx-auto mt-10">
+
+      <div className="max-w-4xl mx-auto mt-8 w-full min-w-0 lg:mt-10">
         <SlideShow images={pages} />
       </div>
     </div>

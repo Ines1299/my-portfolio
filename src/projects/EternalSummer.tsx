@@ -54,29 +54,31 @@ export default function EternalSummer({ project }: { project: Project }) {
   return (
     <>
       <div className={ps.page}>
-        <h1 className={`${ps.title} mb-8`}>{project.title}</h1>
+        <h1 className={`${ps.title} mb-8 hidden lg:block`}>{project.title}</h1>
 
-        <div className="flex items-center gap-3 max-w-4xl mx-auto mb-10">
-          <p className={ps.description}>
+        <div className="mx-auto mb-8 flex w-full items-center gap-3 max-w-4xl sm:mb-10">
+          <p className={`${ps.description} min-w-0 flex-1`}>
             A series of single covers and album cover for “THE ETERNAL SUMMER”
             album by SOURFACE.
           </p>
 
-          <SocialIcon
-            style={{ height: 35, width: 35 }}
-            url="https://open.spotify.com/artist/52KnNbAieqBwivwgKsaP7W?si=s-NztJMmRXygU6jVFVKWxg"
-          />
+          <div className="shrink-0">
+            <SocialIcon
+              style={{ height: 35, width: 35 }}
+              url="https://open.spotify.com/artist/52KnNbAieqBwivwgKsaP7W?si=s-NztJMmRXygU6jVFVKWxg"
+            />
+          </div>
         </div>
 
-        <div className="max-w-10xl mx-auto">
+        <div className="max-w-10xl mx-auto w-full">
           <img
             src="https://jvlcwxxjoppsnwglzomo.supabase.co/storage/v1/object/public/eternal-summer/Free_Vinyl_Mockup_DRFG5.png"
             alt={project.title}
-            className="w-full object-contain"
+            className={ps.image}
           />
         </div>
 
-        <div className="grid grid-cols-2 gap-4 max-w-5xl mx-auto mt-10 sm:grid-cols-3">
+        <div className="grid w-full gap-4 max-w-5xl grid-cols-1 mx-auto mt-8 sm:grid-cols-2 lg:mt-10 lg:grid-cols-3">
           {songs.map((song) => (
             <button
               key={song.spotifyId}
@@ -96,7 +98,7 @@ export default function EternalSummer({ project }: { project: Project }) {
       </div>
 
       {selectedSong && (
-        <div className="fixed bottom-4 right-4 z-50 w-80">
+        <div className="fixed bottom-4 right-4 z-50 w-80 sm:left-auto sm:w-80">
           <iframe
             key={selectedSong}
             src={`https://open.spotify.com/embed/track/${selectedSong}`}

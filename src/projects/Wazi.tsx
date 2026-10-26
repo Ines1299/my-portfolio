@@ -22,7 +22,7 @@ const popUpStore = [
 export default function Wazi({ project }: { project: Project }) {
   return (
     <div className={ps.page}>
-      <h1 className={`${ps.title} mb-8`}>{project.title}</h1>
+      <h1 className={`${ps.title} mb-8 hidden lg:block`}>{project.title}</h1>
 
       {/* Campaign video */}
       <div className="max-w-4xl mx-auto overflow-hidden mb-20">

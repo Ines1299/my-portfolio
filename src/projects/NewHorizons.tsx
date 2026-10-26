@@ -13,17 +13,17 @@ export default function NewHorizons({ project }: { project: Project }) {
 
   return (
     <div className={ps.page}>
-      <h1 className={`${ps.title} `}>{project.title}</h1>
+      <h1 className={`${ps.title} mb-8 hidden lg:block `}>{project.title}</h1>
 
-      <div className="max-w-5xl mx-auto">
+      <div className="max-w-5xl mx-auto w-full">
         <img
           src="https://jvlcwxxjoppsnwglzomo.supabase.co/storage/v1/object/public/illustrations/19.png"
           alt={project.title}
-          className="w-full max-h-180 object-contain"
+          className="block h-auto w-full lg:max-h-180 object-contain"
         />
       </div>
 
-      <div className="flex items-start max-w-4xl gap-4 mx-auto ">
+      <div className="mt-6 w-full lg:mt-0 flex items-start max-w-4xl gap-4 mx-auto ">
         <p className={ps.description}>
           On this piece of work I was asked to think about the concepts of
           contemporary mobility, migratory crisis and personal patrimony. These
@@ -36,13 +36,13 @@ export default function NewHorizons({ project }: { project: Project }) {
         </p>
       </div>
 
-      <div className="columns-3 gap-2 mt-10 max-w-5xl mx-auto">
+      <div className="w-full columns-1 gap-4 mt-8 max-w-5xl mx-auto sm:columns-2 lg:mt-10 lg:columns-3 lg:gap-2">
         {illustrations.map((url) => (
           <img
             key={url}
             src={url}
             alt={project.title}
-            className="w-full mb-2"
+            className="mb-4 block h-auto w-full break-inside-avoid object-contain lg:mb-2"
           />
         ))}
       </div>

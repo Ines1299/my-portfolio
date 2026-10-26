@@ -11,33 +11,19 @@ const illustrations = [
 export default function IllustratedMan({ project }: { project: Project }) {
   return (
     <div className={ps.page}>
-      <h1 className={`${ps.title} mb-8`}>{project.title}</h1>
+      <h1 className={`${ps.title} mb-8 hidden lg:block`}>{project.title}</h1>
 
       <p className={ps.description}>{project.description}</p>
-      <div className={ps.gallery}>
-        <div className="flex items-start max-w-4xl gap-4 mx-auto mt-10">
-          <img
-            src={illustrations[0]}
-            alt={project.title}
-            className="w-1/2 max-h-180 object-contain"
-          />
-          <img
-            src={illustrations[1]}
-            alt={project.title}
-            className="w-1/2 max-h-180 object-contain"
-          />
-        </div>
-        <div className="flex items-start max-w-4xl gap-4 mx-auto mt-10">
-          <img
-            src={illustrations[2]}
-            alt={project.title}
-            className="w-1/2 max-h-180 object-contain"
-          />
-          <img
-            src={illustrations[3]}
-            alt={project.title}
-            className="w-1/2 max-h-180 object-contain"
-          />
+      <div className={`${ps.gallery} mt-8 lg:mt-10`}>
+        <div className="grid grid-cols-1 items-start gap-4 lg:grid-cols-2 lg:gap-x-4 lg:gap-y-10">
+          {illustrations.map((src, index) => (
+            <img
+              key={src}
+              src={src}
+              alt={`${project.title} illustration ${index + 1}`}
+              className="block h-auto w-full object-contain lg:max-h-180"
+            />
+          ))}
         </div>
       </div>
     </div>

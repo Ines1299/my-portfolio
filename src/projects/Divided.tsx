@@ -9,19 +9,19 @@ export default function Divided({ project }: { project: Project }) {
 
   return (
     <div className={ps.page}>
-      <h1 className={`${ps.title} mb-8`}>{project.title}</h1>
+      <h1 className={`${ps.title} mb-8 hidden lg:block`}>{project.title}</h1>
       <p className={ps.description}>{project.description}</p>
 
-      <div className="flex items-start max-w-4xl gap-4 mx-auto mt-10">
+      <div className="flex flex-col items-center max-w-4xl gap-4 mx-auto mt-8 lg:mt-10 lg:flex-row lg:items-start">
         <img
           src={posters[0]}
           alt={project.title}
-          className="w-1/2 max-h-180 object-contain"
+          className="h-auto w-full object-contain lg:w-1/2 lg:max-h-180"
         />
         <img
           src={posters[1]}
           alt={project.title}
-          className="w-1/2 max-h-180 object-contain"
+          className="h-auto w-full object-contain lg:w-1/2 lg:max-h-180"
         />
       </div>
     </div>

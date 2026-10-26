@@ -13,7 +13,7 @@ export default function AttentionEconomy({ project }: { project: Project }) {
 
   return (
     <div className={ps.page}>
-      <h1 className={`${ps.title} mb-8 `}>{project.title}</h1>
+      <h1 className={`${ps.title} mb-8 hidden lg:block`}>{project.title}</h1>
 
       <p className={ps.description}>{project.description}</p>
       <div className="max-w-4xl mx-auto ">

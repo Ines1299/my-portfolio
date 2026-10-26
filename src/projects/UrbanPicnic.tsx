@@ -59,7 +59,7 @@ export default function UrbanPicnic({ project }: { project: Project }) {
   ];
   return (
     <div className={ps.page}>
-      <h1 className={`${ps.title} mb-8`}>{project.title}</h1>
+      <h1 className={`${ps.title} mb-8 hidden lg:block`}>{project.title}</h1>
 
       <div className="max-w-4xl mx-auto w-full">
         <img
@@ -177,7 +177,7 @@ export default function UrbanPicnic({ project }: { project: Project }) {
 
       {/* Stickers */}
 
-      <div className="mx-auto mt-20 grid w-full grid-cols-1 max-w-200 items-center gap-6 sm:grid-cols-3">
+      <div className="mx-auto mt-20 grid w-full grid-cols-3 max-w-200 items-center gap-3 sm:gap-6">
         {stickers.map((url, index) => (
           <img
             key={url}

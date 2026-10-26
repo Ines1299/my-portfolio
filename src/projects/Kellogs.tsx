@@ -4,7 +4,7 @@ import { projectStyles as ps } from "../styles/projectStyles";
 export default function Kellogs({ project }: { project: Project }) {
   return (
     <div className={ps.page}>
-      <h1 className={`${ps.title} mb-8`}>{project.title}</h1>
+      <h1 className={`${ps.title} mb-8 hidden lg:block`}>{project.title}</h1>
       <p className={ps.description}>
         Crocheted blanket of 135 x 190 cm depicting a Kellog's cereal box. I
         turned the image into pixels grids using 6 colors.

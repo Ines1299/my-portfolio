@@ -4,11 +4,16 @@ import { projectStyles as ps } from "../styles/projectStyles";
 export default function OliverConquest({ project }: { project: Project }) {
   return (
     <div className={ps.page}>
-      <div className="grid grid-cols-1 items-start gap-10 md:grid-cols-2 lg:gap-16">
+      <div
+        className="grid grid-cols-1 items-start gap-8 
+       lg:grid-cols-2 lg:gap-16"
+      >
         {/* Left column */}
-        <div className="flex flex-col gap-10">
+        <div className="flex min-w-0 flex-col gap-6 lg:gap-10">
           <div>
-            <h1 className={`${ps.title} mb-8`}>{project.title}</h1>
+            <h1 className={`${ps.title} mb-8 hidden lg:block`}>
+              {project.title}
+            </h1>
 
             <p className={ps.description}>
               This comission was made for the bar
@@ -25,16 +30,16 @@ export default function OliverConquest({ project }: { project: Project }) {
             </p>
           </div>
 
-          <div className="grid grid-cols-2 items-start gap-4">
+          <div className="grid grid-cols-1 items-start gap-4 lg:grid-cols-2">
             <img
               src="https://jvlcwxxjoppsnwglzomo.supabase.co/storage/v1/object/public/cocktail-menu/2.png"
               alt={project.title}
-              className="block h-auto w-full object-contain"
+              className={ps.image}
             />
             <img
               src="https://jvlcwxxjoppsnwglzomo.supabase.co/storage/v1/object/public/cocktail-menu/3.jpg"
               alt={project.title}
-              className="block h-auto w-full object-contain"
+              className={ps.image}
             />
           </div>
         </div>
@@ -44,7 +49,7 @@ export default function OliverConquest({ project }: { project: Project }) {
           <img
             src="https://jvlcwxxjoppsnwglzomo.supabase.co/storage/v1/object/public/cocktail-menu/1.png"
             alt={project.title}
-            className="block w-full h-auto object-contain"
+            className={ps.image}
           />
         </div>
       </div>

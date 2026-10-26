@@ -18,7 +18,7 @@ export default function MentalLoad({ project }: { project: Project }) {
   return (
     <div className={ps.page}>
       <h1
-        className={`${ps.title} mb-8`}
+        className={`${ps.title} mb-8 hidden lg:block`}
         style={{ fontFamily: "var(--font-heading)" }}
       >
         {project.title}
