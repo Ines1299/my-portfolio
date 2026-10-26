@@ -129,26 +129,30 @@ export default function CV() {
   };
 
   return (
-    <div className="grid grid-cols-1 items-start gap-12 border-t border-black pt-16  md:grid-cols-[1.4fr_1fr] lg:gap-20 ">
+    <div className="grid grid-cols-1 items-start gap-12 border-t border-black pt-10 sm:pt-16 lg:grid-cols-[1.4fr_1fr] lg:gap-20 ">
       {/* Left column */}
-      <div className="flex flex-col gap-16">
+      <div className="flex min-w-0 flex-col gap-12 sm:gap-16">
         {/*Education*/}
 
         <section>
-          <h2 className="text-2xl sm:text-3xl mb-10" style={headingStyle}>
+          <h2
+            className="mb-8 text-2xl sm:text-3xl sm:mb-10"
+            style={headingStyle}
+          >
             Education
           </h2>
           {education.map((item) => (
             <div
               key={item.title}
-              className="mb-6 flex justify-between items-start gap-6 border-b border-black pb-6 last:mb-0 last:border-0"
+              className="mb-6 flex justify-between items-start gap-4 border-b border-black pb-6 last:mb-0 last:border-0"
             >
-              <div>
+              <div className="min-w-0">
                 <p className="font-bold text-sm">{item.title}</p>
                 {item.place && (
                   <p className="text-xs mt-1 text-black/60">{item.place}</p>
                 )}
               </div>
+
               <span className="shrink-0 text-right text-xs text-black/60">
                 {item.date}
               </span>
@@ -158,15 +162,19 @@ export default function CV() {
 
         {/* Experience */}
         <section>
-          <h2 className="text-2xl mb-10 sm:text-3xl" style={headingStyle}>
+          <h2
+            className="text-2xl mb-8 sm:mb-10 sm:text-3xl"
+            style={headingStyle}
+          >
             Experience
           </h2>
+
           {experience.map((item) => (
             <div
               key={item.title}
-              className="flex justify-between items-start gap-6 border-b border-black/30 pb-6 mb-6 last:mb-0 last:border-0"
+              className="flex justify-between items-start gap-4 border-b border-black/30 pb-6 mb-6 last:mb-0 last:border-0"
             >
-              <div>
+              <div className="min-w-0">
                 <p className="font-bold text-sm">{item.title}</p>
                 {item.place && (
                   <p className="text-xs mt-1 text-black/60">{item.place}</p>
@@ -177,6 +185,7 @@ export default function CV() {
                   </p>
                 )}
               </div>
+
               <span className="text-xs text-right text-black/60 shrink-0">
                 {item.date}
               </span>
@@ -186,12 +195,13 @@ export default function CV() {
       </div>
 
       {/* Right column */}
-      <div className="flex flex-col gap-14">
+      <div className="flex min-w-0 flex-col gap-10 sm:gap-14">
         {/* Skills */}
         <section>
           <h2 className="text-2xl sm:text-3xl mb-8" style={headingStyle}>
             Skills
           </h2>
+
           {skills.map((skill) => (
             <div
               key={skill.label}
@@ -213,13 +223,16 @@ export default function CV() {
           <h2 className="text-2xl sm:text-3xl mb-8" style={headingStyle}>
             Languages
           </h2>
+
           {languages.map((item) => (
             <div
               key={item.lang}
               className="flex justify-between gap-4 border-b border-black/30 pb-4 mb-4 last:mb-0 last:border-0"
             >
-              <p className="text-sm font-bold">{item.lang}</p>
-              <p className="text-xs text-black/60">{item.level}</p>
+              <p className="min-w-0 text-sm font-bold">{item.lang}</p>
+              <p className="shrink-0 text-right text-xs text-black/60">
+                {item.level}
+              </p>
             </div>
           ))}
         </section>
@@ -229,6 +242,7 @@ export default function CV() {
           <h2 className="text-2xl sm:text-3xl mb-8" style={headingStyle}>
             Interests
           </h2>
+
           <p
             className="text-xs leading-relaxed text-black/70"
             style={{ color: "var(--color-grey)" }}
@@ -246,7 +260,7 @@ export default function CV() {
               key={item.title}
               className="flex justify-between items-start border-b border-black/30 pb-4 mb-4 last:mb-0 last:border-0 gap-4"
             >
-              <div>
+              <div className="min-w-0">
                 <p className="font-bold text-sm">{item.title}</p>
                 {item.place && (
                   <p
