@@ -23,9 +23,8 @@ function Nav() {
 
   return (
     <>
-      {/* Main navigation */}
-      <nav className=" relative z-30 grid h-20 grid-cols-3 items-center bg-white px-5 sm:px-8 lg:px-12">
-        <div className=" flex items-center gap-3 sm:gap-6 ">
+      <nav className=" relative z-30 grid min-h-24 grid-cols-3 grid-rows-2 items-center bg-white px-4 py-3 sm:px-8 lg:h-20 lg:min-h-0 lg:grid-rows-1 lg:px-12 lg:py-0">
+        <div className=" col-span-3 row-start-2 flex items-center justify-center gap-5 sm:gap-8 lg:col-span-1 lg:col-start-1 lg:row-start-1 lg:justify-start lg:gap-6 ">
           <NavLink to="/#projects" end className={navLinkClass}>
             Projects
           </NavLink>
@@ -37,28 +36,29 @@ function Nav() {
             Contact
           </NavLink>
         </div>
-        <div />
+
+        {/* Animated name */}
+        <Link
+          to="/"
+          className="col-start-2 row-start-1 justify-self-center  whitespace-nowrap no-underline lg:fixed lg:left-1/2 lg:top-10 lg:z-50
+    lg:-translate-x-1/2 lg:-translate-y-1/2"
+          style={{
+            color: "var(--color-primary)",
+            fontFamily: "var(--font-heading)",
+          }}
+        >
+          <AnimatedName small />
+        </Link>
 
         <button
           type="button"
           onClick={cycleTheme}
-          className="justify-self-end border border-(--color-primary) bg-(--color-light-grey) px-3 py-1 text-xs text-(--color-primary) transition-colors hoover:bg(--color-primary) hoover:text-white sm:px-4 sm:py-2 sm:text-sm"
+          className="cols-start-3 row-start-1 justify-self-end whitespace-nowrap border border-(--color-primary) bg-(--color-light-grey) px-2 py-1 text-xs text-(--color-primary) transition-colors hoover:bg(--color-primary) hoover:text-white sm:px-4 sm:py-2 sm:text-sm"
           aria-label={`Current theme: ${theme}. Click to switch themes.`}
         >
           Theme
         </button>
       </nav>
-
-      <Link
-        to="/"
-        className="fixed left-1/2 top-10 z-50 -translate-x-1/2 -translate-y-1/2 whitespace-nowrap no-underline "
-        style={{
-          color: "var(--color-primary)",
-          fontFamily: "var(--font-heading)",
-        }}
-      >
-        <AnimatedName small />
-      </Link>
     </>
   );
 }
