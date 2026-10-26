@@ -100,7 +100,25 @@ export default function ProjectPage() {
 
   return (
     <div className="relative">
-      <div className="mx-auto w-full max-w-250 px-6 pt-4 sm:px-8 lg:absolute lg:left-5 lg:top-6 lg:z-20 lg:w-auto lg:max-w-none lg:p-0 ">
+      {/* Back arrow + project title */}
+      <div className="mx-auto grid w-full max-w-250 grid-cols-[auto_1fr_auto] items-center gap-3 px-5 pt-6 sm:px-8 lg:hidden">
+        <BackButton />
+
+        <h1
+          className="min-w-0 text-center text-3xl font-bold leading-tight sm:text-5xl"
+          style={{ fontFamily: "var(--font-heading)" }}
+        >
+          {project.title}
+        </h1>
+
+        {/* Balance the arrow so the title stays centered */}
+        <div className="invisible" aria-hidden="true">
+          <BackButton />
+        </div>
+      </div>
+
+      {/* Original desktop back button */}
+      <div className="hidden lg:absolute lg:left-5 lg:top-6 lg:z-20 lg:block">
         <BackButton />
       </div>
       {renderTemplate(project)}

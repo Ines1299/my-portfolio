@@ -54,10 +54,8 @@ export default function PutaDiaries({ project }: { project: Project }) {
   ];
   return (
     <div className={ps.page}>
-      <section className="flex min-h-[calc(100svh-5rem)] flex-col">
-        <h1 className={ps.title} style={{ fontFamily: "var(--font-heading)" }}>
-          {project.title}
-        </h1>
+      <section className="flex flex-col">
+        <h1 className={`${ps.title} mb-8 hidden lg:block `}>{project.title}</h1>
         <div className="flex w-full justify-center">
           <img
             src={firstImages[3]}
@@ -77,40 +75,59 @@ export default function PutaDiaries({ project }: { project: Project }) {
         </p>
       </section>
 
-      <div className="flex flex-col gap-4 mt-10 ">
-        <img src={firstImages[0]} alt={project.title} className="w-full" />
-        <div className="flex gap-2">
-          <img src={firstImages[1]} alt={project.title} className="w-1/2" />
-          <img src={firstImages[2]} alt={project.title} className="w-1/2" />
+      <div className="mt-10 flex flex-col gap-4 ">
+        <img src={firstImages[0]} alt={project.title} className={ps.image} />
+
+        <div className="flex flex-col gap-4 lg:flex-row lg:gap-2">
+          <img
+            src={firstImages[1]}
+            alt={project.title}
+            className="w-full lg:w-1/2"
+          />
+          <img
+            src={firstImages[2]}
+            alt={project.title}
+            className="w-full lg:w-1/2"
+          />
         </div>
       </div>
 
       <div className="max-w-4xl mx-auto">
-        <h2 className="mt-16 text-4xl font-bold text-red-500 mb-5">Volume 1</h2>
+        <h2 className="mb-5 mt-12 text-3xl font-bold text-(--color-primary) sm:text-4xl lg:mt-16">
+          Volume 1
+        </h2>
         <SlideShow images={zineSlides1} />
       </div>
 
-      <div className="flex gap-8 items-start mt-16">
-        <p className="w-1/3 text-sm leading-relaxed text-pink-400 pt-10">
+      <div className="flex flex-col gap-6 items-start mt-12 lg:mt-16 lg:flex-row lg:gap-8">
+        <p className="w-full text-sm leading-relaxed text-(--color-secondary) lg:w-1/3 lg:pt-10">
           Underwear is a personal and somewhat forbidden subject, making it an
           interesting topic to explore with my theme. Here are some of the
           results of scans I used throughout this project. The colours and
           textures created a compelling feel that lies almost in limbo between
           innocence and provocation.
         </p>
-        <div className="w-2/3 flex gap-4">
-          <SlideShow images={scansBlack} />
-          <SlideShow images={scansWhite} />
+        <div className="flex w-full min-w-0 flex-col gap-4 lg:w-2/3 lg:flex-row">
+          <div className="min-w-0 flex-1">
+            <SlideShow images={scansBlack} />
+          </div>
+          <div className="min-w-0 flex-1">
+            <SlideShow images={scansWhite} />
+          </div>
         </div>
       </div>
 
       <div className="max-w-4xl mx-auto">
-        <h2 className="mt-16 text-4xl font-bold text-red-500 mb-5">Volume 2</h2>
+        <h2 className="mt-12 text-3xl font-bold text-(--color-primary) mb-5 sm:text-4xl lg:mt-16">
+          Volume 2
+        </h2>
         <SlideShow images={zineSlides2} />
       </div>
 
       <div className="max-w-4xl mx-auto">
-        <h2 className="mt-16 text-4xl font-bold text-red-500 mb-5">Volume 3</h2>
+        <h2 className="mt-12 text-3xl font-bold text-(--color-primary) mb-5 sm:text-4xl lg:mt-16">
+          Volume 3
+        </h2>
         <SlideShow images={zineSlides3} />
       </div>
     </div>

@@ -95,18 +95,21 @@ export default function ProjectsPage() {
   return (
     <div className="w-full">
       {/* Page heading */}
-      <div className="relative w-full">
-        {/* Back Button */}
-        <div className="mx-auto w-full max-w-250 px-6 pt-4 sm:px-8 lg:absolute lg:left-5 lg:top-6 lg:z-10 lg:w-auto lg:max-w-none lg:p-0">
-          <BackButton />
-        </div>
+      <div className="relative mx-auto w-full max-w-250 px-5 pt-6 sm:px-8 lg:max-w-none lg:px-0">
+        <div className="grid grid-cols-[auto_1fr_auto] items-center gap-3 lg:mx-auto lg:max-w-250 lg:px-8">
+          {/* Back Button */}
+          <div className="lg:absolute lg:left-5 lg:top-6">
+            <BackButton />
+          </div>
 
-        {/* Title  */}
+          {/* Title  */}
 
-        <div className="mx-auto w-full max-w-250 px-6 pt-6 sm:px-8">
-          <h1 className="lg:text-center text-4xl font-bold leading-tight sm:text-6xl">
+          <h1 className="min-w-0 text-center text-3xl font-bold leading-tight sm:text-5xl lg:col-start-2 lg:text-6xl">
             {title}
           </h1>
+          <div className="invisible" aria-hidden="true">
+            <BackButton />
+          </div>
         </div>
       </div>
 
