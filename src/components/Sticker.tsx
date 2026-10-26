@@ -31,8 +31,13 @@ export default function Sticker({
         zIndex: 50,
         cursor: "grabbing",
       }}
-      className={`absolute z-10 cursor-grab touch-none select-none ${className}`}
-      style={{ width: size }}
+      className={`absolute z-10 w-(--sticker-mobile-size) lg:w-(--sticker-size) cursor-grab touch-none select-none ${className}`}
+      style={
+        {
+          "--sticker-mobile-size": `${size * 0.8}px`,
+          "--sticker-size": `${size}px`,
+        } as React.CSSProperties
+      }
     >
       {/* Separate animation layer */}
       <motion.div
