@@ -13,9 +13,13 @@ const fonts = [
 
 interface AnimatedNameProps {
   small?: boolean;
+  breakOnMobile?: boolean;
 }
 
-export default function AnimatedName({ small = false }: AnimatedNameProps) {
+export default function AnimatedName({
+  small = false,
+  breakOnMobile = false,
+}: AnimatedNameProps) {
   const [fontIndex, setFontIndex] = useState(0);
   const [fontsReady, setFontsReady] = useState(false);
   const reduceMotion = useReducedMotion();
@@ -56,7 +60,9 @@ export default function AnimatedName({ small = false }: AnimatedNameProps) {
       className={
         small
           ? "block whitespace-nowrap text-sm font-bold leading-none sm:text-xl"
-          : "w-full whitespace-nowrap text-center text-[clamp(4rem,16vw,15rem)] leading-[1.15] tracking-[-0.065em]"
+          : breakOnMobile
+            ? "w-full text-center text-[clamp(5.5rem,30vw,9rem)] leading-[1.05] tracking-[-0.065em] lg:whitespace-nowrap  lg:text-[clamp(4rem,16vw,15rem)] lg:leading-[1.15]"
+            : "w-full whitespace-nowrap text-center text-[clamp(4rem,16vw,15rem)] leading-[1.15] tracking-[-0.065em]"
       }
       style={{
         fontFamily: fonts[fontIndex],
@@ -67,7 +73,14 @@ export default function AnimatedName({ small = false }: AnimatedNameProps) {
       animate={{ opacity: 1 }}
       transition={{ duration: 0 }}
     >
-      Inês Mota
+      {breakOnMobile && !small ? (
+        <>
+          <span className="block lg:inline">Inês</span>
+          <span className="block lg:inline"> Mota</span>
+        </>
+      ) : (
+        "Inês Mota"
+      )}
     </MotionTag>
   );
 }

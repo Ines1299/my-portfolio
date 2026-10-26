@@ -1,6 +1,8 @@
 @import "tailwindcss";
 
 body {
+  margin: 0;
+  min-width: 320px;
   font-family: var(--font-body);
   background-color: var(--color-white);
   color: var(--color-black);
@@ -14,6 +16,7 @@ h5,
 h6 {
   font-family: var(--font-heading);
   color: var(--color-primary);
+  overflow-wrap: break-word;
 }
 
 html {
@@ -21,8 +24,17 @@ html {
 }
 
 .container {
+  width: 100%;
   max-width: 1200px;
   margin-left: auto;
+  margin-inline: auto;
   margin-right: auto;
   padding: 0 2rem;
+  padding-inline: 1.5rem;
+}
+
+@media (min-width: 640px) {
+  .container {
+    padding-inline: 2rem;
+  }
 }

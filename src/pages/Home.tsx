@@ -96,7 +96,7 @@ function Home() {
 
           {/* Hero text */}
           <div className="mt-10 relative z-0 mx-auto w-full max-w-350">
-            <AnimatedName />
+            <AnimatedName breakOnMobile />
 
             <motion.p
               initial={reduceMotion ? false : { opacity: 0, y: 15 }}
