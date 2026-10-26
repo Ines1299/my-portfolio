@@ -40,7 +40,7 @@ export default function FolderGrid() {
   return (
     <section
       id="projects"
-      className=" flex h-svh w-full items-center justify-center bg-(--color-secondary) px-5 py-16 sm:px-8 lg:px-12"
+      className=" flex min-h-svh w-full items-center justify-center bg-(--color-secondary) px-5 py-16 sm:px-8 lg:px-12"
     >
       <motion.div
         initial={reduceMotion ? false : { opacity: 0, y: 60 }}
@@ -54,7 +54,7 @@ export default function FolderGrid() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.4 }}
           transition={{ duration: 0.7, ease: "easeOut" }}
-          className="mb-14 text-center text-5xl font-bold sm:mb-16 sm:text-6xl"
+          className="mb-10 text-center text-4xl font-bold sm:mb-14 sm:text-5xl lg:mb-16 lg:text-6xl"
           style={{
             fontFamily: "var(--font-heading)",
             color: "var(--color-light-grey)",
@@ -65,7 +65,7 @@ export default function FolderGrid() {
           Projects
         </motion.h2>
 
-        <div className="grid grid-cols-3 items-end gap-4 sm:gap-8 lg:gap-16">
+        <div className="grid grid-cols-1 items-end justify-items-center gap-8 sm:grid-cols-3 sm:gap-8 lg:gap-16">
           {categories.map((category) => {
             const imageUrl = categoryImages[category.slug];
 
@@ -73,7 +73,7 @@ export default function FolderGrid() {
               <Link
                 key={category.id}
                 to={`/category/${category.slug}`}
-                className="group flex flex-col items-center gap-4 no-underline"
+                className="group flex flex-col items-center gap-3 no-underline sm:max-w-none sm:gap-4"
               >
                 <motion.div
                   whileHover={
@@ -89,7 +89,7 @@ export default function FolderGrid() {
                     stiffness: 160,
                     damping: 18,
                   }}
-                  className="flex h-60 w-full items-end justify-center sm:h-70 lg:h-85"
+                  className="flex h-60 w-full items-end justify-center sm:h-55 lg:h-85"
                 >
                   {imageUrl ? (
                     <img
@@ -104,7 +104,7 @@ export default function FolderGrid() {
                   )}
                 </motion.div>
 
-                <p className=" no-underline text-center text-sm font-bold text-black sm:text-lg">
+                <p className=" no-underline text-center text-base font-bold text-black sm:text-lg">
                   {category.name}
                 </p>
               </Link>

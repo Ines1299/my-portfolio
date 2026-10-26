@@ -1,12 +1,11 @@
 import { motion, useReducedMotion } from "framer-motion";
-import type { RefObject } from "react";
+import type { CSSProperties } from "react";
 
 interface StickerProps {
   src: string;
   alt?: string;
   className?: string;
   size?: number;
-  constraintsRef: RefObject<HTMLElement | null>;
   delay?: number;
 }
 
@@ -15,7 +14,6 @@ export default function Sticker({
   alt = "",
   className = "",
   size = 80,
-  constraintsRef,
   delay = 0,
 }: StickerProps) {
   const reduceMotion = useReducedMotion();
@@ -23,9 +21,7 @@ export default function Sticker({
   return (
     <motion.div
       drag
-      dragConstraints={constraintsRef}
       dragMomentum={false}
-      dragElastic={0.1}
       whileDrag={{
         scale: 1.15,
         zIndex: 50,
@@ -36,7 +32,7 @@ export default function Sticker({
         {
           "--sticker-mobile-size": `${size * 0.8}px`,
           "--sticker-size": `${size}px`,
-        } as React.CSSProperties
+        } as CSSProperties
       }
     >
       {/* Separate animation layer */}
