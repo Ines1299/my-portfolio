@@ -27,7 +27,7 @@ export default function ServiceStar({ label }: ServiceStarProps) {
       </svg>
 
       {/* Service label */}
-      <span className="pointer-events-none relative z-10 w-[55%] text-center text-[10px] font-bold leading-tight whitespace-normal wrap-break-word text-black sm:text-sm">
+      <span className="pointer-events-none relative z-10 w-[60%] text-center text-xs font-bold leading-tight whitespace-normal wrap-break-word text-black sm:w-[55%] sm:text-sm">
         {label}
       </span>
     </div>
