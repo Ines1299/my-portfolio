@@ -110,7 +110,7 @@ export default function CategoryPage() {
   }
 
   return (
-    <section className="relative flex min-h-svh w-full items-center justify-center bg-(--color-secondary) px-5 py-16 sm:px-8 lg:px-12">
+    <section className="relative flex min-h-svh w-full items-center justify-center bg-(--color-secondary) px-5 pb-16 pt-24 sm:px-8 sm:pt-24 lg:px-12 lg:py-16">
       <div className="absolute left-5 top-6 z-10 p-2 sm:left-8 lg:left-12">
         <BackButton />
       </div>
@@ -126,7 +126,7 @@ export default function CategoryPage() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.4 }}
           transition={{ duration: 0.7, ease: "easeOut" }}
-          className="mb-14 text-center text-5xl font-bold sm:mb-16 sm:text-6xl"
+          className="mb-10 text-center text-4xl font-bold sm:mb-14 sm:text-5xl lg:mb-16 lg:text-6xl"
           style={{
             fontFamily: "var(--font-heading)",
             color: "var(--color-light-grey)",
@@ -137,7 +137,7 @@ export default function CategoryPage() {
           {category.name}
         </motion.h2>
 
-        <div className="grid grid-cols-3 items-end gap-4 sm:gap-8 lg:gap-16">
+        <div className="grid grid-cols-1 items-end justify-items-center gap-8 sm:grid-cols-3 sm:gap-8 lg:gap-16">
           {subcategories.map((subcategory) => {
             const imageUrl = subcategoryImages[subcategory.slug];
 
@@ -145,7 +145,7 @@ export default function CategoryPage() {
               <Link
                 key={subcategory.id}
                 to={`/category/${slug}/${subcategory.slug}`}
-                className="group flex flex-col items-center gap-4 no-underline"
+                className="group flex w-full max-w-65 flex-col items-center gap-3 no-underline sm:max-w-none sm:gap-4"
               >
                 <motion.div
                   whileHover={
@@ -161,7 +161,7 @@ export default function CategoryPage() {
                     stiffness: 160,
                     damping: 18,
                   }}
-                  className="flex h-60 w-full items-end justify-center sm:h-70 lg:h-85"
+                  className="flex h-60 w-full items-end justify-center sm:h-55 lg:h-85"
                 >
                   {imageUrl ? (
                     <img
