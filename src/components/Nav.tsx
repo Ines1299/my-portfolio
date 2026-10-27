@@ -23,8 +23,8 @@ function Nav() {
 
   return (
     <>
-      <nav className=" relative z-30 grid min-h-24 grid-col-3 grid-rows-2 items-center bg-white px-4 py-3 sm:px-8 lg:h-20 lg:min-h-0 lg:grid-rows-1 lg:px-12 lg:py-0">
-        <div className=" col-span-3 row-start-2 flex items-center justify-center gap-5 sm:gap-8 lg:col-span-1 lg:col-start-1 lg:row-start-1 lg:justify-start lg:gap-6 ">
+      <nav className=" relative z-30 grid min-h-24 grid-cols-3 grid-rows-2 items-center bg-white px-4 py-3 sm:px-8 lg:h-20 lg:min-h-0 lg:grid-rows-1 lg:px-12 lg:py-0">
+        <div className=" col-span-3 row-start-2 flex w-full items-center justify-between px-2 sm:px-6 lg:col-span-1 lg:col-start-1 lg:row-start-1 lg:justify-start lg:gap-6 lg:px-0 ">
           <NavLink to="/#projects" end className={navLinkClass}>
             Projects
           </NavLink>
@@ -32,6 +32,7 @@ function Nav() {
           <NavLink to="/about" className={navLinkClass}>
             About
           </NavLink>
+
           <NavLink to="/contact" className={navLinkClass}>
             Contact
           </NavLink>
