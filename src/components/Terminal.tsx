@@ -3,17 +3,22 @@ import type { ReactNode } from "react";
 type CodingTerminalProps = {
   children: ReactNode;
   title?: string;
+  showCommands?: boolean;
+  compact?: boolean;
 };
 
 export default function Terminal({
   children,
   title = "projects — terminal",
+  showCommands = true,
+  compact = false,
 }: CodingTerminalProps) {
   return (
     <div className="w-full overflow-hidden rounded-lg border border-[#555555] bg-[#0000AA] shadow-xl">
       {/* Terminal title bar */}
       <div className="relative flex h-9 items-center justify-between bg-[#E8E8E8] px-3 sm:h-10 lg:h-12">
         {/* Window controls */}
+
         <div className="flex items-center gap-2">
           <span className="h-3 w-3 rounded-full bg-[#FF5F57]" />
           <span className="h-3 w-3 rounded-full bg-[#FEBC2E]" />
@@ -33,15 +38,22 @@ export default function Terminal({
 
       {/* Terminal content */}
       <div
-        className="flex min-h-100 flex-col px-5 py-8 text-(--color-primary) sm:min-h-125 sm:px-10 sm:py-12 lg:min-h-0 lg:px-12 lg:py-6"
+        className={`flex flex-col text-(--color-primary) ${
+          compact
+            ? "px-5 py-8 sm:px-8 sm:py-10 lg:px-10"
+            : "min-h-100 px-5 py-8 sm:min-h-125 sm:px-10 sm:py-12 lg:min-h-0 lg:px-12 lg:py-6"
+        }`}
         style={{ fontFamily: "var(--font-body)" }}
       >
         {/* Terminal commands */}
-        <div className="mb-8 text-xs leading-relaxed sm:text-sm sm:mb-10 lg:text-sm lg:mb-4">
-          <p>Last login: Today</p>
-          <p>~ % cd projects</p>
-          <p>~/projects % ls</p>
-        </div>
+        {showCommands && (
+          <div className="mb-8 text-xs leading-relaxed sm:mb-10 sm:text-sm lg:mb-4">
+            <p>Last login: Today</p>
+            <p>~ % cd projects</p>
+            <p>~/projects % ls</p>
+          </div>
+        )}
+
         <div className="flex flex-1 flex-col justify-center">{children}</div>
       </div>
     </div>

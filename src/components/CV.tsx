@@ -1,3 +1,6 @@
+import { useTheme } from "../contexts/ThemeContext";
+import Terminal from "./Terminal";
+
 interface CVItem {
   title: string;
   place?: string;
@@ -121,22 +124,37 @@ const languages: Language[] = [
 ];
 
 export default function CV() {
+  const { theme } = useTheme();
+  const isCoding = theme === "coding";
+
   const headingStyle = {
     fontFamily: "var(--font-heading)",
     color: "var(--color-primary)",
-    WebkitTextStroke: "1px white",
+    WebkitTextStroke: isCoding ? "0px" : "1px white",
     paintOrder: "stroke fill" as const,
   };
 
-  return (
-    <div className="grid grid-cols-1 items-start gap-12 border-t border-black pt-10 sm:pt-16 lg:grid-cols-[1.4fr_1fr] lg:gap-20 ">
+  const dividerColor = isCoding ? "border-white/30" : "border-black/30";
+
+  const secondaryText = isCoding ? "text-white/70" : "text-black/60";
+
+  const descriptionText = isCoding ? "text-white/80" : "text-black/80";
+
+  const content = (
+    <div
+      className={`grid grid-cols-1 items-start gap-12 lg:grid-cols-[1.4fr_1fr] lg:gap-20 ${
+        isCoding
+          ? "text-white"
+          : "border-t border-black pt-10 sm:pt-16 text-black"
+      }`}
+    >
       {/* Left column */}
       <div className="flex min-w-0 flex-col gap-12 sm:gap-16">
         {/*Education*/}
 
         <section>
           <h2
-            className="mb-8 text-2xl sm:text-3xl sm:mb-10"
+            className="mb-8 text-2xl sm:mb-10 sm:text-3xl"
             style={headingStyle}
           >
             Education
@@ -144,16 +162,20 @@ export default function CV() {
           {education.map((item) => (
             <div
               key={item.title}
-              className="mb-6 flex justify-between items-start gap-4 border-b border-black pb-6 last:mb-0 last:border-0"
+              className={`mb-6 flex items-start justify-between gap-4 border-b pb-6 last:mb-0 last:border-0 ${
+                isCoding ? dividerColor : "border-black"
+              }`}
             >
               <div className="min-w-0">
                 <p className="font-bold text-sm">{item.title}</p>
                 {item.place && (
-                  <p className="text-xs mt-1 text-black/60">{item.place}</p>
+                  <p className={`mt-1 text-xs ${secondaryText}`}>
+                    {item.place}
+                  </p>
                 )}
               </div>
 
-              <span className="shrink-0 text-right text-xs text-black/60">
+              <span className={`shrink-0 text-right text-xs ${secondaryText}`}>
                 {item.date}
               </span>
             </div>
@@ -172,21 +194,26 @@ export default function CV() {
           {experience.map((item) => (
             <div
               key={item.title}
-              className="flex justify-between items-start gap-4 border-b border-black/30 pb-6 mb-6 last:mb-0 last:border-0"
+              className={`mb-6 flex items-start justify-between gap-4 border-b pb-6 last:mb-0 last:border-0 ${dividerColor}`}
             >
               <div className="min-w-0">
                 <p className="font-bold text-sm">{item.title}</p>
+
                 {item.place && (
-                  <p className="text-xs mt-1 text-black/60">{item.place}</p>
+                  <p className={`mt-1 text-xs ${secondaryText}`}>
+                    {item.place}
+                  </p>
                 )}
                 {item.description && (
-                  <p className="text-xs leading-relaxed mt-3 max-w-md text-black/80">
+                  <p
+                    className={`mt-3 max-w-md text-xs leading-relaxed ${descriptionText}`}
+                  >
                     {item.description}
                   </p>
                 )}
               </div>
 
-              <span className="text-xs text-right text-black/60 shrink-0">
+              <span className={`shrink-0 text-right text-xs ${secondaryText}`}>
                 {item.date}
               </span>
             </div>
@@ -205,12 +232,18 @@ export default function CV() {
           {skills.map((skill) => (
             <div
               key={skill.label}
-              className="border-b border-black pb-4 mb-4 last:border-b-0"
+              className={`mb-4 border-b pb-4 last:border-b-0 ${
+                isCoding ? dividerColor : "border-black"
+              }`}
             >
               <p className="text-sm font-bold mb-2">{skill.label}</p>
               <p
-                className="text-xs leading-relaxed text-black/70"
-                style={{ color: "var(--color-grey)" }}
+                className="text-xs leading-relaxed"
+                style={{
+                  color: isCoding
+                    ? "rgba(255,255,255,0.8)"
+                    : "var(--color-grey)",
+                }}
               >
                 {skill.value}
               </p>
@@ -227,10 +260,10 @@ export default function CV() {
           {languages.map((item) => (
             <div
               key={item.lang}
-              className="flex justify-between gap-4 border-b border-black/30 pb-4 mb-4 last:mb-0 last:border-0"
+              className={`mb-4 flex justify-between gap-4 border-b pb-4 last:mb-0 last:border-0 ${dividerColor}`}
             >
               <p className="min-w-0 text-sm font-bold">{item.lang}</p>
-              <p className="shrink-0 text-right text-xs text-black/60">
+              <p className={`shrink-0 text-right text-xs ${secondaryText}`}>
                 {item.level}
               </p>
             </div>
@@ -244,8 +277,10 @@ export default function CV() {
           </h2>
 
           <p
-            className="text-xs leading-relaxed text-black/70"
-            style={{ color: "var(--color-grey)" }}
+            className="text-xs leading-relaxed"
+            style={{
+              color: isCoding ? "rgba(255,255,255,0.8)" : "var(--color-grey)",
+            }}
           >
             Guitar (12+ years) · Crochet · Horror films · Electronic music ·
             History · Politics · Digital culture
@@ -258,21 +293,26 @@ export default function CV() {
           {exhibitions.map((item) => (
             <div
               key={item.title}
-              className="flex justify-between items-start border-b border-black/30 pb-4 mb-4 last:mb-0 last:border-0 gap-4"
+              className={`mb-4 flex items-start justify-between gap-4 border-b pb-4 last:mb-0 last:border-0 ${dividerColor}`}
             >
               <div className="min-w-0">
                 <p className="font-bold text-sm">{item.title}</p>
+
                 {item.place && (
                   <p
-                    className="text-xs mt-1 text-black/60"
-                    style={{ color: "var(--color-grey)" }}
+                    className="mt-1 text-xs"
+                    style={{
+                      color: isCoding
+                        ? "rgba(255,255,255,0.7)"
+                        : "var(--color-grey)",
+                    }}
                   >
                     {item.place}
                   </p>
                 )}
               </div>
 
-              <span className="text-right text-xs shrink-0 text-black/60">
+              <span className={`shrink-0 text-right text-xs ${secondaryText}`}>
                 {item.date}
               </span>
             </div>
@@ -281,4 +321,14 @@ export default function CV() {
       </div>
     </div>
   );
+
+  if (isCoding) {
+    return (
+      <Terminal title="macmini — zsh — 120x30" showCommands={false} compact>
+        {content}
+      </Terminal>
+    );
+  }
+
+  return content;
 }
