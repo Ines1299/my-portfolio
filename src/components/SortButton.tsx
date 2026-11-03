@@ -1,4 +1,5 @@
 import type { ChangeEvent } from "react";
+import { useTheme } from "../contexts/ThemeContext";
 
 type SortBy = "year" | "title";
 type SortOrder = "ASC" | "DESC";
@@ -25,6 +26,8 @@ export default function SortButton({
   order,
   onSortChange,
 }: SortButtonProps) {
+  const { theme } = useTheme();
+  const isCoding = theme === "coding";
   const currentIndex = sortOptions.findIndex(
     (opt) => opt.sort_by === sortBy && opt.order === order,
   );
@@ -39,7 +42,12 @@ export default function SortButton({
       id="sort-button"
       value={currentIndex}
       onChange={handleChange}
-      className="cursor-pointer border border-(--color-primary) bg-(--color-light-grey) px-4 py-2 text-sm text-(--color-primary) outline-none"
+      className={`cursor-pointer border border-(--color-primary) px-4 py-2 text-sm text-(--color-primary) outline-none ${
+        isCoding ? "bg-(--color-background)" : "bg-(--color-light-grey)"
+      }`}
+      style={{
+        fontFamily: "var(--font-body)",
+      }}
       aria-label="Sort projects"
     >
       {sortOptions.map((opt, index) => (

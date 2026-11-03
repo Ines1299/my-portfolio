@@ -62,7 +62,7 @@ export default function AllProjects({
 
   return (
     <section
-      className={`w-full bg-white px-5 pb-16 sm:px-8 sm:pb-24 ${
+      className={`w-full bg-(--color-background) px-5 pb-16 sm:px-8 sm:pb-24 ${
         categoryId !== undefined || subcategoryId !== undefined
           ? "pt-6 lg:pt-8"
           : "pt-16 sm:pt-28 lg:pt-36"

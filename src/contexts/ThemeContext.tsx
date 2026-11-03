@@ -19,6 +19,9 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
   useEffect(() => {
     const root = document.documentElement;
     const vars = themes[theme];
+
+    root.dataset.theme = theme;
+
     Object.entries(vars).forEach(([key, value]) => {
       root.style.setProperty(key, value);
     });

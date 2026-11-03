@@ -5,7 +5,7 @@ const meURL =
 
 export default function About() {
   return (
-    <div className="bg-white">
+    <div className="bg-(--color-background)">
       <section className="mx-auto max-w-300 px-5 pb-16 pt-12  sm:px-8 sm:pb-20 lg:pb-24 lg:pt-12 ">
         <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-2 lg:gap-20">
           <div className="relative w-full">

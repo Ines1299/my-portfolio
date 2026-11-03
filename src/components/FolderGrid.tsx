@@ -5,7 +5,10 @@ import { motion, useReducedMotion } from "framer-motion";
 import { supabase } from "../lib/supabase";
 import { useEffect, useState } from "react";
 
-const categoryImages: Record<string, string> = {
+import { useTheme } from "../contexts/ThemeContext";
+import CodingFolderGrid from "./CodingFolderGrid";
+
+const categoryImages = {
   design:
     "https://jvlcwxxjoppsnwglzomo.supabase.co/storage/v1/object/public/categories/design_design.png",
   programming:
@@ -19,6 +22,7 @@ const categoryOrder = ["design", "programming", "crochet"];
 export default function FolderGrid() {
   const [categories, setCategories] = useState<Category[]>([]);
   const reduceMotion = useReducedMotion();
+  const { theme } = useTheme();
 
   useEffect(() => {
     async function fetchCategories() {
@@ -36,6 +40,10 @@ export default function FolderGrid() {
     }
     fetchCategories();
   }, []);
+
+  if (theme === "coding") {
+    return <CodingFolderGrid categories={categories} />;
+  }
 
   return (
     <section

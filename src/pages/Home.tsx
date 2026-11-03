@@ -1,9 +1,11 @@
 import { motion, useReducedMotion } from "framer-motion";
+import { useTheme } from "../contexts/ThemeContext";
 
 import AllProjects from "../components/AllProjects";
 import FolderGrid from "../components/FolderGrid";
 import Sticker from "../components/Sticker";
 import AnimatedName from "../components/AnimatedName";
+import CodingHero from "../components/CodingHero";
 
 const stickers = [
   {
@@ -70,48 +72,52 @@ const stickers = [
 
 function Home() {
   const reduceMotion = useReducedMotion();
+  const { theme } = useTheme();
 
   return (
     <>
-      {/* Hero */}
-      <section className=" mt-10 relative min-h-[calc(100svh-5rem)] overflow-hidden bg-white px-5 sm:px-8 lg:px-12">
-        <div className="relative mx-auto min-h-[calc(100svh-5rem)] w-full max-w-350 pt-20 pb-16 sm:min-h-150">
-          {/* stickers */}
-          {stickers.map((sticker, index) => (
-            <Sticker
-              key={sticker.src}
-              src={sticker.src}
-              className={sticker.position}
-              size={sticker.size}
-              delay={index * 0.12}
-            />
-          ))}
+      {theme === "coding" ? (
+        <CodingHero />
+      ) : (
+        <section className=" mt-10 relative min-h-[calc(100svh-5rem)] overflow-hidden bg-(--color-background) px-5 sm:px-8 lg:px-12">
+          <div className="relative mx-auto min-h-[calc(100svh-5rem)] w-full max-w-350 pt-20 pb-16 sm:min-h-150">
+            {/* stickers */}
+            {stickers.map((sticker, index) => (
+              <Sticker
+                key={sticker.src}
+                src={sticker.src}
+                className={sticker.position}
+                size={sticker.size}
+                delay={index * 0.12}
+              />
+            ))}
 
-          {/* Hero text */}
-          <div className="mt-10 relative z-0 mx-auto w-full max-w-350">
-            <AnimatedName breakOnMobile />
+            {/* Hero text */}
+            <div className="mt-10 relative z-0 mx-auto w-full max-w-350">
+              <AnimatedName breakOnMobile />
 
-            <motion.p
-              initial={reduceMotion ? false : { opacity: 0, y: 15 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, delay: 0.2 }}
-              className="relative mt-10 mx-auto w-[85%] max-w-137.5 text-left text-base leading-relaxed sm:mt-12 sm:text-xl lg:mt-16 lg:ml-[12%] lg:w-auto lg:text-2xl lg:leading-snug"
-              style={{ color: "var(--color-secondary)" }}
-            >
-              Illustrator, Designer, Programmer and
-              <br className="hidden lg:block" />
-              occasional Crocheter based in Brno.
-            </motion.p>
+              <motion.p
+                initial={reduceMotion ? false : { opacity: 0, y: 15 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.7, delay: 0.2 }}
+                className="relative mt-10 mx-auto w-[85%] max-w-137.5 text-left text-base leading-relaxed sm:mt-12 sm:text-xl lg:mt-16 lg:ml-[12%] lg:w-auto lg:text-2xl lg:leading-snug"
+                style={{ color: "var(--color-secondary)" }}
+              >
+                Illustrator, Designer, Programmer and
+                <br className="hidden lg:block" />
+                occasional Crocheter based in Brno.
+              </motion.p>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      )}
 
       {/*Projects*/}
 
       <FolderGrid />
 
       {/*Projects Images*/}
-      <div className="relative z-10 bg-white ">
+      <div className="relative z-10 bg-(--color-background) ">
         <AllProjects />
       </div>
     </>

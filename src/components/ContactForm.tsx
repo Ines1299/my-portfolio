@@ -2,7 +2,12 @@ import emailjs from "@emailjs/browser";
 import { useRef, useState } from "react";
 import type { FormEvent } from "react";
 
+import { useTheme } from "../contexts/ThemeContext";
+
 export default function Contact() {
+  const { theme } = useTheme();
+  const isCoding = theme === "coding";
+
   const [loading, setLoading] = useState(false);
   const [status, setStatus] = useState<"success" | "error" | null>(null);
   const form = useRef<HTMLFormElement>(null);
@@ -71,7 +76,11 @@ export default function Contact() {
       <button
         type="submit"
         disabled={loading}
-        className="cursor-pointer border border-(--color-primary) bg-(--color-light-grey) px-6 py-3 text-xl text-(--color-primary) outline-none w-fit font-bold transition-all duration-300 hoover:-translate-y-1 hoover:shadow-lg disabled:cursor-not-allowed disabled:opacity-60 disabled:hoover:translate-y-0"
+        className={`w-fit cursor-pointer border px-6 py-3 text-xl font-bold outline-none transition-all duration-300 hover:-translate-y-1 hover:shadow-lg disabled:cursor-not-allowed disabled:opacity-60 disabled:hover:translate-y-0 ${
+          isCoding
+            ? "border-black bg-black text-(--color-primary)"
+            : "border-(--color-primary) bg-(--color-light-grey) text-(--color-primary)"
+        }`}
       >
         {loading ? "Sending..." : "Submit"}
       </button>

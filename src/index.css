@@ -1,11 +1,26 @@
 @import "tailwindcss";
 
+html {
+  scroll-behavior: smooth;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
 body {
   margin: 0;
   min-width: 320px;
-  font-family: var(--font-body);
-  background-color: var(--color-white);
-  color: var(--color-black);
+
+  font-family: var(--font-body, "Roboto", sans-serif);
+  background-color: var(--color-background, #ffffff);
+  color: var(--color-text, #111111);
+
+  transition:
+    background-color 300ms ease,
+    color 300ms ease;
 }
 
 h1,
@@ -14,22 +29,15 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: var(--font-heading);
-  color: var(--color-primary);
+  font-family: var(--font-heading, "Archivo Black", sans-serif);
+  color: var(--color-primary, #ff2d78);
   overflow-wrap: break-word;
-}
-
-html {
-  scroll-behavior: smooth;
 }
 
 .container {
   width: 100%;
   max-width: 1200px;
-  margin-left: auto;
   margin-inline: auto;
-  margin-right: auto;
-  padding: 0 2rem;
   padding-inline: 1.5rem;
 }
 
