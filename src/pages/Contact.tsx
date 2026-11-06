@@ -52,7 +52,7 @@ const contactLinks = [
 
 function Contact() {
   return (
-    <div className="overflow-x-clip bg-white">
+    <div className="overflow-x-clip bg-(--color-background)">
       {/* Contact heading and postcard */}
 
       <section className="mx-auto max-w-250 px-5 pt-12 sm:px-8 lg:pt-20">

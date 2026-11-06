@@ -8,7 +8,7 @@ import { useEffect, useState } from "react";
 import { useTheme } from "../contexts/ThemeContext";
 import CodingFolderGrid from "./CodingFolderGrid";
 
-const categoryImages = {
+const categoryImages: Record<string, string> = {
   design:
     "https://jvlcwxxjoppsnwglzomo.supabase.co/storage/v1/object/public/categories/design_design.png",
   programming:
