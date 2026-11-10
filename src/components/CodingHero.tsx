@@ -76,7 +76,7 @@ export default function CodingHero() {
             {name.slice(0, nameLength)}
             {phase === "name" && (
               <span
-                className="ml-2 inline-block h-[clamp(1.25rem,2.5vw, 2rem)] w-[clamp(0.25rem, 0.5vw, 0.5rem)] animate-pulse bg-current align-middle"
+                className="ml-2 inline-block h-[clamp(1.25rem,2.5vw, 2rem)] w-[clamp(0.25rem, 0.5vw, 0.5rem)] cursor-blink bg-current align-middle"
                 aria-hidden="true"
               />
             )}
@@ -111,7 +111,7 @@ export default function CodingHero() {
 
             {phase !== "name" && (
               <span
-                className="ml-1 inline-block animate-pulse"
+                className="ml-1 inline-block cursor-blink"
                 aria-hidden="true"
               >
                 ▌
