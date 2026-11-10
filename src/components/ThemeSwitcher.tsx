@@ -6,7 +6,6 @@ import type { ThemeName } from "../themes/themes";
 const themeOptions: { value: ThemeName; label: string }[] = [
   { value: "design", label: "Design" },
   { value: "coding", label: "Coding" },
-  { value: "crochet", label: "Crochet" },
 ];
 
 export default function ThemeSwitcher() {
