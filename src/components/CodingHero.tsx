@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
+import ParticlesBackground from "./ParticulesBackground";
 
 const name = "INÊS MOTA";
-const descriptionFirstLine = "Illustrator, Designer Proggramer and";
+const descriptionFirstLine = "Illustrator, Designer, Proggramer and";
 const descriptionSecondLine = "occasional crocheter based in Brno.";
 const description = `${descriptionFirstLine} ${descriptionSecondLine}`;
 
@@ -63,8 +64,9 @@ export default function CodingHero() {
   const typedDescription = description.slice(0, descriptionLength);
 
   return (
-    <section className="relative flex min-h-[calc(100svh-5rem)] items-center overflow-hidden bg-(--color-background) px-5 py-16 sm:px-8 lg:px-12">
-      <div className="mx-auto w-full max-w-350">
+    <section className="relative isolate flex min-h-[calc(100svh-5rem)] items-center overflow-hidden bg-(--color-background) px-5 py-16 sm:px-8 lg:px-12">
+      <ParticlesBackground />
+      <div className="relative z-10 mx-auto w-full max-w-350">
         <h1
           className="relative text-center text-[clamp(4rem,13vw,12rem)] leading-[0.85] tracking-tight text-(--color-primary)"
           style={{ fontFamily: "var(--font-heading)" }}
