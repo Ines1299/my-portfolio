@@ -16,7 +16,7 @@ export default function About() {
   return (
     <div className="bg-(--color-background)">
       <section className="mx-auto max-w-300 px-5 pb-16 pt-12 sm:px-8 sm:pb-20 lg:pb-24 lg:pt-12">
-        <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-2 lg:gap-20">
+        <div className="grid grid-cols-1 items-center gap-10 md:grid-cols-2 md:gap-8 lg:gap-20">
           <div className="relative w-full">
             <img
               src={meURL}
@@ -31,7 +31,7 @@ export default function About() {
             <h1
               className={
                 isCoding
-                  ? "absolute -top-8 left-0 z-10 whitespace-nowrap text-[clamp(5rem,13vw,11rem)] leading-none text-(--color-primary) lg:-top-12"
+                  ? "absolute -top-8 left-0 z-10 whitespace-nowrap text-[clamp(5rem,13vw,11rem)] leading-none text-(--color-primary) lg:-top-12 [-webkit-text-stroke:4px_#0000AA] [paint-order:stroke_fill]"
                   : "absolute -top-5 left-0 z-10 whitespace-nowrap text-[clamp(3.5rem,12vw,6rem)] leading-none text-(--color-primary) lg:-top-6 lg:text-[clamp(4rem,9vw,8rem)]"
               }
             >
