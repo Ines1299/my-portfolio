@@ -24,13 +24,15 @@ export default function Contact() {
         import.meta.env.VITE_EMAIL_SERVICE_ID,
         import.meta.env.VITE_EMAIL_TEMPLATE_ID,
         form.current,
-        import.meta.env.VITE_EMAIL_PUBLIC_KEY,
+        {
+          publicKey: import.meta.env.VITE_EMAIL_PUBLIC_KEY,
+        },
       );
 
       setStatus("success");
       form.current.reset();
     } catch (err) {
-      console.log(err);
+      console.error("emailJS failed:", err);
       setStatus("error");
     } finally {
       setLoading(false);

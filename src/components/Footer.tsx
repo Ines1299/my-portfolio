@@ -48,18 +48,24 @@ function Footer() {
             <div className="flex gap-4">
               <SocialIcon
                 url="https://www.instagram.com/i.nesart/"
+                target="_blank"
+                rel="noopener noreferrer"
                 bgColor={socialBg}
                 fgColor={socialFg}
                 style={{ height: 44, width: 44 }}
               />
               <SocialIcon
                 url="https://www.linkedin.com/in/ines-mota-c"
+                target="_blank"
+                rel="noopener noreferrer"
                 bgColor={socialBg}
                 fgColor={socialFg}
                 style={{ height: 44, width: 44 }}
               />
               <SocialIcon
                 url="https://github.com/Ines1299"
+                target="_blank"
+                rel="noopener noreferrer"
                 bgColor={socialBg}
                 fgColor={socialFg}
                 style={{ height: 44, width: 44 }}
