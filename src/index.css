@@ -68,3 +68,22 @@ h6 {
     animation: none;
   }
 }
+
+/* Coding theme: pixel alien hover outline */
+
+.service-alien {
+  transition:
+    filter 300ms ease,
+    transform 200ms ease;
+}
+
+.group:hover .service-alien {
+  filter: drop-shadow(3px 0 0 #0000aa) drop-shadow(-2px 0 0 #0000aa)
+    drop-shadow(0 3px 0 #0000aa) drop-shadow(0 -2px 0 #0000aa);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .service-alien {
+    transition: none;
+  }
+}

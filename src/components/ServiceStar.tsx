@@ -22,7 +22,7 @@ export default function ServiceStar({ label }: ServiceStarProps) {
           src={pixelAlien}
           alt=""
           aria-hidden="true"
-          className="absolute inset-0 h-full w-full object-contain transition-transform duration-200 group-hover:scale-105"
+          className="service-alien absolute inset-0 h-full w-full object-contain  group-hover:scale-105"
           style={{ imageRendering: "pixelated" }}
         />
       ) : (

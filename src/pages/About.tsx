@@ -1,11 +1,20 @@
 import CV from "../components/CV";
 import { useTheme } from "../contexts/ThemeContext";
+import Typewriter from "../components/Typewriter";
 
 const baseURL =
   "https://jvlcwxxjoppsnwglzomo.supabase.co/storage/v1/object/public/profiles";
 
 const design = `${baseURL}/avatar_design.png`;
 const coding = `${baseURL}/avatar_coding.png`;
+
+const firstParagraph =
+  "Portuguese Illustrator, Designer and Junior Developer based in Brno. First Class graduate in Illustration and Visual Media from UAL, recently completed an intensive JavaScript bootcamp at Northcoders. Equally comfortable in Figma and React, jumping between creative briefs and codebases. Passionate about building accessible, intuitive interfaces where clean code and thoughtful design go hand in hand.";
+
+const secondParagraph =
+  "With so many creative interests, I wanted a little corner of the internet that could bring them all together. So I designed and coded this website entirely from scratch, no vibe coding, just lots of experimenting, problem-solving and learning along the way. It's a space to showcase all the different things I love making, and a project in itself that brings together my love for design and development.";
+
+const fullDescription = `${firstParagraph}\n${secondParagraph}`;
 
 export default function About() {
   const { theme } = useTheme();
@@ -47,20 +56,27 @@ export default function About() {
                   : "text-sm leading-relaxed text-(--color-secondary) sm:text-base lg:text-lg"
               }
             >
-              Portuguese Illustrator, Designer and Junior Developer based in
-              Brno. First Class graduate in Illustration and Visual Media from
-              UAL, recently completed an intensive JavaScript bootcamp at
-              Northcoders. Equally comfortable in Figma and React, jumping
-              between creative briefs and codebases. Passionate about building
-              accessible, intuitive interfaces where clean code and thoughtful
-              design go hand in hand.
-              <br /> With so many creative interests, I wanted a little corner
-              of the internet that could bring them all together. So I designed
-              and coded this website entirely from scratch, no vibe coding, just
-              lots of experimenting, problem-solving and learning along the way.
-              It's a space to showcase all the different things I love making,
-              and a project in itself that brings together my love for design
-              and development.
+              <p
+                className={
+                  isCoding
+                    ? "text-sm leading-relaxed text-(--color-primary) sm:text-base lg:text-base"
+                    : "text-sm leading-relaxed text-(--color-secondary) sm:text-base lg:text-lg"
+                }
+              >
+                {isCoding ? (
+                  <Typewriter
+                    text={fullDescription}
+                    speed={10}
+                    delay={300}
+                    keepCursor
+                  />
+                ) : (
+                  <>
+                    {firstParagraph}
+                    <br /> {secondParagraph}
+                  </>
+                )}
+              </p>
             </p>
           </div>
         </div>
