@@ -2,7 +2,7 @@ import ParticlesBackground from "./ParticulesBackground";
 import Typewriter from "./Typewriter";
 
 const name = "INÊS MOTA";
-const descriptionFirstLine = "Illustrator, Designer, Proggramer and";
+const descriptionFirstLine = "Illustrator, Designer, Programmer and";
 const descriptionSecondLine = "occasional crocheter based in Brno.";
 const description = `${descriptionFirstLine} ${descriptionSecondLine}`;
 

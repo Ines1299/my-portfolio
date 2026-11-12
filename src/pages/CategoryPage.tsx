@@ -4,6 +4,8 @@ import { supabase } from "../lib/supabase";
 import { motion, useReducedMotion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { Link, useParams, useNavigate } from "react-router";
+import { useTheme } from "../contexts/ThemeContext";
+import CodingCategoryPage from "../components/COdingCategoryPage";
 
 import BackButton from "../components/BackButton";
 
@@ -27,6 +29,9 @@ export default function CategoryPage() {
   const { slug } = useParams();
   const navigate = useNavigate();
   const reduceMotion = useReducedMotion();
+
+  const { theme } = useTheme();
+  const isCoding = theme === "coding";
 
   useEffect(() => {
     let cancelled = false;
@@ -100,13 +105,26 @@ export default function CategoryPage() {
 
   if (loading) {
     return (
-      <div className="flex min-h-svh items-center justify-center bg-(--color-secondary)">
-        <p className="text-white">Loading...</p>
+      <div
+        className={`flex min-h-svh items-center justify-center ${
+          isCoding ? "bg-(--color-background)" : "bg-(--color-secondary)"
+        }`}
+      >
+        {" "}
+        <p className={isCoding ? "text-(--color-primary)" : "text-white"}>
+          Loading...
+        </p>
       </div>
     );
   }
   if (error || !category) {
     return <p className="p-10">{error ?? "Category not found."}</p>;
+  }
+
+  if (isCoding) {
+    return (
+      <CodingCategoryPage category={category} subcategories={subcategories} />
+    );
   }
 
   return (
