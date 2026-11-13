@@ -5,7 +5,7 @@ import { motion, useReducedMotion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { Link, useParams, useNavigate } from "react-router";
 import { useTheme } from "../contexts/ThemeContext";
-import CodingCategoryPage from "../components/COdingCategoryPage";
+import CodingCategoryPage from "../components/CodingCategoryPage";
 
 import BackButton from "../components/BackButton";
 

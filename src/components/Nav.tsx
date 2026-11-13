@@ -27,7 +27,7 @@ function Nav() {
           </NavLink>
         </div>
 
-        <div className="col-start-3 row-start-1 justify-self-end">
+        <div className="fixed col-start-3 row-start-1 justify-self-end">
           <ThemeSwitcher />
         </div>
       </nav>
