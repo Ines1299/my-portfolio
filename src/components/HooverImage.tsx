@@ -19,7 +19,13 @@ export default function HoverImage({
     <div className="group w-full ">
       {/* Project image */}
       <div className="relative aspect-square w-full overflow-hidden">
-        <img src={src} alt={alt} className="h-full w-full object-cover" />
+        <img
+          src={src}
+          alt={alt}
+          loading="lazy"
+          decoding="async"
+          className="h-full w-full object-cover"
+        />
 
         {/* Desktop hover overlay */}
         <div
