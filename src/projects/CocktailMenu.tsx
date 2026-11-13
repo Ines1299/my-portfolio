@@ -16,14 +16,14 @@ export default function OliverConquest({ project }: { project: Project }) {
             </h1>
 
             <p className={ps.description}>
-              This comission was made for the bar
+              This comission was made for the bar{" "}
               <a
                 href="https://www.conquestpubs.co.uk"
                 className="underline"
                 target="_blank"
               >
                 The Oliver Conquest
-              </a>
+              </a>{" "}
               in Aldgate East, London. The client asked me to do a cocktail menu
               with vibrant colors that was attention-grabbing. I decided to
               incorporate some of the bar’s ingredients, drinks and utensils.

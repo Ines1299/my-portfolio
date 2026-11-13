@@ -16,7 +16,7 @@ export default function AttentionEconomy({ project }: { project: Project }) {
       <h1 className={`${ps.title} mb-8 hidden lg:block`}>{project.title}</h1>
 
       <p className={ps.description}>{project.description}</p>
-      <div className="max-w-4xl mx-auto ">
+      <div className="max-w-4xl mx-auto mt-8 ">
         <img src={screenprint} alt={project.title} />
       </div>
       <div className=" max-w-4xl gap-4 mx-auto mt-10">

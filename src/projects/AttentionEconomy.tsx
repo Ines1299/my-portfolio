@@ -12,14 +12,13 @@ const secIllustrations = [
 export default function AttentionEconomy({ project }: { project: Project }) {
   return (
     <div className={ps.page}>
-      <div className="grid grid-cols-1 items-start gap-10 md:grid-cols-2 lg:gap-16">
+      <div className="grid grid-cols-1 items-start gap-10 md:grid-cols-2 lg:gap-16 lg:gap-y-8">
+        <h1 className={`${ps.title} mb-8 hidden lg:block lg:col-span-2`}>
+          {project.title}
+        </h1>
         {/* Left column */}
         <div className="flex flex-col gap-10">
           <div>
-            <h1 className={`${ps.title} mb-8 hidden lg:block`}>
-              {project.title}
-            </h1>
-
             <p className={ps.description}>{project.description}</p>
           </div>
 

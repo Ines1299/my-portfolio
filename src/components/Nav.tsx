@@ -26,10 +26,6 @@ function Nav() {
             Contact
           </NavLink>
         </div>
-
-        <div className="fixed col-start-3 row-start-1 justify-self-end">
-          <ThemeSwitcher />
-        </div>
       </nav>
 
       {/* Animated name */}
@@ -43,6 +39,9 @@ function Nav() {
       >
         <AnimatedName small />
       </Link>
+      <div className="fixed right-4 top-3 z-50 sm:right-8 lg:right-12 lg:top-10 lg:-translate-y-1/2">
+        <ThemeSwitcher />
+      </div>
     </header>
   );
 }
